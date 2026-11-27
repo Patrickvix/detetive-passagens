@@ -1,4 +1,208 @@
 {
  "data": "2026-11-27",
- "moedas": []
+ "moedas": [
+  {
+   "moeda": "MXN",
+   "por_real": 3.417848,
+   "media_ano": 3.389929,
+   "variacao": 0.8,
+   "data": "2026-11-27",
+   "paises": [
+    "México"
+   ]
+  },
+  {
+   "moeda": "PLN",
+   "por_real": 0.708645,
+   "media_ano": 0.713678,
+   "variacao": -0.7,
+   "data": "2026-11-27",
+   "paises": [
+    "Polônia"
+   ]
+  },
+  {
+   "moeda": "RON",
+   "por_real": 0.843518,
+   "media_ano": 0.865325,
+   "variacao": -2.5,
+   "data": "2026-11-27",
+   "paises": [
+    "Romênia"
+   ]
+  },
+  {
+   "moeda": "SEK",
+   "por_real": 1.773105,
+   "media_ano": 1.820219,
+   "variacao": -2.6,
+   "data": "2026-11-27",
+   "paises": [
+    "Suécia"
+   ]
+  },
+  {
+   "moeda": "ZAR",
+   "por_real": 3.045649,
+   "media_ano": 3.162842,
+   "variacao": -3.7,
+   "data": "2026-11-27",
+   "paises": [
+    "África do Sul"
+   ]
+  },
+  {
+   "moeda": "HUF",
+   "por_real": 58.592619,
+   "media_ano": 61.514245,
+   "variacao": -4.7,
+   "data": "2026-11-27",
+   "paises": [
+    "Hungria"
+   ]
+  },
+  {
+   "moeda": "CZK",
+   "por_real": 3.848327,
+   "media_ano": 4.04332,
+   "variacao": -4.8,
+   "data": "2026-11-27",
+   "paises": [
+    "Tchéquia"
+   ]
+  },
+  {
+   "moeda": "AUD",
+   "por_real": 0.261599,
+   "media_ano": 0.275218,
+   "variacao": -4.9,
+   "data": "2026-11-27",
+   "paises": [
+    "Austrália"
+   ]
+  },
+  {
+   "moeda": "DKK",
+   "por_real": 1.179912,
+   "media_ano": 1.243671,
+   "variacao": -5.1,
+   "data": "2026-11-27",
+   "paises": [
+    "Dinamarca"
+   ]
+  },
+  {
+   "moeda": "EUR",
+   "por_real": 0.157937,
+   "media_ano": 0.166419,
+   "variacao": -5.1,
+   "data": "2026-11-27",
+   "paises": [
+    "Alemanha",
+    "Bulgária",
+    "Bélgica",
+    "Chipre",
+    "Croácia",
+    "Eslováquia",
+    "Eslovênia",
+    "Espanha",
+    "Estônia",
+    "Finlândia",
+    "França",
+    "Grécia",
+    "Irlanda",
+    "Itália",
+    "Letônia",
+    "Lituânia",
+    "Luxemburgo",
+    "Malta",
+    "Montenegro",
+    "Países Baixos",
+    "Portugal",
+    "Áustria"
+   ]
+  },
+  {
+   "moeda": "CHF",
+   "por_real": 0.144706,
+   "media_ano": 0.153879,
+   "variacao": -6.0,
+   "data": "2026-11-27",
+   "paises": [
+    "Suíça"
+   ]
+  },
+  {
+   "moeda": "CAD",
+   "por_real": 0.247008,
+   "media_ano": 0.266975,
+   "variacao": -7.5,
+   "data": "2026-11-27",
+   "paises": [
+    "Canadá"
+   ]
+  },
+  {
+   "moeda": "GBP",
+   "por_real": 0.132489,
+   "media_ano": 0.143181,
+   "variacao": -7.5,
+   "data": "2026-11-27",
+   "paises": [
+    "Reino Unido"
+   ]
+  },
+  {
+   "moeda": "NOK",
+   "por_real": 1.69348,
+   "media_ano": 1.841855,
+   "variacao": -8.1,
+   "data": "2026-11-27",
+   "paises": [
+    "Noruega"
+   ]
+  },
+  {
+   "moeda": "ISK",
+   "por_real": 21.628398,
+   "media_ano": 23.740728,
+   "variacao": -8.9,
+   "data": "2026-11-27",
+   "paises": [
+    "Islândia"
+   ]
+  },
+  {
+   "moeda": "JPY",
+   "por_real": 27.639215,
+   "media_ano": 30.399087,
+   "variacao": -9.1,
+   "data": "2026-11-27",
+   "paises": [
+    "Japão"
+   ]
+  },
+  {
+   "moeda": "USD",
+   "por_real": 0.173419,
+   "media_ano": 0.192045,
+   "variacao": -9.7,
+   "data": "2026-11-27",
+   "paises": [
+    "Equador",
+    "Estados Unidos",
+    "Panamá"
+   ]
+  },
+  {
+   "moeda": "CNY",
+   "por_real": 1.1472,
+   "media_ano": 1.309168,
+   "variacao": -12.4,
+   "data": "2026-11-27",
+   "paises": [
+    "China"
+   ]
+  }
+ ]
 }

@@ -1,4 +1,2827 @@
 {
- "ultima": [],
- "historico": {}
+ "ultima": [
+  {
+   "aeroporto": "GIG",
+   "cidade": "Rio de Janeiro",
+   "pais": "Brasil",
+   "ida": "2027-06-03",
+   "volta": "2027-06-09",
+   "preco": 282,
+   "cia": "Gol",
+   "paradas": 0,
+   "pedido": "june",
+   "entrada": "livre",
+   "destino": "RIO"
+  },
+  {
+   "aeroporto": "SSA",
+   "cidade": "Salvador",
+   "pais": "Brasil",
+   "ida": "2027-06-04",
+   "volta": "2027-06-10",
+   "preco": 634,
+   "cia": "Gol",
+   "paradas": 0,
+   "pedido": "june",
+   "entrada": "livre",
+   "destino": "SSA"
+  },
+  {
+   "aeroporto": "GIG",
+   "cidade": "Rio de Janeiro",
+   "pais": "Brasil",
+   "ida": "2027-07-25",
+   "volta": "2027-08-03",
+   "preco": 933,
+   "cia": "LATAM",
+   "paradas": 0,
+   "pedido": "july",
+   "entrada": "livre",
+   "destino": "RIO"
+  },
+  {
+   "aeroporto": "SSA",
+   "cidade": "Salvador",
+   "pais": "Brasil",
+   "ida": "2027-07-25",
+   "volta": "2027-08-03",
+   "preco": 1556,
+   "cia": "LATAM",
+   "paradas": 1,
+   "pedido": "july",
+   "entrada": "livre",
+   "destino": "SSA"
+  },
+  {
+   "aeroporto": "AEP",
+   "cidade": "Buenos Aires",
+   "pais": "Argentina",
+   "ida": "2027-06-03",
+   "volta": "2027-06-11",
+   "preco": 2425,
+   "cia": "Gol",
+   "paradas": 1,
+   "pedido": "june",
+   "entrada": "livre",
+   "destino": "BUE"
+  },
+  {
+   "aeroporto": "AEP",
+   "cidade": "Buenos Aires",
+   "pais": "Argentina",
+   "ida": "2027-07-01",
+   "volta": "2027-07-07",
+   "preco": 2827,
+   "cia": "LATAM",
+   "paradas": 1,
+   "pedido": "july",
+   "entrada": "livre",
+   "destino": "BUE"
+  },
+  {
+   "aeroporto": "LIM",
+   "cidade": "Lima",
+   "pais": "Peru",
+   "ida": "2027-06-03",
+   "volta": "2027-06-09",
+   "preco": 3285,
+   "cia": "LATAM",
+   "paradas": 1,
+   "pedido": "june",
+   "entrada": "livre",
+   "destino": "LIM"
+  },
+  {
+   "aeroporto": "ORD",
+   "cidade": "Chicago",
+   "pais": "Estados Unidos",
+   "ida": "2027-06-03",
+   "volta": "2027-06-09",
+   "preco": 3362,
+   "cia": "Avianca e Gol",
+   "paradas": 2,
+   "pedido": "june",
+   "entrada": "visto",
+   "destino": "ORD"
+  },
+  {
+   "aeroporto": "LIM",
+   "cidade": "Lima",
+   "pais": "Peru",
+   "ida": "2027-07-01",
+   "volta": "2027-07-07",
+   "preco": 3487,
+   "cia": "LATAM",
+   "paradas": 1,
+   "pedido": "july",
+   "entrada": "livre",
+   "destino": "LIM"
+  },
+  {
+   "aeroporto": "USH",
+   "cidade": "Ushuaia",
+   "pais": "Argentina",
+   "ida": "2027-06-03",
+   "volta": "2027-06-09",
+   "preco": 3793,
+   "cia": "Aerolineas Argentinas e Gol",
+   "paradas": 2,
+   "pedido": "june",
+   "entrada": "livre",
+   "destino": "USH"
+  },
+  {
+   "aeroporto": "FTE",
+   "cidade": "El Calafate",
+   "pais": "Argentina",
+   "ida": "2027-06-03",
+   "volta": "2027-06-09",
+   "preco": 3908,
+   "cia": "Aerolineas Argentinas e Gol",
+   "paradas": 2,
+   "pedido": "june",
+   "entrada": "livre",
+   "destino": "FTE"
+  },
+  {
+   "aeroporto": "FTE",
+   "cidade": "El Calafate",
+   "pais": "Argentina",
+   "ida": "2027-07-01",
+   "volta": "2027-07-07",
+   "preco": 3913,
+   "cia": "Aerolineas Argentinas e Gol",
+   "paradas": 2,
+   "pedido": "july",
+   "entrada": "livre",
+   "destino": "FTE"
+  },
+  {
+   "aeroporto": "USH",
+   "cidade": "Ushuaia",
+   "pais": "Argentina",
+   "ida": "2027-07-01",
+   "volta": "2027-07-07",
+   "preco": 4196,
+   "cia": "Aerolineas Argentinas e Gol",
+   "paradas": 2,
+   "pedido": "july",
+   "entrada": "livre",
+   "destino": "USH"
+  },
+  {
+   "aeroporto": "JNB",
+   "cidade": "Johanesburgo",
+   "pais": "África do Sul",
+   "ida": "2027-06-03",
+   "volta": "2027-06-09",
+   "preco": 4259,
+   "cia": "LATAM",
+   "paradas": 1,
+   "pedido": "june",
+   "entrada": "livre",
+   "destino": "JNB"
+  },
+  {
+   "aeroporto": "YUL",
+   "cidade": "Montreal",
+   "pais": "Canadá",
+   "ida": "2027-06-03",
+   "volta": "2027-06-09",
+   "preco": 4760,
+   "cia": "Avianca e Gol",
+   "paradas": 2,
+   "pedido": "june",
+   "entrada": "visto",
+   "destino": "YUL"
+  },
+  {
+   "aeroporto": "JNB",
+   "cidade": "Johanesburgo",
+   "pais": "África do Sul",
+   "ida": "2027-07-01",
+   "volta": "2027-07-07",
+   "preco": 4839,
+   "cia": "LATAM",
+   "paradas": 1,
+   "pedido": "july",
+   "entrada": "livre",
+   "destino": "JNB"
+  },
+  {
+   "aeroporto": "ORD",
+   "cidade": "Chicago",
+   "pais": "Estados Unidos",
+   "ida": "2027-07-01",
+   "volta": "2027-07-07",
+   "preco": 4885,
+   "cia": "Avianca e Gol",
+   "paradas": 2,
+   "pedido": "july",
+   "entrada": "visto",
+   "destino": "ORD"
+  },
+  {
+   "aeroporto": "LIS",
+   "cidade": "Lisboa",
+   "pais": "Portugal",
+   "ida": "2027-06-11",
+   "volta": "2027-06-18",
+   "preco": 5137,
+   "cia": "LATAM",
+   "paradas": 1,
+   "pedido": "june",
+   "entrada": "livre",
+   "destino": "LIS"
+  },
+  {
+   "aeroporto": "MIA",
+   "cidade": "Miami",
+   "pais": "Estados Unidos",
+   "ida": "2027-07-01",
+   "volta": "2027-07-08",
+   "preco": 5234,
+   "cia": "LATAM",
+   "paradas": 1,
+   "pedido": "july",
+   "entrada": "visto",
+   "destino": "MIA"
+  },
+  {
+   "aeroporto": "MIA",
+   "cidade": "Miami",
+   "pais": "Estados Unidos",
+   "ida": "2027-06-03",
+   "volta": "2027-06-10",
+   "preco": 5475,
+   "cia": "LATAM",
+   "paradas": 1,
+   "pedido": "june",
+   "entrada": "visto",
+   "destino": "MIA"
+  },
+  {
+   "aeroporto": "JFK",
+   "cidade": "Nova Iorque",
+   "pais": "Estados Unidos",
+   "ida": "2027-06-03",
+   "volta": "2027-06-09",
+   "preco": 5533,
+   "cia": "American e Gol",
+   "paradas": 1,
+   "pedido": "june",
+   "entrada": "visto",
+   "destino": "JFK"
+  },
+  {
+   "aeroporto": "IPC",
+   "cidade": "Ilha de Páscoa",
+   "pais": "Chile",
+   "ida": "2027-06-03",
+   "volta": "2027-06-09",
+   "preco": 5622,
+   "cia": "LATAM",
+   "paradas": 3,
+   "pedido": "june",
+   "entrada": "livre",
+   "destino": "IPC"
+  },
+  {
+   "aeroporto": "FCO",
+   "cidade": "Roma",
+   "pais": "Itália",
+   "ida": "2027-06-13",
+   "volta": "2027-06-22",
+   "preco": 5634,
+   "cia": "LATAM",
+   "paradas": 1,
+   "pedido": "june",
+   "entrada": "livre",
+   "destino": "ROM"
+  },
+  {
+   "aeroporto": "GPS",
+   "cidade": "Ilha de Baltra",
+   "pais": "Equador",
+   "ida": "2027-07-01",
+   "volta": "2027-07-07",
+   "preco": 5657,
+   "cia": "LATAM",
+   "paradas": 3,
+   "pedido": "july",
+   "entrada": "livre",
+   "destino": "GPS"
+  },
+  {
+   "aeroporto": "DCA",
+   "cidade": "Washington, D.C.",
+   "pais": "Estados Unidos",
+   "ida": "2027-06-03",
+   "volta": "2027-06-09",
+   "preco": 5734,
+   "cia": "Avianca e Gol",
+   "paradas": 2,
+   "pedido": "june",
+   "entrada": "visto",
+   "destino": "DCA"
+  },
+  {
+   "aeroporto": "GPS",
+   "cidade": "Ilha de Baltra",
+   "pais": "Equador",
+   "ida": "2027-06-03",
+   "volta": "2027-06-09",
+   "preco": 5738,
+   "cia": "LATAM",
+   "paradas": 3,
+   "pedido": "june",
+   "entrada": "livre",
+   "destino": "GPS"
+  },
+  {
+   "aeroporto": "AMS",
+   "cidade": "Amsterdã",
+   "pais": "Países Baixos",
+   "ida": "2027-06-03",
+   "volta": "2027-06-09",
+   "preco": 5900,
+   "cia": "LATAM",
+   "paradas": 1,
+   "pedido": "june",
+   "entrada": "livre",
+   "destino": "AMS"
+  },
+  {
+   "aeroporto": "CPT",
+   "cidade": "Cidade do Cabo",
+   "pais": "África do Sul",
+   "ida": "2027-06-03",
+   "volta": "2027-06-09",
+   "preco": 6005,
+   "cia": "Airlink, LATAM e South African",
+   "paradas": 2,
+   "pedido": "june",
+   "entrada": "livre",
+   "destino": "CPT"
+  },
+  {
+   "aeroporto": "CDG",
+   "cidade": "Paris",
+   "pais": "França",
+   "ida": "2027-06-05",
+   "volta": "2027-06-12",
+   "preco": 6070,
+   "cia": "LATAM e Tap Air Portugal",
+   "paradas": 2,
+   "pedido": "june",
+   "entrada": "livre",
+   "destino": "PAR"
+  },
+  {
+   "aeroporto": "IPC",
+   "cidade": "Ilha de Páscoa",
+   "pais": "Chile",
+   "ida": "2027-07-01",
+   "volta": "2027-07-07",
+   "preco": 6111,
+   "cia": "LATAM",
+   "paradas": 2,
+   "pedido": "july",
+   "entrada": "livre",
+   "destino": "IPC"
+  },
+  {
+   "aeroporto": "LHR",
+   "cidade": "Londres",
+   "pais": "Reino Unido",
+   "ida": "2027-06-10",
+   "volta": "2027-06-17",
+   "preco": 6137,
+   "cia": "Gol e KLM",
+   "paradas": 2,
+   "pedido": "june",
+   "entrada": "online",
+   "destino": "LON"
+  },
+  {
+   "aeroporto": "SAN",
+   "cidade": "San Diego",
+   "pais": "Estados Unidos",
+   "ida": "2027-06-03",
+   "volta": "2027-06-09",
+   "preco": 6232,
+   "cia": "Air Canada e Gol",
+   "paradas": 2,
+   "pedido": "june",
+   "entrada": "visto",
+   "destino": "SAN"
+  },
+  {
+   "aeroporto": "FCO",
+   "cidade": "Roma",
+   "pais": "Itália",
+   "ida": "2027-07-01",
+   "volta": "2027-07-09",
+   "preco": 6401,
+   "cia": "LATAM e Tap Air Portugal",
+   "paradas": 2,
+   "pedido": "july",
+   "entrada": "livre",
+   "destino": "ROM"
+  },
+  {
+   "aeroporto": "JFK",
+   "cidade": "Nova Iorque",
+   "pais": "Estados Unidos",
+   "ida": "2027-07-29",
+   "volta": "2027-08-07",
+   "preco": 6561,
+   "cia": "American e Gol",
+   "paradas": 1,
+   "pedido": "july",
+   "entrada": "visto",
+   "destino": "JFK"
+  },
+  {
+   "aeroporto": "YYZ",
+   "cidade": "Toronto",
+   "pais": "Canadá",
+   "ida": "2027-06-03",
+   "volta": "2027-06-09",
+   "preco": 6705,
+   "cia": "Air Canada, Gol, LATAM e United",
+   "paradas": 2,
+   "pedido": "june",
+   "entrada": "visto",
+   "destino": "YYZ"
+  },
+  {
+   "aeroporto": "CDG",
+   "cidade": "Paris",
+   "pais": "França",
+   "ida": "2027-07-03",
+   "volta": "2027-07-09",
+   "preco": 6747,
+   "cia": "LATAM e Tap Air Portugal",
+   "paradas": 2,
+   "pedido": "july",
+   "entrada": "livre",
+   "destino": "PAR"
+  },
+  {
+   "aeroporto": "MAD",
+   "cidade": "Madrid",
+   "pais": "Espanha",
+   "ida": "2027-06-03",
+   "volta": "2027-06-09",
+   "preco": 6803,
+   "cia": "Gol e Air Europa",
+   "paradas": 1,
+   "pedido": "june",
+   "entrada": "livre",
+   "destino": "MAD"
+  },
+  {
+   "aeroporto": "BOS",
+   "cidade": "Boston",
+   "pais": "Estados Unidos",
+   "ida": "2027-06-27",
+   "volta": "2027-07-06",
+   "preco": 6807,
+   "cia": "American e Gol",
+   "paradas": 2,
+   "pedido": "june",
+   "entrada": "visto",
+   "destino": "BOS"
+  },
+  {
+   "aeroporto": "LIS",
+   "cidade": "Lisboa",
+   "pais": "Portugal",
+   "ida": "2027-07-01",
+   "volta": "2027-07-08",
+   "preco": 6815,
+   "cia": "LATAM e Tap Air Portugal",
+   "paradas": 2,
+   "pedido": "july",
+   "entrada": "livre",
+   "destino": "LIS"
+  },
+  {
+   "aeroporto": "BOS",
+   "cidade": "Boston",
+   "pais": "Estados Unidos",
+   "ida": "2027-07-31",
+   "volta": "2027-08-08",
+   "preco": 6996,
+   "cia": "American e Gol",
+   "paradas": 2,
+   "pedido": "july",
+   "entrada": "visto",
+   "destino": "BOS"
+  },
+  {
+   "aeroporto": "CPT",
+   "cidade": "Cidade do Cabo",
+   "pais": "África do Sul",
+   "ida": "2027-07-01",
+   "volta": "2027-07-07",
+   "preco": 7094,
+   "cia": "LATAM e South African",
+   "paradas": 2,
+   "pedido": "july",
+   "entrada": "livre",
+   "destino": "CPT"
+  },
+  {
+   "aeroporto": "SEA",
+   "cidade": "Seattle",
+   "pais": "Estados Unidos",
+   "ida": "2027-06-03",
+   "volta": "2027-06-09",
+   "preco": 7202,
+   "cia": "Delta e LATAM",
+   "paradas": 2,
+   "pedido": "june",
+   "entrada": "visto",
+   "destino": "SEA"
+  },
+  {
+   "aeroporto": "VCE",
+   "cidade": "Veneza",
+   "pais": "Itália",
+   "ida": "2027-06-03",
+   "volta": "2027-06-09",
+   "preco": 7206,
+   "cia": "Air France e Gol",
+   "paradas": 2,
+   "pedido": "june",
+   "entrada": "livre",
+   "destino": "VCE"
+  },
+  {
+   "aeroporto": "DXB",
+   "cidade": "Dubai",
+   "pais": "Emirados Árabes Unidos",
+   "ida": "2027-06-03",
+   "volta": "2027-06-09",
+   "preco": 7219,
+   "cia": "Emirates e Gol",
+   "paradas": 1,
+   "pedido": "june",
+   "entrada": "livre",
+   "destino": "DXB"
+  },
+  {
+   "aeroporto": "DCA",
+   "cidade": "Washington, D.C.",
+   "pais": "Estados Unidos",
+   "ida": "2027-07-01",
+   "volta": "2027-07-07",
+   "preco": 7271,
+   "cia": "Delta e LATAM",
+   "paradas": 2,
+   "pedido": "july",
+   "entrada": "visto",
+   "destino": "DCA"
+  },
+  {
+   "aeroporto": "BCN",
+   "cidade": "Barcelona",
+   "pais": "Espanha",
+   "ida": "2027-06-03",
+   "volta": "2027-06-09",
+   "preco": 7368,
+   "cia": "Azul, LATAM e Tap Air Portugal",
+   "paradas": 2,
+   "pedido": "june",
+   "entrada": "livre",
+   "destino": "BCN"
+  },
+  {
+   "aeroporto": "DXB",
+   "cidade": "Dubai",
+   "pais": "Emirados Árabes Unidos",
+   "ida": "2027-07-01",
+   "volta": "2027-07-07",
+   "preco": 7484,
+   "cia": "Emirates e Gol",
+   "paradas": 1,
+   "pedido": "july",
+   "entrada": "livre",
+   "destino": "DXB"
+  },
+  {
+   "aeroporto": "FLR",
+   "cidade": "Florença",
+   "pais": "Itália",
+   "ida": "2027-06-03",
+   "volta": "2027-06-09",
+   "preco": 7503,
+   "cia": "Air France e Gol",
+   "paradas": 2,
+   "pedido": "june",
+   "entrada": "livre",
+   "destino": "FLR"
+  },
+  {
+   "aeroporto": "LHR",
+   "cidade": "Londres",
+   "pais": "Reino Unido",
+   "ida": "2027-07-01",
+   "volta": "2027-07-07",
+   "preco": 7520,
+   "cia": "LATAM e Tap Air Portugal",
+   "paradas": 2,
+   "pedido": "july",
+   "entrada": "online",
+   "destino": "LON"
+  },
+  {
+   "aeroporto": "DUB",
+   "cidade": "Dublin",
+   "pais": "Irlanda",
+   "ida": "2027-06-03",
+   "volta": "2027-06-09",
+   "preco": 7573,
+   "cia": "British Airways e LATAM",
+   "paradas": 2,
+   "pedido": "june",
+   "entrada": "livre",
+   "destino": "DUB"
+  },
+  {
+   "aeroporto": "VIE",
+   "cidade": "Viena",
+   "pais": "Áustria",
+   "ida": "2027-06-03",
+   "volta": "2027-06-09",
+   "preco": 7626,
+   "cia": "Gol e KLM",
+   "paradas": 2,
+   "pedido": "june",
+   "entrada": "livre",
+   "destino": "VIE"
+  },
+  {
+   "aeroporto": "BER",
+   "cidade": "Berlim",
+   "pais": "Alemanha",
+   "ida": "2027-06-03",
+   "volta": "2027-06-09",
+   "preco": 7650,
+   "cia": "Air France, Gol e KLM",
+   "paradas": 2,
+   "pedido": "june",
+   "entrada": "livre",
+   "destino": "BER"
+  },
+  {
+   "aeroporto": "AMS",
+   "cidade": "Amsterdã",
+   "pais": "Países Baixos",
+   "ida": "2027-07-01",
+   "volta": "2027-07-07",
+   "preco": 7666,
+   "cia": "Air France, Gol e KLM",
+   "paradas": 2,
+   "pedido": "july",
+   "entrada": "livre",
+   "destino": "AMS"
+  },
+  {
+   "aeroporto": "YUL",
+   "cidade": "Montreal",
+   "pais": "Canadá",
+   "ida": "2027-07-01",
+   "volta": "2027-07-07",
+   "preco": 7678,
+   "cia": "Avianca e Gol",
+   "paradas": 2,
+   "pedido": "july",
+   "entrada": "visto",
+   "destino": "YUL"
+  },
+  {
+   "aeroporto": "DUB",
+   "cidade": "Dublin",
+   "pais": "Irlanda",
+   "ida": "2027-07-01",
+   "volta": "2027-07-07",
+   "preco": 8067,
+   "cia": "Gol e KLM",
+   "paradas": 2,
+   "pedido": "july",
+   "entrada": "livre",
+   "destino": "DUB"
+  },
+  {
+   "aeroporto": "LAX",
+   "cidade": "Los Angeles",
+   "pais": "Estados Unidos",
+   "ida": "2027-06-03",
+   "volta": "2027-06-09",
+   "preco": 8093,
+   "cia": "Gol e United",
+   "paradas": 2,
+   "pedido": "june",
+   "entrada": "visto",
+   "destino": "LAX"
+  },
+  {
+   "aeroporto": "CPH",
+   "cidade": "Copenhague",
+   "pais": "Dinamarca",
+   "ida": "2027-06-03",
+   "volta": "2027-06-09",
+   "preco": 8130,
+   "cia": "Air France, Gol e KLM",
+   "paradas": 2,
+   "pedido": "june",
+   "entrada": "livre",
+   "destino": "CPH"
+  },
+  {
+   "aeroporto": "MLA",
+   "cidade": "Malta",
+   "pais": "Malta",
+   "ida": "2027-06-03",
+   "volta": "2027-06-09",
+   "preco": 8148,
+   "cia": "Air France, Gol, KLM e KM Malta Airlines",
+   "paradas": 2,
+   "pedido": "june",
+   "entrada": "livre",
+   "destino": "MLA"
+  },
+  {
+   "aeroporto": "EDI",
+   "cidade": "Edimburgo",
+   "pais": "Reino Unido",
+   "ida": "2027-06-03",
+   "volta": "2027-06-09",
+   "preco": 8202,
+   "cia": "Gol e KLM",
+   "paradas": 2,
+   "pedido": "june",
+   "entrada": "online",
+   "destino": "LON"
+  },
+  {
+   "aeroporto": "MSY",
+   "cidade": "Nova Orleans",
+   "pais": "Estados Unidos",
+   "ida": "2027-06-03",
+   "volta": "2027-06-09",
+   "preco": 8208,
+   "cia": "Delta e LATAM",
+   "paradas": 2,
+   "pedido": "june",
+   "entrada": "visto",
+   "destino": "MSY"
+  },
+  {
+   "aeroporto": "BCN",
+   "cidade": "Barcelona",
+   "pais": "Espanha",
+   "ida": "2027-07-01",
+   "volta": "2027-07-07",
+   "preco": 8237,
+   "cia": "LATAM",
+   "paradas": 1,
+   "pedido": "july",
+   "entrada": "livre",
+   "destino": "BCN"
+  },
+  {
+   "aeroporto": "PRG",
+   "cidade": "Praga",
+   "pais": "Tchéquia",
+   "ida": "2027-06-03",
+   "volta": "2027-06-09",
+   "preco": 8244,
+   "cia": "Air France, Gol e KLM",
+   "paradas": 2,
+   "pedido": "june",
+   "entrada": "livre",
+   "destino": "PRG"
+  },
+  {
+   "aeroporto": "FLR",
+   "cidade": "Florença",
+   "pais": "Itália",
+   "ida": "2027-07-01",
+   "volta": "2027-07-07",
+   "preco": 8262,
+   "cia": "Air France, Gol e KLM",
+   "paradas": 2,
+   "pedido": "july",
+   "entrada": "livre",
+   "destino": "FLR"
+  },
+  {
+   "aeroporto": "MAD",
+   "cidade": "Madrid",
+   "pais": "Espanha",
+   "ida": "2027-07-01",
+   "volta": "2027-07-07",
+   "preco": 8262,
+   "cia": "Iberia e LATAM",
+   "paradas": 1,
+   "pedido": "july",
+   "entrada": "livre",
+   "destino": "MAD"
+  },
+  {
+   "aeroporto": "VCE",
+   "cidade": "Veneza",
+   "pais": "Itália",
+   "ida": "2027-07-01",
+   "volta": "2027-07-07",
+   "preco": 8274,
+   "cia": "Air France e Gol",
+   "paradas": 2,
+   "pedido": "july",
+   "entrada": "livre",
+   "destino": "VCE"
+  },
+  {
+   "aeroporto": "BER",
+   "cidade": "Berlim",
+   "pais": "Alemanha",
+   "ida": "2027-07-01",
+   "volta": "2027-07-07",
+   "preco": 8312,
+   "cia": "Azul e Tap Air Portugal",
+   "paradas": 2,
+   "pedido": "july",
+   "entrada": "livre",
+   "destino": "BER"
+  },
+  {
+   "aeroporto": "LAS",
+   "cidade": "Las Vegas",
+   "pais": "Estados Unidos",
+   "ida": "2027-06-03",
+   "volta": "2027-06-09",
+   "preco": 8368,
+   "cia": "Gol e United",
+   "paradas": 2,
+   "pedido": "june",
+   "entrada": "visto",
+   "destino": "LAS"
+  },
+  {
+   "aeroporto": "VIE",
+   "cidade": "Viena",
+   "pais": "Áustria",
+   "ida": "2027-07-01",
+   "volta": "2027-07-07",
+   "preco": 8391,
+   "cia": "Gol e KLM",
+   "paradas": 2,
+   "pedido": "july",
+   "entrada": "livre",
+   "destino": "VIE"
+  },
+  {
+   "aeroporto": "NQZ",
+   "cidade": "Astana",
+   "pais": "Cazaquistão",
+   "ida": "2027-06-03",
+   "volta": "2027-06-09",
+   "preco": 8400,
+   "cia": "Air Astana, LATAM e Lufthansa",
+   "paradas": 2,
+   "pedido": "june",
+   "entrada": "conferir",
+   "destino": "NQZ"
+  },
+  {
+   "aeroporto": "SAN",
+   "cidade": "San Diego",
+   "pais": "Estados Unidos",
+   "ida": "2027-07-01",
+   "volta": "2027-07-07",
+   "preco": 8466,
+   "cia": "Alaska, Delta e LATAM",
+   "paradas": 2,
+   "pedido": "july",
+   "entrada": "visto",
+   "destino": "SAN"
+  },
+  {
+   "aeroporto": "SFO",
+   "cidade": "São Francisco",
+   "pais": "Estados Unidos",
+   "ida": "2027-06-03",
+   "volta": "2027-06-09",
+   "preco": 8472,
+   "cia": "Air Canada e Gol",
+   "paradas": 2,
+   "pedido": "june",
+   "entrada": "visto",
+   "destino": "SFO"
+  },
+  {
+   "aeroporto": "MLA",
+   "cidade": "Malta",
+   "pais": "Malta",
+   "ida": "2027-07-01",
+   "volta": "2027-07-07",
+   "preco": 8551,
+   "cia": "Air France, Gol e KM Malta Airlines",
+   "paradas": 2,
+   "pedido": "july",
+   "entrada": "livre",
+   "destino": "MLA"
+  },
+  {
+   "aeroporto": "SAW",
+   "cidade": "Istambul",
+   "pais": "Turquia",
+   "ida": "2027-06-03",
+   "volta": "2027-06-09",
+   "preco": 8582,
+   "cia": "Gol, KLM e Pegasus",
+   "paradas": 2,
+   "pedido": "june",
+   "entrada": "livre",
+   "destino": "IST"
+  },
+  {
+   "aeroporto": "MEL",
+   "cidade": "Melbourne",
+   "pais": "Austrália",
+   "ida": "2027-06-03",
+   "volta": "2027-06-09",
+   "preco": 8624,
+   "cia": "LATAM",
+   "paradas": 2,
+   "pedido": "june",
+   "entrada": "visto",
+   "destino": "MEL"
+  },
+  {
+   "aeroporto": "MEL",
+   "cidade": "Melbourne",
+   "pais": "Austrália",
+   "ida": "2027-07-01",
+   "volta": "2027-07-07",
+   "preco": 8624,
+   "cia": "LATAM",
+   "paradas": 2,
+   "pedido": "july",
+   "entrada": "visto",
+   "destino": "MEL"
+  },
+  {
+   "aeroporto": "BUD",
+   "cidade": "Budapeste",
+   "pais": "Hungria",
+   "ida": "2027-06-03",
+   "volta": "2027-06-09",
+   "preco": 8750,
+   "cia": "Air France, Gol e KLM",
+   "paradas": 2,
+   "pedido": "june",
+   "entrada": "livre",
+   "destino": "BUD"
+  },
+  {
+   "aeroporto": "ATH",
+   "cidade": "Atenas",
+   "pais": "Grécia",
+   "ida": "2027-06-03",
+   "volta": "2027-06-09",
+   "preco": 8755,
+   "cia": "Air France e Gol",
+   "paradas": 2,
+   "pedido": "june",
+   "entrada": "livre",
+   "destino": "ATH"
+  },
+  {
+   "aeroporto": "BOM",
+   "cidade": "Mumbai",
+   "pais": "Índia",
+   "ida": "2027-06-03",
+   "volta": "2027-06-09",
+   "preco": 8799,
+   "cia": "British Airways e LATAM",
+   "paradas": 2,
+   "pedido": "june",
+   "entrada": "conferir",
+   "destino": "BOM"
+  },
+  {
+   "aeroporto": "PRG",
+   "cidade": "Praga",
+   "pais": "Tchéquia",
+   "ida": "2027-07-01",
+   "volta": "2027-07-07",
+   "preco": 8957,
+   "cia": "Gol e KLM",
+   "paradas": 2,
+   "pedido": "july",
+   "entrada": "livre",
+   "destino": "PRG"
+  },
+  {
+   "aeroporto": "SAW",
+   "cidade": "Istambul",
+   "pais": "Turquia",
+   "ida": "2027-07-01",
+   "volta": "2027-07-07",
+   "preco": 9215,
+   "cia": "Gol, KLM e Pegasus",
+   "paradas": 2,
+   "pedido": "july",
+   "entrada": "livre",
+   "destino": "IST"
+  },
+  {
+   "aeroporto": "CPH",
+   "cidade": "Copenhague",
+   "pais": "Dinamarca",
+   "ida": "2027-07-01",
+   "volta": "2027-07-07",
+   "preco": 9263,
+   "cia": "Azul, Gol e Tap Air Portugal",
+   "paradas": 2,
+   "pedido": "july",
+   "entrada": "livre",
+   "destino": "CPH"
+  },
+  {
+   "aeroporto": "YVR",
+   "cidade": "Vancouver",
+   "pais": "Canadá",
+   "ida": "2027-06-03",
+   "volta": "2027-06-09",
+   "preco": 9330,
+   "cia": "Air Canada, Gol e United",
+   "paradas": 2,
+   "pedido": "june",
+   "entrada": "visto",
+   "destino": "YVR"
+  },
+  {
+   "aeroporto": "LAX",
+   "cidade": "Los Angeles",
+   "pais": "Estados Unidos",
+   "ida": "2027-07-01",
+   "volta": "2027-07-07",
+   "preco": 9359,
+   "cia": "LATAM",
+   "paradas": 2,
+   "pedido": "july",
+   "entrada": "visto",
+   "destino": "LAX"
+  },
+  {
+   "aeroporto": "EDI",
+   "cidade": "Edimburgo",
+   "pais": "Reino Unido",
+   "ida": "2027-07-01",
+   "volta": "2027-07-07",
+   "preco": 9409,
+   "cia": "Gol e KLM",
+   "paradas": 2,
+   "pedido": "july",
+   "entrada": "online",
+   "destino": "LON"
+  },
+  {
+   "aeroporto": "SYD",
+   "cidade": "Sydney",
+   "pais": "Austrália",
+   "ida": "2027-06-03",
+   "volta": "2027-06-09",
+   "preco": 9415,
+   "cia": "LATAM",
+   "paradas": 2,
+   "pedido": "june",
+   "entrada": "visto",
+   "destino": "SYD"
+  },
+  {
+   "aeroporto": "SYD",
+   "cidade": "Sydney",
+   "pais": "Austrália",
+   "ida": "2027-07-01",
+   "volta": "2027-07-07",
+   "preco": 9415,
+   "cia": "LATAM",
+   "paradas": 2,
+   "pedido": "july",
+   "entrada": "visto",
+   "destino": "SYD"
+  },
+  {
+   "aeroporto": "LAS",
+   "cidade": "Las Vegas",
+   "pais": "Estados Unidos",
+   "ida": "2027-07-01",
+   "volta": "2027-07-07",
+   "preco": 9471,
+   "cia": "Gol e United",
+   "paradas": 2,
+   "pedido": "july",
+   "entrada": "visto",
+   "destino": "LAS"
+  },
+  {
+   "aeroporto": "ATH",
+   "cidade": "Atenas",
+   "pais": "Grécia",
+   "ida": "2027-07-11",
+   "volta": "2027-07-19",
+   "preco": 9600,
+   "cia": "LATAM e Lufthansa",
+   "paradas": 2,
+   "pedido": "july",
+   "entrada": "livre",
+   "destino": "ATH"
+  },
+  {
+   "aeroporto": "MSY",
+   "cidade": "Nova Orleans",
+   "pais": "Estados Unidos",
+   "ida": "2027-07-01",
+   "volta": "2027-07-07",
+   "preco": 9633,
+   "cia": "Gol e United",
+   "paradas": 2,
+   "pedido": "july",
+   "entrada": "visto",
+   "destino": "MSY"
+  },
+  {
+   "aeroporto": "SEA",
+   "cidade": "Seattle",
+   "pais": "Estados Unidos",
+   "ida": "2027-07-01",
+   "volta": "2027-07-07",
+   "preco": 9638,
+   "cia": "Alaska e LATAM",
+   "paradas": 2,
+   "pedido": "july",
+   "entrada": "visto",
+   "destino": "SEA"
+  },
+  {
+   "aeroporto": "YQB",
+   "cidade": "Quebec",
+   "pais": "Canadá",
+   "ida": "2027-06-03",
+   "volta": "2027-06-09",
+   "preco": 9893,
+   "cia": "Air Canada e LATAM",
+   "paradas": 2,
+   "pedido": "june",
+   "entrada": "visto",
+   "destino": "YQB"
+  },
+  {
+   "aeroporto": "ZQN",
+   "cidade": "Queenstown",
+   "pais": "Nova Zelândia",
+   "ida": "2027-07-01",
+   "volta": "2027-07-07",
+   "preco": 9904,
+   "cia": "LATAM, Air New Zealand e Qantas",
+   "paradas": 3,
+   "pedido": "july",
+   "entrada": "conferir",
+   "destino": "ZQN"
+  },
+  {
+   "aeroporto": "BUD",
+   "cidade": "Budapeste",
+   "pais": "Hungria",
+   "ida": "2027-07-01",
+   "volta": "2027-07-07",
+   "preco": 9997,
+   "cia": "Air France, Gol e KLM",
+   "paradas": 2,
+   "pedido": "july",
+   "entrada": "livre",
+   "destino": "BUD"
+  },
+  {
+   "aeroporto": "SEZ",
+   "cidade": "Ilha de Mahé",
+   "pais": "Seicheles",
+   "ida": "2027-06-03",
+   "volta": "2027-06-09",
+   "preco": 10176,
+   "cia": "Emirates e Gol",
+   "paradas": 2,
+   "pedido": "june",
+   "entrada": "conferir",
+   "destino": "SEZ"
+  },
+  {
+   "aeroporto": "YYZ",
+   "cidade": "Toronto",
+   "pais": "Canadá",
+   "ida": "2027-07-01",
+   "volta": "2027-07-07",
+   "preco": 10183,
+   "cia": "Air Canada e LATAM",
+   "paradas": 2,
+   "pedido": "july",
+   "entrada": "visto",
+   "destino": "YYZ"
+  },
+  {
+   "aeroporto": "YQB",
+   "cidade": "Quebec",
+   "pais": "Canadá",
+   "ida": "2027-07-01",
+   "volta": "2027-07-07",
+   "preco": 10237,
+   "cia": "Air Canada e LATAM",
+   "paradas": 2,
+   "pedido": "july",
+   "entrada": "visto",
+   "destino": "YQB"
+  },
+  {
+   "aeroporto": "BKK",
+   "cidade": "Bangkok",
+   "pais": "Tailândia",
+   "ida": "2027-06-03",
+   "volta": "2027-06-09",
+   "preco": 10352,
+   "cia": "British Airways e LATAM",
+   "paradas": 2,
+   "pedido": "june",
+   "entrada": "conferir",
+   "destino": "BKK"
+  },
+  {
+   "aeroporto": "SFO",
+   "cidade": "São Francisco",
+   "pais": "Estados Unidos",
+   "ida": "2027-07-01",
+   "volta": "2027-07-07",
+   "preco": 10365,
+   "cia": "Aeromexico e LATAM",
+   "paradas": 2,
+   "pedido": "july",
+   "entrada": "visto",
+   "destino": "SFO"
+  },
+  {
+   "aeroporto": "YVR",
+   "cidade": "Vancouver",
+   "pais": "Canadá",
+   "ida": "2027-07-01",
+   "volta": "2027-07-07",
+   "preco": 10500,
+   "cia": "Air Canada e LATAM",
+   "paradas": 2,
+   "pedido": "july",
+   "entrada": "visto",
+   "destino": "YVR"
+  },
+  {
+   "aeroporto": "CGK",
+   "cidade": "Jacarta",
+   "pais": "Indonésia",
+   "ida": "2027-06-03",
+   "volta": "2027-06-09",
+   "preco": 10543,
+   "cia": "Emirates e Gol",
+   "paradas": 2,
+   "pedido": "june",
+   "entrada": "conferir",
+   "destino": "CGK"
+  },
+  {
+   "aeroporto": "HKG",
+   "cidade": "Hong Kong",
+   "pais": "Hong Kong",
+   "ida": "2027-06-03",
+   "volta": "2027-06-09",
+   "preco": 10593,
+   "cia": "Emirates e Gol",
+   "paradas": 2,
+   "pedido": "june",
+   "entrada": "conferir",
+   "destino": "HKG"
+  },
+  {
+   "aeroporto": "HNL",
+   "cidade": "Honolulu",
+   "pais": "Estados Unidos",
+   "ida": "2027-06-03",
+   "volta": "2027-06-09",
+   "preco": 10856,
+   "cia": "Alaska e LATAM",
+   "paradas": 2,
+   "pedido": "june",
+   "entrada": "visto",
+   "destino": "HNL"
+  },
+  {
+   "aeroporto": "HND",
+   "cidade": "Tóquio",
+   "pais": "Japão",
+   "ida": "2027-06-11",
+   "volta": "2027-06-18",
+   "preco": 10864,
+   "cia": "Emirates e Gol",
+   "paradas": 2,
+   "pedido": "june",
+   "entrada": "livre",
+   "destino": "HND"
+  },
+  {
+   "aeroporto": "SIN",
+   "cidade": "Singapura",
+   "pais": "Singapura",
+   "ida": "2027-06-03",
+   "volta": "2027-06-09",
+   "preco": 10932,
+   "cia": "British Airways e LATAM",
+   "paradas": 2,
+   "pedido": "june",
+   "entrada": "conferir",
+   "destino": "SIN"
+  },
+  {
+   "aeroporto": "MRU",
+   "cidade": "Ilha Maurícia",
+   "pais": "Maurício",
+   "ida": "2027-06-03",
+   "volta": "2027-06-09",
+   "preco": 10947,
+   "cia": "Gol e South African",
+   "paradas": 2,
+   "pedido": "june",
+   "entrada": "conferir",
+   "destino": "MRU"
+  },
+  {
+   "aeroporto": "ANC",
+   "cidade": "Anchorage",
+   "pais": "Estados Unidos",
+   "ida": "2027-06-03",
+   "volta": "2027-06-09",
+   "preco": 11022,
+   "cia": "Gol e United",
+   "paradas": 2,
+   "pedido": "june",
+   "entrada": "visto",
+   "destino": "ANC"
+  },
+  {
+   "aeroporto": "JTR",
+   "cidade": "Santorini",
+   "pais": "Grécia",
+   "ida": "2027-06-03",
+   "volta": "2027-06-09",
+   "preco": 11086,
+   "cia": "British Airways e Gol",
+   "paradas": 2,
+   "pedido": "june",
+   "entrada": "livre",
+   "destino": "ATH"
+  },
+  {
+   "aeroporto": "NQZ",
+   "cidade": "Astana",
+   "pais": "Cazaquistão",
+   "ida": "2027-07-01",
+   "volta": "2027-07-07",
+   "preco": 11088,
+   "cia": "Air Astana, LATAM e Lufthansa",
+   "paradas": 2,
+   "pedido": "july",
+   "entrada": "conferir",
+   "destino": "NQZ"
+  },
+  {
+   "aeroporto": "BOM",
+   "cidade": "Mumbai",
+   "pais": "Índia",
+   "ida": "2027-07-01",
+   "volta": "2027-07-07",
+   "preco": 11112,
+   "cia": "Gol, LATAM e Lufthansa",
+   "paradas": 2,
+   "pedido": "july",
+   "entrada": "conferir",
+   "destino": "BOM"
+  },
+  {
+   "aeroporto": "SEZ",
+   "cidade": "Ilha de Mahé",
+   "pais": "Seicheles",
+   "ida": "2027-07-01",
+   "volta": "2027-07-07",
+   "preco": 11164,
+   "cia": "Emirates e Gol",
+   "paradas": 2,
+   "pedido": "july",
+   "entrada": "conferir",
+   "destino": "SEZ"
+  },
+  {
+   "aeroporto": "FAI",
+   "cidade": "Fairbanks",
+   "pais": "Estados Unidos",
+   "ida": "2027-06-03",
+   "volta": "2027-06-09",
+   "preco": 11390,
+   "cia": "Gol e United",
+   "paradas": 3,
+   "pedido": "june",
+   "entrada": "visto",
+   "destino": "FAI"
+  },
+  {
+   "aeroporto": "CGK",
+   "cidade": "Jacarta",
+   "pais": "Indonésia",
+   "ida": "2027-07-01",
+   "volta": "2027-07-07",
+   "preco": 11628,
+   "cia": "Emirates, Gol e LATAM",
+   "paradas": 2,
+   "pedido": "july",
+   "entrada": "conferir",
+   "destino": "CGK"
+  },
+  {
+   "aeroporto": "HND",
+   "cidade": "Tóquio",
+   "pais": "Japão",
+   "ida": "2027-07-01",
+   "volta": "2027-07-07",
+   "preco": 11772,
+   "cia": "Gol e United",
+   "paradas": 2,
+   "pedido": "july",
+   "entrada": "livre",
+   "destino": "HND"
+  },
+  {
+   "aeroporto": "BKK",
+   "cidade": "Bangkok",
+   "pais": "Tailândia",
+   "ida": "2027-07-01",
+   "volta": "2027-07-07",
+   "preco": 12016,
+   "cia": "Emirates, Gol e LATAM",
+   "paradas": 2,
+   "pedido": "july",
+   "entrada": "conferir",
+   "destino": "BKK"
+  },
+  {
+   "aeroporto": "LIH",
+   "cidade": "Kauai",
+   "pais": "Estados Unidos",
+   "ida": "2027-06-03",
+   "volta": "2027-06-09",
+   "preco": 12022,
+   "cia": "Alaska, Delta e LATAM",
+   "paradas": 2,
+   "pedido": "june",
+   "entrada": "visto",
+   "destino": "LIH"
+  },
+  {
+   "aeroporto": "KIX",
+   "cidade": "Osaka",
+   "pais": "Japão",
+   "ida": "2027-06-03",
+   "volta": "2027-06-09",
+   "preco": 12609,
+   "cia": "Emirates e Gol",
+   "paradas": 2,
+   "pedido": "june",
+   "entrada": "livre",
+   "destino": "KIX"
+  },
+  {
+   "aeroporto": "KIX",
+   "cidade": "Osaka",
+   "pais": "Japão",
+   "ida": "2027-07-01",
+   "volta": "2027-07-07",
+   "preco": 12626,
+   "cia": "Air Canada e Gol",
+   "paradas": 3,
+   "pedido": "july",
+   "entrada": "livre",
+   "destino": "KIX"
+  },
+  {
+   "aeroporto": "JTR",
+   "cidade": "Santorini",
+   "pais": "Grécia",
+   "ida": "2027-07-01",
+   "volta": "2027-07-07",
+   "preco": 12699,
+   "cia": "British Airways, Iberia e LATAM",
+   "paradas": 2,
+   "pedido": "july",
+   "entrada": "livre",
+   "destino": "ATH"
+  },
+  {
+   "aeroporto": "HKG",
+   "cidade": "Hong Kong",
+   "pais": "Hong Kong",
+   "ida": "2027-07-01",
+   "volta": "2027-07-07",
+   "preco": 12720,
+   "cia": "LATAM e Qatar Airways",
+   "paradas": 2,
+   "pedido": "july",
+   "entrada": "conferir",
+   "destino": "HKG"
+  },
+  {
+   "aeroporto": "SIN",
+   "cidade": "Singapura",
+   "pais": "Singapura",
+   "ida": "2027-07-01",
+   "volta": "2027-07-07",
+   "preco": 13059,
+   "cia": "Air France e Gol",
+   "paradas": 2,
+   "pedido": "july",
+   "entrada": "conferir",
+   "destino": "SIN"
+  },
+  {
+   "aeroporto": "MRU",
+   "cidade": "Ilha Maurícia",
+   "pais": "Maurício",
+   "ida": "2027-07-01",
+   "volta": "2027-07-07",
+   "preco": 13187,
+   "cia": "LATAM e South African",
+   "paradas": 2,
+   "pedido": "july",
+   "entrada": "conferir",
+   "destino": "MRU"
+  },
+  {
+   "aeroporto": "HNL",
+   "cidade": "Honolulu",
+   "pais": "Estados Unidos",
+   "ida": "2027-07-01",
+   "volta": "2027-07-07",
+   "preco": 13205,
+   "cia": "Alaska e LATAM",
+   "paradas": 2,
+   "pedido": "july",
+   "entrada": "visto",
+   "destino": "HNL"
+  },
+  {
+   "aeroporto": "LIH",
+   "cidade": "Kauai",
+   "pais": "Estados Unidos",
+   "ida": "2027-07-01",
+   "volta": "2027-07-07",
+   "preco": 13205,
+   "cia": "Alaska, Delta e LATAM",
+   "paradas": 2,
+   "pedido": "july",
+   "entrada": "visto",
+   "destino": "LIH"
+  },
+  {
+   "aeroporto": "PER",
+   "cidade": "Perth",
+   "pais": "Austrália",
+   "ida": "2027-07-01",
+   "volta": "2027-07-07",
+   "preco": 14139,
+   "cia": "LATAM e Qantas",
+   "paradas": 3,
+   "pedido": "july",
+   "entrada": "visto",
+   "destino": "PER"
+  },
+  {
+   "aeroporto": "ANC",
+   "cidade": "Anchorage",
+   "pais": "Estados Unidos",
+   "ida": "2027-07-01",
+   "volta": "2027-07-07",
+   "preco": 14722,
+   "cia": "American e Gol",
+   "paradas": 2,
+   "pedido": "july",
+   "entrada": "visto",
+   "destino": "ANC"
+  },
+  {
+   "aeroporto": "PER",
+   "cidade": "Perth",
+   "pais": "Austrália",
+   "ida": "2027-06-03",
+   "volta": "2027-06-09",
+   "preco": 15182,
+   "cia": "Emirates e Gol",
+   "paradas": 2,
+   "pedido": "june",
+   "entrada": "visto",
+   "destino": "PER"
+  },
+  {
+   "aeroporto": "KZN",
+   "cidade": "Cazã",
+   "pais": "Rússia",
+   "ida": "2027-06-03",
+   "volta": "2027-06-09",
+   "preco": 15219,
+   "cia": "LATAM e Turkish Airlines",
+   "paradas": 2,
+   "pedido": "june",
+   "entrada": "conferir",
+   "destino": "KZN"
+  },
+  {
+   "aeroporto": "KZN",
+   "cidade": "Cazã",
+   "pais": "Rússia",
+   "ida": "2027-07-01",
+   "volta": "2027-07-07",
+   "preco": 15219,
+   "cia": "LATAM e Turkish Airlines",
+   "paradas": 2,
+   "pedido": "july",
+   "entrada": "conferir",
+   "destino": "KZN"
+  },
+  {
+   "aeroporto": "FAI",
+   "cidade": "Fairbanks",
+   "pais": "Estados Unidos",
+   "ida": "2027-07-01",
+   "volta": "2027-07-07",
+   "preco": 21460,
+   "cia": "Gol e United",
+   "paradas": 3,
+   "pedido": "july",
+   "entrada": "visto",
+   "destino": "FAI"
+  },
+  {
+   "aeroporto": "WKJ",
+   "cidade": "Wakkanai",
+   "pais": "Japão",
+   "ida": "2027-06-03",
+   "volta": "2027-06-09",
+   "preco": 41909,
+   "cia": "Gol, Lufthansa, ANA e United",
+   "paradas": 3,
+   "pedido": "june",
+   "entrada": "livre",
+   "destino": "WKJ"
+  },
+  {
+   "aeroporto": "WKJ",
+   "cidade": "Wakkanai",
+   "pais": "Japão",
+   "ida": "2027-07-01",
+   "volta": "2027-07-07",
+   "preco": 41909,
+   "cia": "LATAM, Lufthansa, ANA e United",
+   "paradas": 3,
+   "pedido": "july",
+   "entrada": "livre",
+   "destino": "WKJ"
+  },
+  {
+   "aeroporto": "UBN",
+   "cidade": "Ulan Bator",
+   "pais": "Mongólia",
+   "ida": "2027-06-03",
+   "volta": "2027-06-09",
+   "preco": 64835,
+   "cia": "Gol, Lufthansa e MIAT",
+   "paradas": 2,
+   "pedido": "june",
+   "entrada": "conferir",
+   "destino": "UBN"
+  },
+  {
+   "aeroporto": "UBN",
+   "cidade": "Ulan Bator",
+   "pais": "Mongólia",
+   "ida": "2027-07-01",
+   "volta": "2027-07-07",
+   "preco": 66121,
+   "cia": "Gol, Lufthansa e MIAT",
+   "paradas": 2,
+   "pedido": "july",
+   "entrada": "conferir",
+   "destino": "UBN"
+  },
+  {
+   "aeroporto": "HRB",
+   "cidade": "Harbin",
+   "pais": "China",
+   "ida": "2027-06-03",
+   "volta": "2027-06-09",
+   "preco": 77906,
+   "cia": "China Southern e LATAM",
+   "paradas": 3,
+   "pedido": "june",
+   "entrada": "conferir",
+   "destino": "HRB"
+  }
+ ],
+ "historico": {
+  "GIG": {
+   "precos": [
+    {
+     "d": "2026-11-27",
+     "preco": 282,
+     "ida": "2027-06-03"
+    },
+    {
+     "d": "2026-11-27",
+     "preco": 933,
+     "ida": "2027-07-25"
+    }
+   ],
+   "cidade": "Rio de Janeiro",
+   "pais": "Brasil"
+  },
+  "SSA": {
+   "precos": [
+    {
+     "d": "2026-11-27",
+     "preco": 634,
+     "ida": "2027-06-04"
+    },
+    {
+     "d": "2026-11-27",
+     "preco": 1556,
+     "ida": "2027-07-25"
+    }
+   ],
+   "cidade": "Salvador",
+   "pais": "Brasil"
+  },
+  "AEP": {
+   "precos": [
+    {
+     "d": "2026-11-27",
+     "preco": 2425,
+     "ida": "2027-06-03"
+    },
+    {
+     "d": "2026-11-27",
+     "preco": 2827,
+     "ida": "2027-07-01"
+    }
+   ],
+   "cidade": "Buenos Aires",
+   "pais": "Argentina"
+  },
+  "LIM": {
+   "precos": [
+    {
+     "d": "2026-11-27",
+     "preco": 3285,
+     "ida": "2027-06-03"
+    },
+    {
+     "d": "2026-11-27",
+     "preco": 3487,
+     "ida": "2027-07-01"
+    }
+   ],
+   "cidade": "Lima",
+   "pais": "Peru"
+  },
+  "ORD": {
+   "precos": [
+    {
+     "d": "2026-11-27",
+     "preco": 3362,
+     "ida": "2027-06-03"
+    },
+    {
+     "d": "2026-11-27",
+     "preco": 4885,
+     "ida": "2027-07-01"
+    }
+   ],
+   "cidade": "Chicago",
+   "pais": "Estados Unidos"
+  },
+  "USH": {
+   "precos": [
+    {
+     "d": "2026-11-27",
+     "preco": 3793,
+     "ida": "2027-06-03"
+    },
+    {
+     "d": "2026-11-27",
+     "preco": 4196,
+     "ida": "2027-07-01"
+    }
+   ],
+   "cidade": "Ushuaia",
+   "pais": "Argentina"
+  },
+  "FTE": {
+   "precos": [
+    {
+     "d": "2026-11-27",
+     "preco": 3908,
+     "ida": "2027-06-03"
+    },
+    {
+     "d": "2026-11-27",
+     "preco": 3913,
+     "ida": "2027-07-01"
+    }
+   ],
+   "cidade": "El Calafate",
+   "pais": "Argentina"
+  },
+  "JNB": {
+   "precos": [
+    {
+     "d": "2026-11-27",
+     "preco": 4259,
+     "ida": "2027-06-03"
+    },
+    {
+     "d": "2026-11-27",
+     "preco": 4839,
+     "ida": "2027-07-01"
+    }
+   ],
+   "cidade": "Johanesburgo",
+   "pais": "África do Sul"
+  },
+  "YUL": {
+   "precos": [
+    {
+     "d": "2026-11-27",
+     "preco": 4760,
+     "ida": "2027-06-03"
+    },
+    {
+     "d": "2026-11-27",
+     "preco": 7678,
+     "ida": "2027-07-01"
+    }
+   ],
+   "cidade": "Montreal",
+   "pais": "Canadá"
+  },
+  "LIS": {
+   "precos": [
+    {
+     "d": "2026-11-27",
+     "preco": 5137,
+     "ida": "2027-06-11"
+    },
+    {
+     "d": "2026-11-27",
+     "preco": 6815,
+     "ida": "2027-07-01"
+    }
+   ],
+   "cidade": "Lisboa",
+   "pais": "Portugal"
+  },
+  "MIA": {
+   "precos": [
+    {
+     "d": "2026-11-27",
+     "preco": 5475,
+     "ida": "2027-06-03"
+    },
+    {
+     "d": "2026-11-27",
+     "preco": 5234,
+     "ida": "2027-07-01"
+    }
+   ],
+   "cidade": "Miami",
+   "pais": "Estados Unidos"
+  },
+  "JFK": {
+   "precos": [
+    {
+     "d": "2026-11-27",
+     "preco": 5533,
+     "ida": "2027-06-03"
+    },
+    {
+     "d": "2026-11-27",
+     "preco": 6561,
+     "ida": "2027-07-29"
+    }
+   ],
+   "cidade": "Nova Iorque",
+   "pais": "Estados Unidos"
+  },
+  "IPC": {
+   "precos": [
+    {
+     "d": "2026-11-27",
+     "preco": 5622,
+     "ida": "2027-06-03"
+    },
+    {
+     "d": "2026-11-27",
+     "preco": 6111,
+     "ida": "2027-07-01"
+    }
+   ],
+   "cidade": "Ilha de Páscoa",
+   "pais": "Chile"
+  },
+  "FCO": {
+   "precos": [
+    {
+     "d": "2026-11-27",
+     "preco": 5634,
+     "ida": "2027-06-13"
+    },
+    {
+     "d": "2026-11-27",
+     "preco": 6401,
+     "ida": "2027-07-01"
+    }
+   ],
+   "cidade": "Roma",
+   "pais": "Itália"
+  },
+  "DCA": {
+   "precos": [
+    {
+     "d": "2026-11-27",
+     "preco": 5734,
+     "ida": "2027-06-03"
+    },
+    {
+     "d": "2026-11-27",
+     "preco": 7271,
+     "ida": "2027-07-01"
+    }
+   ],
+   "cidade": "Washington, D.C.",
+   "pais": "Estados Unidos"
+  },
+  "GPS": {
+   "precos": [
+    {
+     "d": "2026-11-27",
+     "preco": 5738,
+     "ida": "2027-06-03"
+    },
+    {
+     "d": "2026-11-27",
+     "preco": 5657,
+     "ida": "2027-07-01"
+    }
+   ],
+   "cidade": "Ilha de Baltra",
+   "pais": "Equador"
+  },
+  "AMS": {
+   "precos": [
+    {
+     "d": "2026-11-27",
+     "preco": 5900,
+     "ida": "2027-06-03"
+    },
+    {
+     "d": "2026-11-27",
+     "preco": 7666,
+     "ida": "2027-07-01"
+    }
+   ],
+   "cidade": "Amsterdã",
+   "pais": "Países Baixos"
+  },
+  "CPT": {
+   "precos": [
+    {
+     "d": "2026-11-27",
+     "preco": 6005,
+     "ida": "2027-06-03"
+    },
+    {
+     "d": "2026-11-27",
+     "preco": 7094,
+     "ida": "2027-07-01"
+    }
+   ],
+   "cidade": "Cidade do Cabo",
+   "pais": "África do Sul"
+  },
+  "CDG": {
+   "precos": [
+    {
+     "d": "2026-11-27",
+     "preco": 6070,
+     "ida": "2027-06-05"
+    },
+    {
+     "d": "2026-11-27",
+     "preco": 6747,
+     "ida": "2027-07-03"
+    }
+   ],
+   "cidade": "Paris",
+   "pais": "França"
+  },
+  "LHR": {
+   "precos": [
+    {
+     "d": "2026-11-27",
+     "preco": 6137,
+     "ida": "2027-06-10"
+    },
+    {
+     "d": "2026-11-27",
+     "preco": 7520,
+     "ida": "2027-07-01"
+    }
+   ],
+   "cidade": "Londres",
+   "pais": "Reino Unido"
+  },
+  "SAN": {
+   "precos": [
+    {
+     "d": "2026-11-27",
+     "preco": 6232,
+     "ida": "2027-06-03"
+    },
+    {
+     "d": "2026-11-27",
+     "preco": 8466,
+     "ida": "2027-07-01"
+    }
+   ],
+   "cidade": "San Diego",
+   "pais": "Estados Unidos"
+  },
+  "YYZ": {
+   "precos": [
+    {
+     "d": "2026-11-27",
+     "preco": 6705,
+     "ida": "2027-06-03"
+    },
+    {
+     "d": "2026-11-27",
+     "preco": 10183,
+     "ida": "2027-07-01"
+    }
+   ],
+   "cidade": "Toronto",
+   "pais": "Canadá"
+  },
+  "MAD": {
+   "precos": [
+    {
+     "d": "2026-11-27",
+     "preco": 6803,
+     "ida": "2027-06-03"
+    },
+    {
+     "d": "2026-11-27",
+     "preco": 8262,
+     "ida": "2027-07-01"
+    }
+   ],
+   "cidade": "Madrid",
+   "pais": "Espanha"
+  },
+  "BOS": {
+   "precos": [
+    {
+     "d": "2026-11-27",
+     "preco": 6807,
+     "ida": "2027-06-27"
+    },
+    {
+     "d": "2026-11-27",
+     "preco": 6996,
+     "ida": "2027-07-31"
+    }
+   ],
+   "cidade": "Boston",
+   "pais": "Estados Unidos"
+  },
+  "SEA": {
+   "precos": [
+    {
+     "d": "2026-11-27",
+     "preco": 7202,
+     "ida": "2027-06-03"
+    },
+    {
+     "d": "2026-11-27",
+     "preco": 9638,
+     "ida": "2027-07-01"
+    }
+   ],
+   "cidade": "Seattle",
+   "pais": "Estados Unidos"
+  },
+  "VCE": {
+   "precos": [
+    {
+     "d": "2026-11-27",
+     "preco": 7206,
+     "ida": "2027-06-03"
+    },
+    {
+     "d": "2026-11-27",
+     "preco": 8274,
+     "ida": "2027-07-01"
+    }
+   ],
+   "cidade": "Veneza",
+   "pais": "Itália"
+  },
+  "DXB": {
+   "precos": [
+    {
+     "d": "2026-11-27",
+     "preco": 7219,
+     "ida": "2027-06-03"
+    },
+    {
+     "d": "2026-11-27",
+     "preco": 7484,
+     "ida": "2027-07-01"
+    }
+   ],
+   "cidade": "Dubai",
+   "pais": "Emirados Árabes Unidos"
+  },
+  "BCN": {
+   "precos": [
+    {
+     "d": "2026-11-27",
+     "preco": 7368,
+     "ida": "2027-06-03"
+    },
+    {
+     "d": "2026-11-27",
+     "preco": 8237,
+     "ida": "2027-07-01"
+    }
+   ],
+   "cidade": "Barcelona",
+   "pais": "Espanha"
+  },
+  "FLR": {
+   "precos": [
+    {
+     "d": "2026-11-27",
+     "preco": 7503,
+     "ida": "2027-06-03"
+    },
+    {
+     "d": "2026-11-27",
+     "preco": 8262,
+     "ida": "2027-07-01"
+    }
+   ],
+   "cidade": "Florença",
+   "pais": "Itália"
+  },
+  "DUB": {
+   "precos": [
+    {
+     "d": "2026-11-27",
+     "preco": 7573,
+     "ida": "2027-06-03"
+    },
+    {
+     "d": "2026-11-27",
+     "preco": 8067,
+     "ida": "2027-07-01"
+    }
+   ],
+   "cidade": "Dublin",
+   "pais": "Irlanda"
+  },
+  "VIE": {
+   "precos": [
+    {
+     "d": "2026-11-27",
+     "preco": 7626,
+     "ida": "2027-06-03"
+    },
+    {
+     "d": "2026-11-27",
+     "preco": 8391,
+     "ida": "2027-07-01"
+    }
+   ],
+   "cidade": "Viena",
+   "pais": "Áustria"
+  },
+  "BER": {
+   "precos": [
+    {
+     "d": "2026-11-27",
+     "preco": 7650,
+     "ida": "2027-06-03"
+    },
+    {
+     "d": "2026-11-27",
+     "preco": 8312,
+     "ida": "2027-07-01"
+    }
+   ],
+   "cidade": "Berlim",
+   "pais": "Alemanha"
+  },
+  "LAX": {
+   "precos": [
+    {
+     "d": "2026-11-27",
+     "preco": 8093,
+     "ida": "2027-06-03"
+    },
+    {
+     "d": "2026-11-27",
+     "preco": 9359,
+     "ida": "2027-07-01"
+    }
+   ],
+   "cidade": "Los Angeles",
+   "pais": "Estados Unidos"
+  },
+  "CPH": {
+   "precos": [
+    {
+     "d": "2026-11-27",
+     "preco": 8130,
+     "ida": "2027-06-03"
+    },
+    {
+     "d": "2026-11-27",
+     "preco": 9263,
+     "ida": "2027-07-01"
+    }
+   ],
+   "cidade": "Copenhague",
+   "pais": "Dinamarca"
+  },
+  "MLA": {
+   "precos": [
+    {
+     "d": "2026-11-27",
+     "preco": 8148,
+     "ida": "2027-06-03"
+    },
+    {
+     "d": "2026-11-27",
+     "preco": 8551,
+     "ida": "2027-07-01"
+    }
+   ],
+   "cidade": "Malta",
+   "pais": "Malta"
+  },
+  "EDI": {
+   "precos": [
+    {
+     "d": "2026-11-27",
+     "preco": 8202,
+     "ida": "2027-06-03"
+    },
+    {
+     "d": "2026-11-27",
+     "preco": 9409,
+     "ida": "2027-07-01"
+    }
+   ],
+   "cidade": "Edimburgo",
+   "pais": "Reino Unido"
+  },
+  "MSY": {
+   "precos": [
+    {
+     "d": "2026-11-27",
+     "preco": 8208,
+     "ida": "2027-06-03"
+    },
+    {
+     "d": "2026-11-27",
+     "preco": 9633,
+     "ida": "2027-07-01"
+    }
+   ],
+   "cidade": "Nova Orleans",
+   "pais": "Estados Unidos"
+  },
+  "PRG": {
+   "precos": [
+    {
+     "d": "2026-11-27",
+     "preco": 8244,
+     "ida": "2027-06-03"
+    },
+    {
+     "d": "2026-11-27",
+     "preco": 8957,
+     "ida": "2027-07-01"
+    }
+   ],
+   "cidade": "Praga",
+   "pais": "Tchéquia"
+  },
+  "LAS": {
+   "precos": [
+    {
+     "d": "2026-11-27",
+     "preco": 8368,
+     "ida": "2027-06-03"
+    },
+    {
+     "d": "2026-11-27",
+     "preco": 9471,
+     "ida": "2027-07-01"
+    }
+   ],
+   "cidade": "Las Vegas",
+   "pais": "Estados Unidos"
+  },
+  "NQZ": {
+   "precos": [
+    {
+     "d": "2026-11-27",
+     "preco": 8400,
+     "ida": "2027-06-03"
+    },
+    {
+     "d": "2026-11-27",
+     "preco": 11088,
+     "ida": "2027-07-01"
+    }
+   ],
+   "cidade": "Astana",
+   "pais": "Cazaquistão"
+  },
+  "SFO": {
+   "precos": [
+    {
+     "d": "2026-11-27",
+     "preco": 8472,
+     "ida": "2027-06-03"
+    },
+    {
+     "d": "2026-11-27",
+     "preco": 10365,
+     "ida": "2027-07-01"
+    }
+   ],
+   "cidade": "São Francisco",
+   "pais": "Estados Unidos"
+  },
+  "SAW": {
+   "precos": [
+    {
+     "d": "2026-11-27",
+     "preco": 8582,
+     "ida": "2027-06-03"
+    },
+    {
+     "d": "2026-11-27",
+     "preco": 9215,
+     "ida": "2027-07-01"
+    }
+   ],
+   "cidade": "Istambul",
+   "pais": "Turquia"
+  },
+  "MEL": {
+   "precos": [
+    {
+     "d": "2026-11-27",
+     "preco": 8624,
+     "ida": "2027-06-03"
+    },
+    {
+     "d": "2026-11-27",
+     "preco": 8624,
+     "ida": "2027-07-01"
+    }
+   ],
+   "cidade": "Melbourne",
+   "pais": "Austrália"
+  },
+  "BUD": {
+   "precos": [
+    {
+     "d": "2026-11-27",
+     "preco": 8750,
+     "ida": "2027-06-03"
+    },
+    {
+     "d": "2026-11-27",
+     "preco": 9997,
+     "ida": "2027-07-01"
+    }
+   ],
+   "cidade": "Budapeste",
+   "pais": "Hungria"
+  },
+  "ATH": {
+   "precos": [
+    {
+     "d": "2026-11-27",
+     "preco": 8755,
+     "ida": "2027-06-03"
+    },
+    {
+     "d": "2026-11-27",
+     "preco": 9600,
+     "ida": "2027-07-11"
+    }
+   ],
+   "cidade": "Atenas",
+   "pais": "Grécia"
+  },
+  "BOM": {
+   "precos": [
+    {
+     "d": "2026-11-27",
+     "preco": 8799,
+     "ida": "2027-06-03"
+    },
+    {
+     "d": "2026-11-27",
+     "preco": 11112,
+     "ida": "2027-07-01"
+    }
+   ],
+   "cidade": "Mumbai",
+   "pais": "Índia"
+  },
+  "YVR": {
+   "precos": [
+    {
+     "d": "2026-11-27",
+     "preco": 9330,
+     "ida": "2027-06-03"
+    },
+    {
+     "d": "2026-11-27",
+     "preco": 10500,
+     "ida": "2027-07-01"
+    }
+   ],
+   "cidade": "Vancouver",
+   "pais": "Canadá"
+  },
+  "SYD": {
+   "precos": [
+    {
+     "d": "2026-11-27",
+     "preco": 9415,
+     "ida": "2027-06-03"
+    },
+    {
+     "d": "2026-11-27",
+     "preco": 9415,
+     "ida": "2027-07-01"
+    }
+   ],
+   "cidade": "Sydney",
+   "pais": "Austrália"
+  },
+  "YQB": {
+   "precos": [
+    {
+     "d": "2026-11-27",
+     "preco": 9893,
+     "ida": "2027-06-03"
+    },
+    {
+     "d": "2026-11-27",
+     "preco": 10237,
+     "ida": "2027-07-01"
+    }
+   ],
+   "cidade": "Quebec",
+   "pais": "Canadá"
+  },
+  "SEZ": {
+   "precos": [
+    {
+     "d": "2026-11-27",
+     "preco": 10176,
+     "ida": "2027-06-03"
+    },
+    {
+     "d": "2026-11-27",
+     "preco": 11164,
+     "ida": "2027-07-01"
+    }
+   ],
+   "cidade": "Ilha de Mahé",
+   "pais": "Seicheles"
+  },
+  "BKK": {
+   "precos": [
+    {
+     "d": "2026-11-27",
+     "preco": 10352,
+     "ida": "2027-06-03"
+    },
+    {
+     "d": "2026-11-27",
+     "preco": 12016,
+     "ida": "2027-07-01"
+    }
+   ],
+   "cidade": "Bangkok",
+   "pais": "Tailândia"
+  },
+  "CGK": {
+   "precos": [
+    {
+     "d": "2026-11-27",
+     "preco": 10543,
+     "ida": "2027-06-03"
+    },
+    {
+     "d": "2026-11-27",
+     "preco": 11628,
+     "ida": "2027-07-01"
+    }
+   ],
+   "cidade": "Jacarta",
+   "pais": "Indonésia"
+  },
+  "HKG": {
+   "precos": [
+    {
+     "d": "2026-11-27",
+     "preco": 10593,
+     "ida": "2027-06-03"
+    },
+    {
+     "d": "2026-11-27",
+     "preco": 12720,
+     "ida": "2027-07-01"
+    }
+   ],
+   "cidade": "Hong Kong",
+   "pais": "Hong Kong"
+  },
+  "HNL": {
+   "precos": [
+    {
+     "d": "2026-11-27",
+     "preco": 10856,
+     "ida": "2027-06-03"
+    },
+    {
+     "d": "2026-11-27",
+     "preco": 13205,
+     "ida": "2027-07-01"
+    }
+   ],
+   "cidade": "Honolulu",
+   "pais": "Estados Unidos"
+  },
+  "HND": {
+   "precos": [
+    {
+     "d": "2026-11-27",
+     "preco": 10864,
+     "ida": "2027-06-11"
+    },
+    {
+     "d": "2026-11-27",
+     "preco": 11772,
+     "ida": "2027-07-01"
+    }
+   ],
+   "cidade": "Tóquio",
+   "pais": "Japão"
+  },
+  "SIN": {
+   "precos": [
+    {
+     "d": "2026-11-27",
+     "preco": 10932,
+     "ida": "2027-06-03"
+    },
+    {
+     "d": "2026-11-27",
+     "preco": 13059,
+     "ida": "2027-07-01"
+    }
+   ],
+   "cidade": "Singapura",
+   "pais": "Singapura"
+  },
+  "MRU": {
+   "precos": [
+    {
+     "d": "2026-11-27",
+     "preco": 10947,
+     "ida": "2027-06-03"
+    },
+    {
+     "d": "2026-11-27",
+     "preco": 13187,
+     "ida": "2027-07-01"
+    }
+   ],
+   "cidade": "Ilha Maurícia",
+   "pais": "Maurício"
+  },
+  "ANC": {
+   "precos": [
+    {
+     "d": "2026-11-27",
+     "preco": 11022,
+     "ida": "2027-06-03"
+    },
+    {
+     "d": "2026-11-27",
+     "preco": 14722,
+     "ida": "2027-07-01"
+    }
+   ],
+   "cidade": "Anchorage",
+   "pais": "Estados Unidos"
+  },
+  "JTR": {
+   "precos": [
+    {
+     "d": "2026-11-27",
+     "preco": 11086,
+     "ida": "2027-06-03"
+    },
+    {
+     "d": "2026-11-27",
+     "preco": 12699,
+     "ida": "2027-07-01"
+    }
+   ],
+   "cidade": "Santorini",
+   "pais": "Grécia"
+  },
+  "FAI": {
+   "precos": [
+    {
+     "d": "2026-11-27",
+     "preco": 11390,
+     "ida": "2027-06-03"
+    },
+    {
+     "d": "2026-11-27",
+     "preco": 21460,
+     "ida": "2027-07-01"
+    }
+   ],
+   "cidade": "Fairbanks",
+   "pais": "Estados Unidos"
+  },
+  "LIH": {
+   "precos": [
+    {
+     "d": "2026-11-27",
+     "preco": 12022,
+     "ida": "2027-06-03"
+    },
+    {
+     "d": "2026-11-27",
+     "preco": 13205,
+     "ida": "2027-07-01"
+    }
+   ],
+   "cidade": "Kauai",
+   "pais": "Estados Unidos"
+  },
+  "KIX": {
+   "precos": [
+    {
+     "d": "2026-11-27",
+     "preco": 12609,
+     "ida": "2027-06-03"
+    },
+    {
+     "d": "2026-11-27",
+     "preco": 12626,
+     "ida": "2027-07-01"
+    }
+   ],
+   "cidade": "Osaka",
+   "pais": "Japão"
+  },
+  "PER": {
+   "precos": [
+    {
+     "d": "2026-11-27",
+     "preco": 15182,
+     "ida": "2027-06-03"
+    },
+    {
+     "d": "2026-11-27",
+     "preco": 14139,
+     "ida": "2027-07-01"
+    }
+   ],
+   "cidade": "Perth",
+   "pais": "Austrália"
+  },
+  "KZN": {
+   "precos": [
+    {
+     "d": "2026-11-27",
+     "preco": 15219,
+     "ida": "2027-06-03"
+    },
+    {
+     "d": "2026-11-27",
+     "preco": 15219,
+     "ida": "2027-07-01"
+    }
+   ],
+   "cidade": "Cazã",
+   "pais": "Rússia"
+  },
+  "WKJ": {
+   "precos": [
+    {
+     "d": "2026-11-27",
+     "preco": 41909,
+     "ida": "2027-06-03"
+    },
+    {
+     "d": "2026-11-27",
+     "preco": 41909,
+     "ida": "2027-07-01"
+    }
+   ],
+   "cidade": "Wakkanai",
+   "pais": "Japão"
+  },
+  "UBN": {
+   "precos": [
+    {
+     "d": "2026-11-27",
+     "preco": 64835,
+     "ida": "2027-06-03"
+    },
+    {
+     "d": "2026-11-27",
+     "preco": 66121,
+     "ida": "2027-07-01"
+    }
+   ],
+   "cidade": "Ulan Bator",
+   "pais": "Mongólia"
+  },
+  "HRB": {
+   "precos": [
+    {
+     "d": "2026-11-27",
+     "preco": 77906,
+     "ida": "2027-06-03"
+    }
+   ],
+   "cidade": "Harbin",
+   "pais": "China"
+  },
+  "ZQN": {
+   "precos": [
+    {
+     "d": "2026-11-27",
+     "preco": 9904,
+     "ida": "2027-07-01"
+    }
+   ],
+   "cidade": "Queenstown",
+   "pais": "Nova Zelândia"
+  }
+ },
+ "data": "2026-11-27"
 }

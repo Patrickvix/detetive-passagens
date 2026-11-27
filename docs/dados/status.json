@@ -1,5 +1,7 @@
 {
  "bot": "destino_viagens_bot",
- "apify_gasto": {},
- "ultima_execucao": "2026-11-27T09:00-03:00"
+ "apify_gasto": {
+  "2026-11": 0.034
+ },
+ "ultima_execucao": "2026-11-27T09:18-03:00"
 }

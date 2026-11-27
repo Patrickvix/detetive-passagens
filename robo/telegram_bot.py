@@ -39,6 +39,21 @@ class Bot:
             dados["reply_markup"] = {"inline_keyboard": [[{"text": t, "callback_data": c}] for t, c in botoes[:4]]}
         self._api("sendMessage", **dados)
 
+    # A validade do passaporte fica só na mensagem fixada do seu chat (não vai para o repositório público).
+    def salvar_passaporte(self, validade_iso):
+        r = self._api("sendMessage", chat_id=self.chat, text=f"🛂 Validade do passaporte: {validade_iso}")
+        if r.get("ok"):
+            self._api("pinChatMessage", chat_id=self.chat, message_id=r["result"]["message_id"],
+                      disable_notification=True)
+
+    def ler_passaporte(self):
+        if not self.chat:
+            return None
+        r = self._api("getChat", chat_id=self.chat)
+        texto = ((r.get("result") or {}).get("pinned_message") or {}).get("text", "")
+        m = re.search(r"Validade do passaporte: (\d{4}-\d{2}-\d{2})", texto)
+        return m[1] if m else None
+
     def ler_comandos(self):
         """Devolve a lista de comandos recebidos desde a última execução: [(comando, argumento)]."""
         r = self._api("getUpdates", offset=self.estado.get("offset", 0), timeout=0,
@@ -56,8 +71,12 @@ class Bot:
                 texto = up["message"].get("text", "")
             else:
                 continue
-            if self.chat is None and texto.startswith("/start"):
-                self.estado["chat_id"] = origem           # o primeiro /start vira o dono do bot
+            if self.chat is None:
+                # sem dono configurado: só ensina como configurar e não guarda nada
+                if texto.startswith("/start"):
+                    self._api("sendMessage", chat_id=origem,
+                              text=f"Seu código de chat é {origem}. No GitHub, crie o segredo TELEGRAM_CHAT_ID com esse número.")
+                continue
             if origem != self.chat:
                 continue                                    # ignora qualquer outra pessoa
             comandos.append(_interpretar(texto))

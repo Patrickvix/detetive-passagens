@@ -26,7 +26,8 @@ Promoções para países que pedem visto ficam escondidas (dá para mostrar no a
    - `TELEGRAM_TOKEN` = token do bot
    - `APIFY_TOKEN` = token do Apify
 4. **App**: em Settings → Pages, escolha *Deploy from a branch*, depois `main` e a pasta `/docs`. O endereço aparece ali (algo como `https://SEU-USUARIO.github.io/detetive-passagens/`). No iPhone: abra no Safari, toque em Compartilhar e depois em *Adicionar à Tela de Início*.
-5. **Ligar**: na aba Actions, toque em *Detetive de Passagens* e depois em *Run workflow*. Em seguida mande `/start` para o seu bot. O primeiro `/start` vira o dono e só ele recebe avisos.
+5. **Ligar**: na aba Actions, toque em *Detetive de Passagens* e depois em *Run workflow*. Em seguida mande `/start` para o seu bot e rode o workflow de novo: o bot responde com o seu *código de chat*.
+6. **Dono**: crie o segredo `TELEGRAM_CHAT_ID` com esse número. Só o seu chat recebe avisos e dá comandos, e o número **não** fica no repositório público. A validade do passaporte fica só na mensagem fixada do seu chat com o bot.
 
 ## Comandos do bot
 

@@ -16,6 +16,7 @@ import robo.main as main  # noqa: E402
 main.DADOS, main.ESTADO = util.DADOS, util.ESTADO
 
 ENVIADAS = []
+PIN = {}
 RSS = """<?xml version="1.0"?><rss version="2.0"><channel><title>x</title>
 <item><title>Passagens de Vitória para Salvador e Recife a partir de R$ 499 ida e volta</title>
 <link>https://blog/{n}a</link><description>Oferta</description><pubDate>Fri, 27 Nov 2026 10:00:00 +0000</pubDate></item>
@@ -71,6 +72,11 @@ def falso_post(url, json=None, **kw):
             return R({"ok": True, "result": ups})
         if metodo == "sendMessage":
             ENVIADAS.append(json["text"])
+            if "Validade do passaporte" in json["text"]:
+                PIN["texto"] = json["text"]
+            return R({"ok": True, "result": {"message_id": 7}})
+        if metodo == "getChat":
+            return R({"ok": True, "result": {"pinned_message": {"text": PIN.get("texto", "")}}})
         return R({"ok": True})
     if "api.apify.com" in url:
         if json.get("exploreOrigin"):
@@ -84,9 +90,12 @@ def falso_post(url, json=None, **kw):
     raise AssertionError(url)
 
 
+CHAT_ENV = {}
+
+
 def rodar(desc):
     with mock.patch("requests.get", falso_get), mock.patch("requests.post", falso_post), \
-            mock.patch.dict("os.environ", {"TELEGRAM_TOKEN": "t", "APIFY_TOKEN": "a"}):
+            mock.patch.dict("os.environ", {"TELEGRAM_TOKEN": "t", "APIFY_TOKEN": "a", **CHAT_ENV}):
         antes = len(ENVIADAS)
         main.main()
         print(f"\n=== {desc}: {len(ENVIADAS) - antes} mensagens")
@@ -96,10 +105,15 @@ def rodar(desc):
 
 msg = lambda txt, uid: {"update_id": uid, "message": {"chat": {"id": 42}, "text": txt}}
 RODADA["updates"] = [msg("/start", 1)]
-rodar("1ª execução (dono manda /start)")
+rodar("0ª execução (sem TELEGRAM_CHAT_ID: só devolve o código)")
+assert any("Seu código de chat é 42" in m for m in ENVIADAS)
+assert json.loads((util.DADOS / "promocoes.json").read_text()) == []
+CHAT_ENV["TELEGRAM_CHAT_ID"] = "42"
+RODADA["updates"] = [msg("/start", 2)]
+rodar("1ª execução (dono configurado)")
 RODADA["n"] = 2
-RODADA["updates"] = [msg("/favoritar Gramado", 2), msg("/passaporte 2027-06-01", 3),
-                     {"update_id": 4, "callback_query": {"id": "c", "data": "fav:LIS", "message": {"chat": {"id": 99}}}}]
+RODADA["updates"] = [msg("/favoritar Gramado", 3), msg("/passaporte 2027-06-01", 4),
+                     {"update_id": 5, "callback_query": {"id": "c", "data": "fav:LIS", "message": {"chat": {"id": 99}}}}]
 main.agora = lambda: util.datetime(2026, 11, 27, 6, 0, tzinfo=util.FUSO_BR)   # antes das 7h: sem preços
 rodar("2ª execução (promoções novas + comandos; callback de estranho ignorado)")
 main.agora = lambda: util.datetime(2026, 11, 27, 8, 0, tzinfo=util.FUSO_BR)
@@ -113,4 +127,8 @@ print("Promoções guardadas:", len(json.loads((d / "promocoes.json").read_text(
 print("Rotas com preço:", len(json.loads((d / "precos.json").read_text())))
 print("Real forte:", json.loads((d / "real_forte.json").read_text())["moedas"][:2])
 print("Status:", json.loads((d / "status.json").read_text()))
+vazamento = [str(f) for f in list(d.rglob("*.json")) + list(util.ESTADO.rglob("*.json"))
+             if "2027-06-01" in f.read_text() or '"chat_id"' in f.read_text()]
+assert not vazamento, vazamento
+print("Nada pessoal (passaporte/chat) nos arquivos que vão para o repositório")
 shutil.rmtree(TMP)

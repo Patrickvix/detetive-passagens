@@ -37,7 +37,8 @@ def carregar():
 
 
 def guardar(e):
-    salvar(ESTADO / "telegram.json", e["tg"])
+    # o código do chat vem do segredo do GitHub e nunca é gravado no repositório público
+    salvar(ESTADO / "telegram.json", {k: v for k, v in e["tg"].items() if k != "chat_id"})
     salvar(DADOS / "status.json", e["status"])
     salvar(DADOS / "favoritos.json", e["favoritos"])
     salvar(DADOS / "promocoes.json", e["promocoes"][:400])
@@ -100,7 +101,7 @@ def tratar_comandos(bot, e):
         elif cmd == "passaporte":
             try:
                 validade = para_data((arg or "").strip())
-                e["tg"]["passaporte"] = iso(validade)
+                bot.salvar_passaporte(iso(validade))
                 e["tg"]["passaporte_avisos"] = []
                 bot.enviar(f"🛂 Anotado: passaporte válido até {validade:%d/%m/%Y}. Aviso quando faltar 1 ano, 9 meses e 6 meses.")
             except ValueError:
@@ -226,7 +227,7 @@ def rodar_cambio(bot, e):
 
 
 def lembrete_passaporte(bot, e):
-    validade = e["tg"].get("passaporte")
+    validade = bot.ler_passaporte()
     if not validade:
         return
     faltam = (para_data(validade) - hoje()).days
@@ -256,7 +257,9 @@ def main():
 
     tratar_comandos(bot, e)
     if not bot.chat:
-        log("Ainda sem dono: mande /start para o bot no Telegram.")
+        log("Sem TELEGRAM_CHAT_ID: mande /start ao bot para receber o código e crie o segredo no GitHub.")
+        guardar(e)
+        return
 
     if primeira_vez:
         # primeira execução: só aprende o que já existe, para não despejar dezenas de avisos antigos

@@ -1,1 +1,758 @@
-[]
+[
+ {
+  "titulo": "Europa de Executiva! Mega Promo Latam tem voos para Lisboa, Madri e outras cidades a partir de R$ 10.070 ida e volta!",
+  "link": "https://www.melhoresdestinos.com.br/promocao/passagens-aereas-mega-promo-latam-executiva-europa-26-11-26",
+  "fonte": "Melhores Destinos",
+  "publicado": "2026-11-26T19:33:23-03:00",
+  "resumo": "A Latam acabou de iniciar a sua Mega Promo de Black Friday, com passagens aéreas nacionais e internacionais com até 40% de desconto. E tem bons preços também para quem não abre mão do conforto, e quer viajar para a Europa em Classe Executiva! Encontramos passagens aéreas na Premium Business para Ams",
+  "tipo": "passagem",
+  "destinos": [
+   "LIS",
+   "MAD",
+   "BCN",
+   "PAR",
+   "ROM",
+   "MIL",
+   "BER",
+   "FRA",
+   "AMS",
+   "BRU",
+   "LON"
+  ],
+  "grupos": [
+   "Europa"
+  ],
+  "paises": [
+   "Alemanha",
+   "Bélgica",
+   "Espanha",
+   "França",
+   "Itália",
+   "Países Baixos",
+   "Portugal",
+   "Reino Unido"
+  ],
+  "origem": "Origem não informada",
+  "viagem_inicio": "2027-02-15",
+  "viagem_fim": "2027-11-15",
+  "categorias": [
+   "proximos",
+   "medio",
+   "longo"
+  ],
+  "exige_visto": false
+ },
+ {
+  "titulo": "México e Caribe! Mega Promo Latam tem voos para Costa Rica, Cancún e mais a partir de R$ 2.348 ida e volta!",
+  "link": "https://www.melhoresdestinos.com.br/promocao/passagens-aereas-mega-promo-latam-caribe-mexico-26-11-26",
+  "fonte": "Melhores Destinos",
+  "publicado": "2026-11-26T19:24:20-03:00",
+  "resumo": "A Latam acabou de iniciar a sua Mega Promo de Black Friday, com passagens aéreas nacionais e internacionais com até 40% de desconto. Claro que pesquisamos os principais destinos da companhia no Caribe e também no México! Encontramos passagens aéreas para Aruba, Cancún, Cidade do México, Curaçao, Mon",
+  "tipo": "passagem",
+  "destinos": [],
+  "grupos": [],
+  "paises": [],
+  "origem": "Origem não informada",
+  "viagem_inicio": null,
+  "viagem_fim": null,
+  "categorias": [
+   "sem_data"
+  ],
+  "exige_visto": false
+ },
+ {
+  "titulo": "[Esgotado] 20 cupons exclusivos com R$ 500 OFF na Decolar para passagem, pacote, hotel ou passeio",
+  "link": "https://www.melhoresdestinos.com.br/promocao/cupom-decolar-500-off-black-friday",
+  "fonte": "Melhores Destinos",
+  "publicado": "2026-11-26T19:09:35-03:00",
+  "resumo": "A Decolar acabou de liberar um presentão de Black Friday exclusivo para quem acompanha o Melhores Destinos. São 20 cupons com R$ 500 de desconto cada um, para compras a partir de R$ 1.000! Ou seja, você pode garantir a sua viagem pela metade do preço. O cupom é PRESENTEMD [ATUALIZAÇÃO: CUPOM ESGOTAD",
+  "tipo": "passagem",
+  "destinos": [],
+  "grupos": [],
+  "paises": [],
+  "origem": "Origem não informada",
+  "viagem_inicio": "2027-05-15",
+  "viagem_fim": "2027-05-15",
+  "categorias": [
+   "medio"
+  ],
+  "exige_visto": false
+ },
+ {
+  "titulo": "América do Sul! Latam, Jetsmart e Sky têm voos para Argentina, Chile, Uruguai e mais destinos a partir de R$ 940 ida e volta!",
+  "link": "https://www.melhoresdestinos.com.br/promocao/passagens-aereas-mega-promo-latam-america-do-sul-26-11-26",
+  "fonte": "Melhores Destinos",
+  "publicado": "2026-11-26T18:38:23-03:00",
+  "resumo": "A Latam acabou de iniciar a sua Mega Promo de Black Friday, com passagens aéreas nacionais e internacionais com até 40% de desconto. Pesquisamos os melhores preços nos voos para destinos na América do Sul. Aqui a gente pesquisou também os menores preços das low-cost Jetsmart e Sky, que também estão ",
+  "tipo": "passagem",
+  "destinos": [
+   "SAO",
+   "RIO",
+   "FLN",
+   "BUE",
+   "SCL",
+   "MVD",
+   "ASU"
+  ],
+  "grupos": [
+   "América do Sul",
+   "Sudeste",
+   "Sul"
+  ],
+  "paises": [
+   "Argentina",
+   "Brasil",
+   "Chile",
+   "Paraguai",
+   "Uruguai"
+  ],
+  "origem": "Origem não informada",
+  "viagem_inicio": "2027-01-15",
+  "viagem_fim": "2027-01-15",
+  "categorias": [
+   "proximos"
+  ],
+  "exige_visto": false
+ },
+ {
+  "titulo": "Oceania! Mega Promo Latam tem voos para Austrália ou Nova Zelândia a partir de R$ 6.044 ida e volta!",
+  "link": "https://www.melhoresdestinos.com.br/promocao/passagens-aereas-mega-promo-latam-oceania-26-11-26",
+  "fonte": "Melhores Destinos",
+  "publicado": "2026-11-26T18:16:07-03:00",
+  "resumo": "A Latam acabou de iniciar a sua Mega Promo de Black Friday, com passagens aéreas nacionais e internacionais com até 40% de desconto. Apontamos nosso radar para bem longe, para buscar os menores preços de voos com destino à Austrália ou Nova Zelândia! Encontramos passagens aéreas para Auckland, Sydne",
+  "tipo": "passagem",
+  "destinos": [
+   "SAO"
+  ],
+  "grupos": [
+   "Sudeste"
+  ],
+  "paises": [
+   "Brasil"
+  ],
+  "origem": "Origem não informada",
+  "viagem_inicio": "2027-05-15",
+  "viagem_fim": "2027-05-15",
+  "categorias": [
+   "medio"
+  ],
+  "exige_visto": false
+ },
+ {
+  "titulo": "🔴 [LIVE] MEGA PROMO LATAM: até 40% OFF! Brasil, Chile, EUA e Europa | Nacionais desde R$ 267 ida e volta",
+  "link": "https://www.melhoresdestinos.com.br/live-mega-promo-latam-black-friday-2026-yt.html",
+  "fonte": "Melhores Destinos",
+  "publicado": "2026-11-26T18:05:55-03:00",
+  "resumo": "A Mega Promo LATAM de Black Friday começou, com passagens aéreas nacionais e internacionais com até 40% de desconto! Vamos analisar ao vivo as ofertas para Brasil, Chile, Estados Unidos e Europa e mostrar quais oportunidades valem a pena! Confira os destaques encontrados pelo Melhores Destinos: 🇧🇷 B",
+  "tipo": "passagem",
+  "destinos": [
+   "SCL",
+   "LIS",
+   "ROM",
+   "AMS"
+  ],
+  "grupos": [
+   "América do Sul",
+   "Europa"
+  ],
+  "paises": [
+   "Chile",
+   "Itália",
+   "Países Baixos",
+   "Portugal"
+  ],
+  "origem": "Origem não informada",
+  "viagem_inicio": null,
+  "viagem_fim": null,
+  "categorias": [
+   "sem_data"
+  ],
+  "exige_visto": false
+ },
+ {
+  "titulo": "África do Sul 🇿🇦 Mega Promo Latam tem voos para Joanesburgo ou Cidade do Cabo a partir de R$ 3.564 ida e volta!",
+  "link": "https://www.melhoresdestinos.com.br/promocao/passagens-aereas-mega-promo-latam-africa-do-sul-26-11-26",
+  "fonte": "Melhores Destinos",
+  "publicado": "2026-11-26T18:02:37-03:00",
+  "resumo": "A Latam acabou de iniciar a sua Mega Promo de Black Friday, com passagens aéreas nacionais e internacionais com até 40% de desconto. Pesquisamos os melhores preços nos voos para África do Sul. Encontramos passagens aéreas para Joanesburgo a partir de R$ 3.564 ida e volta, taxas inclusas. Este preço ",
+  "tipo": "passagem",
+  "destinos": [
+   "SAO",
+   "RIO"
+  ],
+  "grupos": [
+   "Sudeste"
+  ],
+  "paises": [
+   "Brasil"
+  ],
+  "origem": "Origem não informada",
+  "viagem_inicio": "2027-01-15",
+  "viagem_fim": "2027-01-15",
+  "categorias": [
+   "proximos"
+  ],
+  "exige_visto": false
+ },
+ {
+  "titulo": "Voe para Lima a partir de 29 mil milhas LATAM Pass + taxas o trecho",
+  "link": "https://passageirodeprimeira.com/voe-lima-a-partir-29-mil-milhas-latam-pass-taxas-trecho/",
+  "fonte": "Passageiro de Primeira",
+  "publicado": "2026-11-27T08:30:12-03:00",
+  "resumo": "Alerta direto dos Grupos do PP no WhatsApp! 🚨 Encontramos disponibilidade de bilhetes de ida e volta entre São Paulo (GRU) e Lima (LIM). Os voos são operados pela LATAM a partir de 29.004 milhas LATAM Pass + taxas o trecho. Confira! O post Voe para Lima a partir de 29 mil milhas LATAM Pass + taxas o",
+  "tipo": "milhas",
+  "destinos": [
+   "SAO",
+   "LIM"
+  ],
+  "grupos": [
+   "América do Sul",
+   "Sudeste"
+  ],
+  "paises": [
+   "Brasil",
+   "Peru"
+  ],
+  "origem": "Origem não informada",
+  "viagem_inicio": null,
+  "viagem_fim": null,
+  "categorias": [
+   "sem_data"
+  ],
+  "exige_visto": false
+ },
+ {
+  "titulo": "Pink Hour Livelo! Acumule até 21 pontos por real gasto na Insider, Olympikus e mais parceiros",
+  "link": "https://passageirodeprimeira.com/pink-hour-livelo-acumule-ate-21-pontos-por-real-gasto-na-insider-olympikus-e-mais-parceiros/",
+  "fonte": "Passageiro de Primeira",
+  "publicado": "2026-11-27T01:30:36-03:00",
+  "resumo": "[Oferta] Muito bom! A Livelo está oferecendo até 21 pontos por real gasto na Insider, 15 pontos na Olympikus e até 10 pontos na Decolar, entre outros parceiros. Mas corra, as ofertas são válidas até às 12h de hoje (27). O post Pink Hour Livelo! Acumule até 21 pontos por real gasto na Insider, Olympi",
+  "tipo": "milhas",
+  "destinos": [
+   "SAO",
+   "BUE"
+  ],
+  "grupos": [
+   "América do Sul",
+   "Sudeste"
+  ],
+  "paises": [
+   "Argentina",
+   "Brasil"
+  ],
+  "origem": "Origem não informada",
+  "viagem_inicio": null,
+  "viagem_fim": null,
+  "categorias": [
+   "sem_data"
+  ],
+  "exige_visto": false
+ },
+ {
+  "titulo": "Receba 10.000 pontos Livelo ao assinar o Clube Mini por apenas R$ 24,90 por mês",
+  "link": "https://passageirodeprimeira.com/receba-10-000-pontos-livelo-ao-assinar-o-clube-mini-por-apenas-r-2490-por-mes/",
+  "fonte": "Passageiro de Primeira",
+  "publicado": "2026-11-27T01:20:53-03:00",
+  "resumo": "[Oferta] Muito bom! A Livelo está oferecendo até 10.000 pontos ao assinar o Clube Mini por apenas R$ 24,90 por mês, com 1.000 pontos bônus na adesão e 500 pontos bônus mensais nos primeiros seis meses. A promoção é válida até 30 de novembro e exige o uso do cupom \"CLUBEPPBFMINI\". O post Receba 10.00",
+  "tipo": "milhas",
+  "destinos": [],
+  "grupos": [],
+  "paises": [],
+  "origem": "Origem não informada",
+  "viagem_inicio": null,
+  "viagem_fim": null,
+  "categorias": [
+   "sem_data"
+  ],
+  "exige_visto": false
+ },
+ {
+  "titulo": "Partiu Tóquio? Viaje para a capital do Japão a partir de 207 mil pontos Azul + taxas",
+  "link": "https://passageirodeprimeira.com/partiu-toquio-viaje-para-capital-japao-a-partir-207-mil-pontos-azul-taxas/",
+  "fonte": "Passageiro de Primeira",
+  "publicado": "2026-11-27T01:10:35-03:00",
+  "resumo": "Alerta direto dos Grupos do PP no WhatsApp! 🚨 Encontramos disponibilidade de bilhetes ida e volta entre São Paulo (GRU) e Tóquio (HND), a partir de 207.000 pontos Azul Fidelidade + taxas por trecho! Os voos são operados pela United Airlines e acontecem em várias datas diferentes nos próximos meses. ",
+  "tipo": "milhas",
+  "destinos": [
+   "SAO"
+  ],
+  "grupos": [
+   "Sudeste"
+  ],
+  "paises": [
+   "Brasil"
+  ],
+  "origem": "Origem não informada",
+  "viagem_inicio": null,
+  "viagem_fim": null,
+  "categorias": [
+   "sem_data"
+  ],
+  "exige_visto": false
+ },
+ {
+  "titulo": "Livelo oferece até 30% off em passagens para Portugal + 40% de pointsback na CVC",
+  "link": "https://passageirodeprimeira.com/livelo-oferece-ate-30-off-passagens-portugal-40-pointsback-cvc/",
+  "fonte": "Passageiro de Primeira",
+  "publicado": "2026-11-27T01:00:05-03:00",
+  "resumo": "A Livelo está oferecendo 30% de desconto na compra de passagens para Portugal e mais 40% de pointsback em voos comprados com a CVC, ou seja, parte dos pontos utilizados na emissão será devolvida à conta do participante após a viagem. O post Livelo oferece até 30% off em passagens para Portugal + 40%",
+  "tipo": "milhas",
+  "destinos": [],
+  "grupos": [],
+  "paises": [],
+  "origem": "Origem não informada",
+  "viagem_inicio": null,
+  "viagem_fim": null,
+  "categorias": [
+   "sem_data"
+  ],
+  "exige_visto": false
+ },
+ {
+  "titulo": "Trecho de Recife para Barcelona em Executiva a partir de 194 milhas LATAM Pass + taxas",
+  "link": "https://passageirodeprimeira.com/recife-para-barcelona-executiva-a-partir-194-milhas-latam-pass-taxas/",
+  "fonte": "Passageiro de Primeira",
+  "publicado": "2026-11-27T00:50:11-03:00",
+  "resumo": "Alerta direto dos Grupos do PP no WhatsApp! 🚨 Em nossas pesquisas, encontramos disponibilidade de bilhetes de ida e volta em Classe Executiva entre Recife (REC) e Barcelona (BCN). Os voos são operados pela LATAM e a emissão pode ser feita por 194.041 milhas LATAM Pass + taxas. Confira! O post Trecho",
+  "tipo": "milhas",
+  "destinos": [
+   "REC",
+   "BCN"
+  ],
+  "grupos": [
+   "Europa",
+   "Nordeste"
+  ],
+  "paises": [
+   "Brasil",
+   "Espanha"
+  ],
+  "origem": "Origem não informada",
+  "viagem_inicio": null,
+  "viagem_fim": null,
+  "categorias": [
+   "sem_data"
+  ],
+  "exige_visto": false
+ },
+ {
+  "titulo": "Livelo oferece até 57,1 % de desconto na compra de pontos para assinantes do Clube – milheiro a partir de R$ 29,13",
+  "link": "https://passageirodeprimeira.com/livelo-oferece-ate-571-de-desconto-na-compra-de-pontos-para-assinantes-do-clube-milheiro-a-partir-de-r-2913/",
+  "fonte": "Passageiro de Primeira",
+  "publicado": "2026-11-27T00:40:55-03:00",
+  "resumo": "Oportunidade para quem está precisando completar o saldo na Livelo 💳 Até 4h desta sexta-feira (27), o programa está oferecendo até 57,1% de desconto na compra de pontos para assinantes do Clube. A campanha conta com o parcelamento em até 12x sem juros para compras acima de R$ 240,00 e também oferta ",
+  "tipo": "milhas",
+  "destinos": [],
+  "grupos": [],
+  "paises": [],
+  "origem": "Origem não informada",
+  "viagem_inicio": null,
+  "viagem_fim": null,
+  "categorias": [
+   "sem_data"
+  ],
+  "exige_visto": false
+ },
+ {
+  "titulo": "Executiva para Orlando a partir de 176 mil milhas Smiles + taxas",
+  "link": "https://passageirodeprimeira.com/executiva-para-orlando-a-partir-176-mil-milhas-smiles-taxas/",
+  "fonte": "Passageiro de Primeira",
+  "publicado": "2026-11-27T00:33:19-03:00",
+  "resumo": "Alerta direto dos Grupos do PP no WhatsApp! 🚨 Em nossas pesquisas, encontramos disponibilidade de bilhetes de ida e volta entre Rio de Janeiro (GIG) e Orlando (MCO) em Classe Executiva, com a American Airlines, a partir de 176.400 milhas Smiles + taxas. O post Executiva para Orlando a partir de 176 ",
+  "tipo": "milhas",
+  "destinos": [
+   "RIO"
+  ],
+  "grupos": [
+   "Sudeste"
+  ],
+  "paises": [
+   "Brasil"
+  ],
+  "origem": "Origem não informada",
+  "viagem_inicio": "2027-01-15",
+  "viagem_fim": "2027-01-15",
+  "categorias": [
+   "proximos"
+  ],
+  "exige_visto": false
+ },
+ {
+  "titulo": "Azul tem passagens a partir de R$ 176 por trecho",
+  "link": "https://passageirodeprimeira.com/azul-tem-passagens-a-partir-de-r-176-por-trecho/",
+  "fonte": "Passageiro de Primeira",
+  "publicado": "2026-11-27T00:20:34-03:00",
+  "resumo": "Nesta Black Friday, a Azul está oferecendo passagens aéreas nacionais a partir de R$ 179 por trecho já com taxas inclusas. Para melhorar, você ainda pode combinar com a oferta de 22% de desconto na reserva de hotéis usando pontos ou 20% de desconto na reserva de hotéis com reais. Confira algumas sug",
+  "tipo": "passagem",
+  "destinos": [],
+  "grupos": [],
+  "paises": [],
+  "origem": "Origem não informada",
+  "viagem_inicio": null,
+  "viagem_fim": null,
+  "categorias": [
+   "sem_data"
+  ],
+  "exige_visto": false
+ },
+ {
+  "titulo": "Aproveite! Mercado Livre oferece cupom de até 25% de desconto em compras",
+  "link": "https://passageirodeprimeira.com/aproveite-mercado-livre-oferece-cupom-ate-25-desconto-compras/",
+  "fonte": "Passageiro de Primeira",
+  "publicado": "2026-11-27T00:10:45-03:00",
+  "resumo": "Mais cupom! 🏷️ 🤑 O Mercado Livre liberou novos cupons de desconto, chegando até 25% OFF em compras. As ofertas têm períodos de vigência distintos, mas podem esgotar a qualquer momento. Confira como resgatar! O post Aproveite! Mercado Livre oferece cupom de até 25% de desconto em compras apareceu pri",
+  "tipo": "passagem",
+  "destinos": [],
+  "grupos": [],
+  "paises": [],
+  "origem": "Origem não informada",
+  "viagem_inicio": null,
+  "viagem_fim": null,
+  "categorias": [
+   "sem_data"
+  ],
+  "exige_visto": false
+ },
+ {
+  "titulo": "Receba até 392.000 pontos ao assinar o Clube Livelo Premium – Milheiro a partir de R$ 23,92",
+  "link": "https://passageirodeprimeira.com/receba-ate-392-000-pontos-ao-assinar-o-clube-livelo-premium-milheiro-a-partir-de-r-2392/",
+  "fonte": "Passageiro de Primeira",
+  "publicado": "2026-11-27T00:04:00-03:00",
+  "resumo": "[Oferta] Muito bom! O Clube Livelo Premium está oferecendo até 112.000 pontos bônus em novas assinaturas, totalizando até 392.000 pontos ao longo de 12 meses, com milheiro a partir de R$ 23,92. A promoção é válida até segunda-feira (30) e inclui planos mensais e anuais. O post Receba até 392.000 pon",
+  "tipo": "milhas",
+  "destinos": [],
+  "grupos": [],
+  "paises": [],
+  "origem": "Origem não informada",
+  "viagem_inicio": null,
+  "viagem_fim": null,
+  "categorias": [
+   "sem_data"
+  ],
+  "exige_visto": false
+ },
+ {
+  "titulo": "ÚLTIMO DIA! 50% OFF nos Alertas do PP (maior desconto do ano!)",
+  "link": "https://passageirodeprimeira.com/e-black-50-off-o-maior-desconto-da-historia-dos-alertas-do-pp/",
+  "fonte": "Passageiro de Primeira",
+  "publicado": "2026-11-26T19:30:32-03:00",
+  "resumo": "Corre! A Black dos Alertas está com 50% OFF, o maior desconto do ano, válido até hoje (27). Com o cupom BLACK50, você garante 12 meses de alertas por metade do preço, facilitando suas emissões de passagens com milhas. Não perca essa oportunidade! O post ÚLTIMO DIA! 50% OFF nos Alertas do PP (maior d",
+  "tipo": "passagem",
+  "destinos": [],
+  "grupos": [],
+  "paises": [],
+  "origem": "Origem não informada",
+  "viagem_inicio": "2027-05-15",
+  "viagem_fim": "2027-05-15",
+  "categorias": [
+   "medio"
+  ],
+  "exige_visto": false
+ },
+ {
+  "titulo": "Black da UDM: aproveite 60% OFF para entrar no Mundo Avios",
+  "link": "https://passageirodeprimeira.com/black-da-udm-aproveite-60-off-para-entrar-no-mundo-avios/",
+  "fonte": "Passageiro de Primeira",
+  "publicado": "2026-11-26T18:50:05-03:00",
+  "resumo": "Black da UDM: o curso Mundo Avios está com 60% OFF. Aprenda a usar Avios em programas como Iberia Club, British Airways Club, Qatar Privilege Club e Finnair Plus. Alunos da UDM e assinantes dos Alertas do PP têm 10% OFF extra. O post Black da UDM: aproveite 60% OFF para entrar no Mundo Avios aparece",
+  "tipo": "milhas",
+  "destinos": [],
+  "grupos": [],
+  "paises": [],
+  "origem": "Origem não informada",
+  "viagem_inicio": null,
+  "viagem_fim": null,
+  "categorias": [
+   "sem_data"
+  ],
+  "exige_visto": false
+ },
+ {
+  "titulo": "Últimas horas para assinar assinar o Clube Livelo Premium e receber até 390.000 pontos- CPM a partir de R$ 24,04",
+  "link": "https://passageirodeprimeira.com/ultimas-horas-para-assinar-assinar-o-clube-livelo-premium-e-receber-ate-390-000-pontos-cpm-a-partir-de-r-2404/",
+  "fonte": "Passageiro de Primeira",
+  "publicado": "2026-11-26T18:30:12-03:00",
+  "resumo": "Últimas horas! O Clube Livelo está oferecendo até 390.000 pontos em novas assinaturas do Clube Premium, com CPM a partir de R$ 24,04. A promoção é válida até hoje (26) e contempla planos mensais e anuais. O post Últimas horas para assinar assinar o Clube Livelo Premium e receber até 390.000 pontos- ",
+  "tipo": "milhas",
+  "destinos": [],
+  "grupos": [],
+  "paises": [],
+  "origem": "Origem não informada",
+  "viagem_inicio": null,
+  "viagem_fim": null,
+  "categorias": [
+   "sem_data"
+  ],
+  "exige_visto": false
+ },
+ {
+  "titulo": "Voe para Barbados no Caribe a partir de 76 mil pontos Azul + taxas",
+  "link": "https://passageirodeprimeira.com/voe-para-barbados-no-caribe-a-partir-de-76-mil-pontos-azul-taxas/",
+  "fonte": "Passageiro de Primeira",
+  "publicado": "2026-11-26T18:10:00-03:00",
+  "resumo": "[Alerta] Alerta direto dos Grupos do PP no WhatsApp! Encontramos disponibilidade de bilhetes ida e volta entre São Paulo (GRU) e Barbados (BGI) a partir de 76.000 pontos Azul Fidelidade + taxas por trecho, operados pela Copa Airlines em várias datas nos próximos meses. O post Voe para Barbados no Ca",
+  "tipo": "milhas",
+  "destinos": [
+   "SAO"
+  ],
+  "grupos": [
+   "Sudeste"
+  ],
+  "paises": [
+   "Brasil"
+  ],
+  "origem": "Origem não informada",
+  "viagem_inicio": null,
+  "viagem_fim": null,
+  "categorias": [
+   "sem_data"
+  ],
+  "exige_visto": false
+ },
+ {
+  "titulo": "Segue valendo a oferta da Livelo de até 10 pontos por real gasto na compra de um combo McDonald’s",
+  "link": "https://passageirodeprimeira.com/segue-valendo-oferta-livelo-ate-10-pontos-real-gasto-compra-combo-mcdonalds/",
+  "fonte": "Passageiro de Primeira",
+  "publicado": "2026-11-26T17:50:20-03:00",
+  "resumo": "A Livelo e o McDonald's prorrogaram a promoção que oferece até 10 pontos por real gasto na compra de uma McOferta Clássica + Sundae pelo app do Méqui (McDelivery ou Peça & Retire), utilizando o cupom “LIVELO” [sem aspas]. A oferta agora é válida até segunda-feira (30). Saiba mais! O post Segue valen",
+  "tipo": "milhas",
+  "destinos": [],
+  "grupos": [],
+  "paises": [],
+  "origem": "Origem não informada",
+  "viagem_inicio": null,
+  "viagem_fim": null,
+  "categorias": [
+   "sem_data"
+  ],
+  "exige_visto": false
+ },
+ {
+  "titulo": "Últimos dias para ganhar até 55 mil milhas bônus solicitando o cartão GOL Smiles",
+  "link": "https://passageirodeprimeira.com/ultimos-dias-para-ganhar-ate-55-mil-milhas-bonus-solicitando-o-cartao-gol-smiles/",
+  "fonte": "Passageiro de Primeira",
+  "publicado": "2026-11-26T17:30:04-03:00",
+  "resumo": "A Smiles segue oferecendo até 55 mil milhas bônus para quem solicitar o cartão GOL Smiles e atingir a meta de gastos da campanha. A promoção é válida até o dia 30 de novembro. O post Últimos dias para ganhar até 55 mil milhas bônus solicitando o cartão GOL Smiles apareceu primeiro em Passageiro de P",
+  "tipo": "milhas",
+  "destinos": [
+   "LIM"
+  ],
+  "grupos": [
+   "América do Sul"
+  ],
+  "paises": [
+   "Peru"
+  ],
+  "origem": "Origem não informada",
+  "viagem_inicio": null,
+  "viagem_fim": null,
+  "categorias": [
+   "sem_data"
+  ],
+  "exige_visto": false
+ },
+ {
+  "titulo": "Imperdível! Tauá Hotel & Convention João Pessoa com mais de 22% de desconto durante o Carnaval na Azul Viagens",
+  "link": "https://passageirodeprimeira.com/imperdivel-taua-hotel-convention-joao-pessoa-com-mais-de-22-de-desconto-durante-o-carnaval-na-azul-viagens/",
+  "fonte": "Passageiro de Primeira",
+  "publicado": "2026-11-26T17:10:52-03:00",
+  "resumo": "[Oferta] Muito bom! A Azul Viagens está oferecendo um cupom exclusivo de 22% de desconto em reservas de hotéis, aluguéis de carros e pacotes, válido apenas hoje (25). Aproveite essa oportunidade para se hospedar no Tauá Hotel & Convention João Pessoa durante o Carnaval com um super desconto! O post ",
+  "tipo": "passagem",
+  "destinos": [
+   "JPA"
+  ],
+  "grupos": [
+   "Nordeste"
+  ],
+  "paises": [
+   "Brasil"
+  ],
+  "origem": "Origem não informada",
+  "viagem_inicio": null,
+  "viagem_fim": null,
+  "categorias": [
+   "sem_data"
+  ],
+  "exige_visto": false
+ },
+ {
+  "titulo": "Voe para Nova York a partir de 66 mil milhas Smiles + taxas",
+  "link": "https://passageirodeprimeira.com/voe-para-nova-york-a-partir-de-66-mil-milhas-smiles-taxas/",
+  "fonte": "Passageiro de Primeira",
+  "publicado": "2026-11-26T16:50:26-03:00",
+  "resumo": "[Alerta] Alerta direto dos Grupos do PP no WhatsApp! Encontramos disponibilidade de passagens ida e volta entre São Paulo (GRU) e Nova York (JFK) a partir de 66.800 milhas Smiles + taxas por trecho, operadas pela American Airlines. Não perca essa oportunidade de explorar a Big Apple! O post Voe para",
+  "tipo": "milhas",
+  "destinos": [
+   "SAO"
+  ],
+  "grupos": [
+   "Sudeste"
+  ],
+  "paises": [
+   "Brasil"
+  ],
+  "origem": "Origem não informada",
+  "viagem_inicio": null,
+  "viagem_fim": null,
+  "categorias": [
+   "sem_data"
+  ],
+  "exige_visto": false
+ },
+ {
+  "titulo": "Black Friday é amanhã! Receba de graça no seu WhatsApp as melhores ofertas e descontos",
+  "link": "https://passageirodeprimeira.com/black-friday-e-amanha-receba-de-graca-no-seu-whatsapp-as-melhores-ofertas-e-descontos/",
+  "fonte": "Passageiro de Primeira",
+  "publicado": "2026-11-26T16:40:07-03:00",
+  "resumo": "Amanhã é a Black Friday e o Passageiro de Primeira preparou o grupos.promo, um projeto que envia as melhores ofertas e descontos direto no seu WhatsApp, sem custo. São 5 grupos temáticos, incluindo cupons, ofertas da Apple e dicas de milhas, para você não perder nenhuma oportunidade. Entre de graça ",
+  "tipo": "passagem",
+  "destinos": [
+   "SAO",
+   "BOG"
+  ],
+  "grupos": [
+   "América do Sul",
+   "Sudeste"
+  ],
+  "paises": [
+   "Brasil",
+   "Colômbia"
+  ],
+  "origem": "Origem não informada",
+  "viagem_inicio": null,
+  "viagem_fim": null,
+  "categorias": [
+   "sem_data"
+  ],
+  "exige_visto": false
+ },
+ {
+  "titulo": "Azul Fidelidade oferece até 14 pontos por real gasto no Magalu",
+  "link": "https://passageirodeprimeira.com/azul-fidelidade-oferece-ate-14-pontos-por-real-gasto-no-magalu-9/",
+  "fonte": "Passageiro de Primeira",
+  "publicado": "2026-11-26T16:30:12-03:00",
+  "resumo": "Oportunidade para quem está pensando em realizar compras 🛍️ O Azul Fidelidade está oferecendo até 14 pontos por real gasto no Magalu. A oferta é válida até segunda-feira (30) e contempla produtos selecionados. O post Azul Fidelidade oferece até 14 pontos por real gasto no Magalu apareceu primeiro em",
+  "tipo": "milhas",
+  "destinos": [],
+  "grupos": [],
+  "paises": [],
+  "origem": "Origem não informada",
+  "viagem_inicio": null,
+  "viagem_fim": null,
+  "categorias": [
+   "sem_data"
+  ],
+  "exige_visto": false
+ },
+ {
+  "titulo": "LATAM Friday oferece passagens promocionais a partir de R$ 119",
+  "link": "https://passageirodeprimeira.com/latam-friday-oferece-passagens-promocionais-partir-r-119/",
+  "fonte": "Passageiro de Primeira",
+  "publicado": "2026-11-26T15:30:00-03:00",
+  "resumo": "Alerta de oportunidade de garantir seu próximo voo! 🚨 A LATAM Friday está oferecendo voos nacionais e internacionais a partir de R$ 119. Confira as oportunidades. O post LATAM Friday oferece passagens promocionais a partir de R$ 119 apareceu primeiro em Passageiro de Primeira .",
+  "tipo": "passagem",
+  "destinos": [],
+  "grupos": [],
+  "paises": [],
+  "origem": "Origem não informada",
+  "viagem_inicio": null,
+  "viagem_fim": null,
+  "categorias": [
+   "sem_data"
+  ],
+  "exige_visto": false
+ },
+ {
+  "titulo": "Azul Fidelidade oferece até 35% de desconto no resgate de passagens nacionais e internacionais",
+  "link": "https://passageirodeprimeira.com/azul-fidelidade-oferece-ate-35-de-desconto-no-resgate-de-passagens-nacionais-e-internacionais/",
+  "fonte": "Passageiro de Primeira",
+  "publicado": "2026-11-26T15:10:24-03:00",
+  "resumo": "A Azul está oferecendo até 35% de desconto na emissão de passagens nacionais com o cupom \"AZULFRIDAY35\" e passagens internacionais com o cupom \"AZULFRIDAY15\". A promoção é válida até 23h59 de domingo (29) para voos entre 01/12/2026 e 30/06/2027, com algumas datas de blackout. Não perca essa oportuni",
+  "tipo": "milhas",
+  "destinos": [],
+  "grupos": [],
+  "paises": [],
+  "origem": "Origem não informada",
+  "viagem_inicio": "2026-12-01",
+  "viagem_fim": "2027-06-30",
+  "categorias": [
+   "relampago",
+   "proximos",
+   "medio",
+   "longo"
+  ],
+  "exige_visto": false
+ },
+ {
+  "titulo": "Cupom de até 50% de desconto em pacotes de viagem na Azul Viagens",
+  "link": "https://passageirodeprimeira.com/cupom-ate-50-desconto-pacotes-viagem-azul-viagens/",
+  "fonte": "Passageiro de Primeira",
+  "publicado": "2026-11-26T14:35:06-03:00",
+  "resumo": "A Azul está oferecendo um cupom de 50% de desconto em pacotes (aéreo + hotéis) em destinos selecionados, válido para compras em reais e pontos. A oferta é válida até amanhã (27) mediante o uso do cupom 'FRIDAY50' [sem aspas]. Confira! O post Cupom de até 50% de desconto em pacotes de viagem na Azul ",
+  "tipo": "passagem",
+  "destinos": [],
+  "grupos": [],
+  "paises": [],
+  "origem": "Origem não informada",
+  "viagem_inicio": null,
+  "viagem_fim": null,
+  "categorias": [
+   "sem_data"
+  ],
+  "exige_visto": false
+ },
+ {
+  "titulo": "Seja rápido! Mercado Livre oferece cupom de até 25% de desconto em compras",
+  "link": "https://passageirodeprimeira.com/seja-rapido-mercado-livre-oferece-cupom-de-ate-25-de-desconto-em-compras/",
+  "fonte": "Passageiro de Primeira",
+  "publicado": "2026-11-26T14:12:57-03:00",
+  "resumo": "Muito bom! O Mercado Livre está oferecendo cupons de até 25% de desconto em compras, com limite de até R$ 30. As ofertas são válidas por tempo limitado e podem esgotar a qualquer momento. O post Seja rápido! Mercado Livre oferece cupom de até 25% de desconto em compras apareceu primeiro em Passageir",
+  "tipo": "passagem",
+  "destinos": [],
+  "grupos": [],
+  "paises": [],
+  "origem": "Origem não informada",
+  "viagem_inicio": null,
+  "viagem_fim": null,
+  "categorias": [
+   "sem_data"
+  ],
+  "exige_visto": false
+ },
+ {
+  "titulo": "Black Friday Marriott! Diárias a partir de R$ 399 no maior desconto do ano",
+  "link": "https://passageirodeprimeira.com/black-friday-marriott-diarias-a-partir-de-r-399-no-maior-desconto-do-ano/",
+  "fonte": "Passageiro de Primeira",
+  "publicado": "2026-11-26T14:00:41-03:00",
+  "resumo": "Começou a Black Friday dos hotéis Marriott! 🎉 A rede está oferecendo diárias a partir de R$ 399 com café da manhã incluso na maior promoção do ano. O post Black Friday Marriott! Diárias a partir de R$ 399 no maior desconto do ano apareceu primeiro em Passageiro de Primeira .",
+  "tipo": "passagem",
+  "destinos": [],
+  "grupos": [],
+  "paises": [],
+  "origem": "Origem não informada",
+  "viagem_inicio": "2027-05-15",
+  "viagem_fim": "2027-05-15",
+  "categorias": [
+   "medio"
+  ],
+  "exige_visto": false
+ },
+ {
+  "titulo": "Acaba em menos de 24h: Ganhe até 10.000 pontos Livelo adquirindo dólares digitais no ARQ",
+  "link": "https://passageirodeprimeira.com/acaba-em-menos-de-24h-ganhe-ate-10-000-pontos-livelo-adquirindo-dolares-digitais-no-arq/",
+  "fonte": "Passageiro de Primeira",
+  "publicado": "2026-11-26T13:30:25-03:00",
+  "resumo": "[Oferta] Muito bom! O ARQ está oferecendo até 10.000 pontos Livelo para novos clientes que abrirem uma conta até hoje (26) e converterem pelo menos 100 dólares digitais em até 30 dias. Cada dólar convertido rende 1 ponto Livelo e a taxa de conversão é de apenas 0,5%. O post Acaba em menos de 24h: Ga",
+  "tipo": "milhas",
+  "destinos": [],
+  "grupos": [],
+  "paises": [],
+  "origem": "Origem não informada",
+  "viagem_inicio": "2027-05-15",
+  "viagem_fim": "2027-05-15",
+  "categorias": [
+   "medio"
+  ],
+  "exige_visto": false
+ }
+]

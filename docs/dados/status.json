@@ -1,3 +1,6 @@
 {
- "bot": "destino_viagens_bot"
+ "bot": "destino_viagens_bot",
+ "apify_gasto": {},
+ "ultimo_voos": "2026-11-27",
+ "ultima_execucao": "2026-11-27T08:54-03:00"
 }

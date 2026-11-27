@@ -1,0 +1,45 @@
+name: Detetive de Passagens
+
+on:
+  schedule:
+    - cron: "17 * * * *"      # de hora em hora (horário UTC)
+  workflow_dispatch: {}        # botão "Run workflow" para rodar na hora
+
+permissions:
+  contents: write
+
+concurrency:
+  group: robo
+  cancel-in-progress: false
+
+jobs:
+  robo:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - run: pip install -r requirements.txt
+
+      - name: Rodar o robô
+        env:
+          TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
+          APIFY_TOKEN: ${{ secrets.APIFY_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          LIMITE_APIFY_USD: ${{ vars.LIMITE_APIFY_USD || '3.5' }}
+        run: python -m robo.main
+
+      - name: Guardar os dados no repositório
+        run: |
+          git config user.name "detetive-robo"
+          git config user.email "detetive-robo@users.noreply.github.com"
+          git add docs/dados estado
+          if git diff --cached --quiet; then echo "Nada mudou"; exit 0; fi
+          git commit -m "Atualiza dados $(date -u +%Y-%m-%dT%H:%MZ)"
+          git pull --rebase -X ours origin main || true
+          git push

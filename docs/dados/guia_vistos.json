@@ -1,0 +1,65 @@
+{
+  "verificado_em": "2026-11-27",
+  "aviso": "Regras de entrada mudam. Antes de comprar, confira sempre o site oficial do país e o Portal Consular do Itamaraty.",
+  "links_gerais": [
+    {"nome": "Portal Consular do Itamaraty (regras por país)", "url": "https://www.gov.br/mre/pt-br/assuntos/portal-consular"},
+    {"nome": "Certificado de vacina (CIVP) no gov.br", "url": "https://www.gov.br/pt-br/servicos/obter-o-certificado-internacional-de-vacinacao-e-profilaxia"},
+    {"nome": "Passaporte na Polícia Federal", "url": "https://www.gov.br/pf/pt-br/assuntos/passaporte"}
+  ],
+  "lembretes": [
+    "Muitos países pedem passaporte com pelo menos 6 meses de validade na data da volta.",
+    "RG para Mercosul: precisa ter menos de 10 anos de emissão, foto atual e estar em bom estado. A CIN (novo RG) vale nos mesmos países, exceto Venezuela.",
+    "Vacina de febre amarela: tome pelo menos 10 dias antes da viagem. O certificado internacional (CIVP) é emitido grátis pelo app Meu SUS Digital ou gov.br.",
+    "Conexão também conta: se a escala é num país que pede visto ou vacina, a regra pode valer para você."
+  ],
+  "autorizacoes_online": [
+    {
+      "pais": "Reino Unido", "nome": "ETA (Electronic Travel Authorisation)",
+      "situacao": "Obrigatória para brasileiros",
+      "custo": "£16 (cerca de R$ 118)", "validade": "2 anos, várias entradas",
+      "como": ["Baixe o app oficial 'UK ETA' ou entre no site gov.uk/eta", "Fotografe o passaporte e o rosto pelo app", "Pague a taxa no cartão", "A resposta costuma chegar em poucos dias; peça com antecedência"],
+      "url": "https://www.gov.uk/eta"
+    },
+    {
+      "pais": "México", "nome": "Visto eletrônico",
+      "situacao": "Online desde fevereiro de 2026, para quem chega de avião",
+      "custo": "cerca de R$ 55",
+      "como": ["Crie uma conta no portal oficial Visa Electrónica", "Envie passaporte e foto digital no padrão pedido", "Pague a taxa online", "Leve a autorização impressa ou no celular"],
+      "atalho": "Quem tem visto americano válido não precisa do visto mexicano.",
+      "alerta": "O consulado do México alertou contra despachantes: o pedido é simples e só deve ser feito no site oficial.",
+      "url": "https://visaelectronica.sre.gob.mx/"
+    },
+    {
+      "pais": "Europa (Schengen)", "nome": "ETIAS",
+      "situacao": "Ainda NÃO está valendo. Não há data oficial (já foi adiado várias vezes).",
+      "custo": "€20 quando começar", "validade": "3 anos (previsto)",
+      "como": ["Hoje não há nada a fazer: o site oficial ainda não aceita pedidos", "Quando abrir, será um formulário online de cerca de 10 minutos", "Cuidado com sites que já 'vendem' ETIAS: são golpes ou cobram à toa"],
+      "url": "https://travel-europe.europa.eu/etias_pt"
+    }
+  ],
+  "vistos": [
+    {
+      "pais": "Estados Unidos", "nome": "Visto de turismo (B1/B2)",
+      "documentos": ["Passaporte válido", "Formulário DS-160 preenchido online", "Foto digital no padrão", "Comprovante da taxa paga", "Comprovantes de vínculo com o Brasil (emprego, renda, imóvel, família)"],
+      "como": ["Preencha o DS-160 no site oficial", "Pague a taxa e agende no sistema oficial de vistos", "Vá ao CASV (coleta de digitais) e à entrevista no consulado", "O passaporte volta pelo correio ou retirada"],
+      "atalhos": ["Renovação pode dispensar a entrevista para quem teve visto vencido há pouco tempo (confira as regras atuais)", "O visto americano válido facilita México (sem visto) e Canadá (só eTA)"],
+      "prazo": "A fila de entrevista varia muito por cidade; consulte o tempo de espera no site oficial e procure datas em outros consulados (Rio, São Paulo, Brasília, Recife, Porto Alegre)",
+      "url": "https://br.usembassy.gov/pt/visas-pt/"
+    },
+    {
+      "pais": "Canadá", "nome": "Visto de visitante ou eTA",
+      "documentos": ["Passaporte válido", "Comprovantes financeiros e de vínculo", "Biometria (no centro de vistos)"],
+      "como": ["Confira se você pode pedir só a eTA: quem tem visto americano válido ou teve visto canadense nos últimos 10 anos, viajando de avião", "eTA: pedido online, barato e rápido", "Se não puder, peça o visto de visitante online no site do governo canadense e faça a biometria"],
+      "atalhos": ["Tirar o visto americano primeiro abre a porta para a eTA do Canadá"],
+      "url": "https://www.canada.ca/pt/imigracao-refugiados-cidadania/servicos/visitar-canada.html"
+    },
+    {
+      "pais": "Austrália", "nome": "Visto de visitante (subclasse 600)",
+      "documentos": ["Passaporte válido", "Comprovantes financeiros", "Seguro saúde recomendado"],
+      "como": ["Crie conta no ImmiAccount (site oficial)", "Preencha o pedido e envie documentos digitalizados", "Pague a taxa online", "Pode haver pedido de biometria ou exame médico"],
+      "atalhos": ["Todo o processo é online"],
+      "url": "https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/visitor-600"
+    }
+  ],
+  "assessorias": "Assessorias de visto existem (por exemplo, a Mundial Vistos, que tem unidade em Vila Velha) e ajudam com formulários e agendamento. São opcionais e cobram à parte. O pedido oficial é o mesmo, e nenhuma assessoria pode garantir aprovação ou furar fila."
+}

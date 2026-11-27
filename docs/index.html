@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Detetive">
+<meta name="theme-color" content="#0f2a3d">
+<title>Detetive de Passagens</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🕵️</text></svg>">
+<style>
+  :root{
+    --tinta:#0f2a3d; --tinta2:#3d5566; --fundo:#f3efe6; --papel:#fffdf8; --linha:#e2dccd;
+    --mar:#0e7c86; --sol:#e8a33d; --coral:#d9534f; --verde:#2e8b57; --suave:#7a8a94;
+    --raio:14px; --sombra:0 1px 2px rgba(15,42,61,.06),0 4px 14px rgba(15,42,61,.06);
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;background:var(--fundo);color:var(--tinta);
+    font:15px/1.45 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif}
+  header{position:sticky;top:0;z-index:5;background:var(--tinta);color:#fff;
+    padding:calc(env(safe-area-inset-top) + 12px) 16px 12px}
+  header h1{margin:0;font:700 19px/1.2 Georgia,"Times New Roman",serif;letter-spacing:.2px}
+  header .sub{font-size:12px;opacity:.75;margin-top:2px}
+  main{padding:12px 12px calc(84px + env(safe-area-inset-bottom));max-width:760px;margin:0 auto}
+  nav{position:fixed;bottom:0;left:0;right:0;z-index:6;display:flex;background:var(--papel);
+    border-top:1px solid var(--linha);padding-bottom:env(safe-area-inset-bottom)}
+  nav button{flex:1;border:0;background:none;padding:8px 2px 9px;font-size:11px;color:var(--suave);
+    display:flex;flex-direction:column;align-items:center;gap:2px;cursor:pointer}
+  nav button .ic{font-size:20px;line-height:1}
+  nav button.ativo{color:var(--mar);font-weight:600}
+  .chips{display:flex;gap:6px;overflow-x:auto;padding:2px 0 8px;scrollbar-width:none}
+  .chips::-webkit-scrollbar{display:none}
+  .chip{flex:none;border:1px solid var(--linha);background:var(--papel);border-radius:999px;
+    padding:6px 12px;font-size:13px;color:var(--tinta2);cursor:pointer;white-space:nowrap}
+  .chip.ativo{background:var(--tinta);color:#fff;border-color:var(--tinta)}
+  .cartao{background:var(--papel);border:1px solid var(--linha);border-radius:var(--raio);
+    padding:12px 14px;margin:10px 0;box-shadow:var(--sombra)}
+  .cartao h3{margin:4px 0 6px;font-size:15px;line-height:1.3}
+  .cartao h3 a{color:inherit;text-decoration:none}
+  .meta{font-size:13px;color:var(--tinta2);margin:3px 0}
+  .etq{display:inline-block;font-size:11px;font-weight:600;border-radius:6px;padding:2px 7px;margin:0 4px 4px 0;
+    background:#eef3f4;color:var(--tinta2)}
+  .etq.relampago{background:#fde8e6;color:#a8322e}.etq.proximos{background:#fff2dc;color:#94600f}
+  .etq.medio{background:#e3f2f1;color:#0b6169}.etq.longo{background:#e6f1e9;color:#1f6b42}
+  .etq.milhas{background:#ece7fb;color:#5a3fb0}
+  .acoes{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px}
+  .bt{border:1px solid var(--linha);background:#fff;border-radius:10px;padding:7px 11px;font-size:13px;
+    color:var(--tinta);text-decoration:none;display:inline-flex;align-items:center;gap:4px}
+  .bt.fav{border-color:#f0d38f;background:#fff8e6}
+  .preco{font:700 22px/1 Georgia,serif;color:var(--mar)}
+  .linha{display:flex;justify-content:space-between;align-items:flex-end;gap:10px}
+  .titulo-secao{font:700 16px/1.2 Georgia,serif;margin:18px 4px 4px}
+  .nota{font-size:12.5px;color:var(--suave);margin:4px 4px 10px}
+  .vazio{text-align:center;color:var(--suave);padding:30px 10px}
+  .barra{height:8px;border-radius:4px;background:#e9e4d8;overflow:hidden;margin-top:6px}
+  .barra i{display:block;height:100%;background:var(--verde)}
+  .barra i.neg{background:var(--coral)}
+  details{background:var(--papel);border:1px solid var(--linha);border-radius:var(--raio);margin:10px 0;padding:10px 14px}
+  summary{font-weight:600;cursor:pointer}
+  details ol,details ul{padding-left:20px;margin:8px 0}
+  table{width:100%;border-collapse:collapse;font-size:13px}
+  td,th{padding:6px 4px;border-bottom:1px solid var(--linha);text-align:left;vertical-align:top}
+  svg.graf{width:100%;height:70px;display:block;margin-top:6px}
+  .alternar{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--tinta2);margin:0 4px 6px}
+  select{font-size:15px;padding:8px;border-radius:10px;border:1px solid var(--linha);background:#fff;width:100%}
+  a{color:var(--mar)}
+</style>
+</head>
+<body>
+<header>
+  <h1>🕵️ Detetive de Passagens</h1>
+  <div class="sub" id="sub">Saindo de Vitória · carregando…</div>
+</header>
+<main id="tela"></main>
+<nav id="nav"></nav>
+
+<script>
+const ABAS = [
+  ["promo","🔔","Promoções"],["fav","⭐","Favoritos"],["explorar","🧭","Explorar"],
+  ["cambio","💱","Real forte"],["visto","🛂","Visto e saúde"]
+];
+const CAT = {relampago:"⚡ Relâmpago",proximos:"📅 Próximos meses",medio:"🗓️ Médio prazo",longo:"🌴 Longo prazo",sem_data:"❔ Sem data"};
+const MES = ["jan","fev","mar","abr","mai","jun","jul","ago","set","out","nov","dez"];
+const D = {};                       // dados carregados
+const F = {aba:"promo", cat:"todas", grupo:"todos", visto:false, regiao:"Nordeste"};
+try{ Object.assign(F, JSON.parse(localStorage.getItem("detetive-filtros")||"{}")); }catch(e){}
+
+const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const real = v => "R$ " + Math.round(v).toLocaleString("pt-BR");
+const dt = s => { if(!s) return ""; const [a,m,d]=s.slice(0,10).split("-"); return `${d}/${m}/${a}`; };
+const mesAno = s => { const [a,m]=s.split("-"); return `${MES[+m-1]}/${a}`; };
+const salvarFiltros = () => { try{ localStorage.setItem("detetive-filtros", JSON.stringify(F)); }catch(e){} };
+
+async function carregar(nome, padrao){
+  try{ const r = await fetch(`dados/${nome}.json?v=${Date.now()}`); if(!r.ok) throw 0; return await r.json(); }
+  catch(e){ return padrao; }
+}
+
+function linkBot(acao, iata){
+  const bot = D.status?.bot;
+  return bot ? `https://t.me/${bot}?start=${acao}_${iata}` : null;
+}
+function botaoFav(iata, nome){
+  const ja = (D.favoritos||[]).some(f => f.iata === iata);
+  if (ja) return `<span class="bt fav">⭐ ${esc(nome)} (favorito)</span>`;
+  const l = linkBot("fav", iata);
+  return l ? `<a class="bt fav" href="${l}">☆ Favoritar ${esc(nome)}</a>` : "";
+}
+function pais(iata){ return (D.destinos?.destinos||[]).find(d=>d.iata===iata); }
+function infoPais(nome){ return D.destinos?.paises?.[nome]; }
+function entradaTxt(nomePais){
+  if(!nomePais || nomePais==="Brasil") return "";
+  const p = infoPais(nomePais) || {documento:"passaporte",entrada:"conferir",vacina_fa:"conferir"};
+  const doc = p.documento==="RG" ? "🪪 Só RG" : "🛂 Passaporte";
+  const ent = {livre:"sem visto",online:"autorização online",visto:"⛔ precisa de visto",conferir:"⚠️ conferir regra"}[p.entrada];
+  const vac = p.vacina_fa==="exige" ? " · 💉 febre amarela obrigatória" : (["depende","conferir"].includes(p.vacina_fa) ? " · 💉 conferir vacina" : "");
+  return `${esc(nomePais)}: ${doc} · ${ent}${vac}`;
+}
+
+/* ---------------- Promoções ---------------- */
+function telaPromo(){
+  const promos = (D.promocoes||[]);
+  const grupos = ["todos","Milhas","Sai de Vitória", ...(D.destinos?.grupos||[])];
+  let lista = promos.filter(p => {
+    if (!F.visto && p.exige_visto) return false;
+    if (F.cat!=="todas" && !p.categorias.includes(F.cat)) return false;
+    if (F.grupo==="Milhas") return p.tipo==="milhas";
+    if (F.grupo==="Sai de Vitória") return p.origem==="Sai de Vitória";
+    if (F.grupo!=="todos") return p.grupos.includes(F.grupo);
+    return true;
+  });
+  const escondidas = promos.filter(p=>p.exige_visto).length;
+  let h = chips("cat", [["todas","Todas"], ...Object.entries(CAT)]);
+  h += chips("grupo", grupos.map(g=>[g, g==="todos"?"Todas as regiões":g]));
+  h += `<label class="alternar"><input type="checkbox" ${F.visto?"checked":""} onchange="F.visto=this.checked;desenhar()"> Mostrar destinos que pedem visto (${escondidas})</label>`;
+  if (!lista.length) h += `<div class="vazio">Nenhuma promoção com esses filtros ainda.</div>`;
+  for (const p of lista.slice(0,150)){
+    const cats = p.categorias.map(c=>`<span class="etq ${c}">${CAT[c]||c}</span>`).join("");
+    const tipo = p.tipo==="milhas" ? `<span class="etq milhas">Milhas</span>` : "";
+    const nomes = p.destinos.map(i=>pais(i)?.nome||i);
+    const per = p.viagem_inicio ? `🗓️ Viagem: ${mesAno(p.viagem_inicio)}${p.viagem_fim!==p.viagem_inicio?" a "+mesAno(p.viagem_fim):""}` : "🗓️ Período não informado no texto";
+    const entradas = [...new Set(p.paises)].map(entradaTxt).filter(Boolean).map(t=>`<div class="meta">${t}</div>`).join("");
+    const favs = p.destinos.slice(0,3).map(i=>botaoFav(i, pais(i)?.nome||i)).join("");
+    h += `<div class="cartao">${cats}${tipo}
+      <h3><a href="${esc(p.link)}" target="_blank" rel="noopener">${esc(p.titulo)}</a></h3>
+      <div class="meta">📍 ${esc(p.origem)}${nomes.length?" → "+esc(nomes.join(", ")):""}</div>
+      <div class="meta">${per}</div>${entradas}
+      <div class="meta">📰 ${esc(p.fonte)} · ${dt(p.publicado)}</div>
+      <div class="acoes"><a class="bt" href="${esc(p.link)}" target="_blank" rel="noopener">Abrir oferta ↗</a>${favs}</div></div>`;
+  }
+  return h;
+}
+
+function chips(campo, opcoes){
+  return `<div class="chips">${opcoes.map(([v,t])=>`<button class="chip ${F[campo]===v?"ativo":""}" onclick="F.${campo}='${String(v).replace(/'/g,"\\'")}';desenhar()">${esc(t)}</button>`).join("")}</div>`;
+}
+
+/* ---------------- Favoritos ---------------- */
+function serieCalendario(rota){
+  const pts = [];
+  for (const c of Object.values(rota?.calendarios||{})) for (const [d,v] of c.pontos) pts.push([d,v]);
+  pts.sort((a,b)=>a[0]<b[0]?-1:1);
+  return pts;
+}
+function grafico(pts){
+  if (pts.length < 2) return "";
+  const vs = pts.map(p=>p[1]), mn = Math.min(...vs), mx = Math.max(...vs), W=300, H=60;
+  const x = i => i/(pts.length-1)*W, y = v => mx===mn ? H/2 : H-4-(v-mn)/(mx-mn)*(H-10);
+  const d = pts.map((p,i)=>`${i?"L":"M"}${x(i).toFixed(1)},${y(p[1]).toFixed(1)}`).join("");
+  const im = vs.indexOf(mn);
+  return `<svg class="graf" viewBox="0 0 ${W} ${H+8}" preserveAspectRatio="none" aria-label="Preço por data de ida">
+    <path d="${d}" fill="none" stroke="#0e7c86" stroke-width="2" vector-effect="non-scaling-stroke"/>
+    <circle cx="${x(im)}" cy="${y(mn)}" r="3.5" fill="#e8a33d"/></svg>
+    <div class="meta" style="display:flex;justify-content:space-between;font-size:11px"><span>${dt(pts[0][0])}</span><span>${dt(pts.at(-1)[0])}</span></div>`;
+}
+function cartaoRota(iata, nome, favorito){
+  const rota = D.precos?.[iata];
+  const pts = serieCalendario(rota);
+  const destino = pais(iata);
+  const nomePais = destino?.pais || D.descobertas?.historico?.[iata]?.pais;
+  let corpo;
+  if (pts.length){
+    const melhor = pts.reduce((a,b)=>b[1]<a[1]?b:a);
+    const rec = rota.recorde;
+    corpo = `<div class="linha"><div><div class="meta">Mais barato agora</div><div class="preco">${real(melhor[1])}</div>
+      <div class="meta">ida ${dt(melhor[0])} · 7 noites</div></div>
+      ${rec?`<div style="text-align:right"><div class="meta">Menor já visto</div><div><b>${real(rec.min)}</b></div><div class="meta">ida ${dt(rec.ida)}</div></div>`:""}</div>
+      <div class="meta" style="margin-top:8px;font-size:12px">Preço ida e volta por data de ida (7 noites) · <span style="color:#e8a33d">●</span> mais barato</div>${grafico(pts)}`;
+  } else corpo = `<div class="meta">Ainda sem preço: a primeira busca acontece na próxima manhã.</div>`;
+  const g = `https://www.google.com/travel/flights?q=Flights%20from%20VIX%20to%20${iata}`;
+  const acao = favorito
+    ? (linkBot("rem",iata)?`<a class="bt" href="${linkBot("rem",iata)}">Remover</a>`:"")
+    : botaoFav(iata, destino?.nome||nome);
+  return `<div class="cartao"><h3>${favorito?"⭐ ":""}Vitória → ${esc(nome)}</h3>${corpo}
+    ${nomePais&&nomePais!=="Brasil"?`<div class="meta">${entradaTxt(nomePais)}</div>`:""}
+    <div class="acoes"><a class="bt" href="${g}" target="_blank" rel="noopener">Google Flights ↗</a>${acao}</div></div>`;
+}
+function telaFav(){
+  const favs = D.favoritos||[];
+  let h = `<div class="nota">Vigiados todo dia, de 1 mês a 1 ano à frente (uma janela de 3 meses por dia, em rodízio). Aviso no Telegram quando cai 15% abaixo do normal.</div>`;
+  h += favs.map(f=>cartaoRota(f.iata, f.nome, true)).join("") || `<div class="vazio">Nenhum favorito.</div>`;
+  const opcoes = (D.destinos?.grupos||[]).map(g=>{
+    const ds = (D.destinos.destinos||[]).filter(d=>d.grupo===g && !favs.some(f=>f.iata===d.iata));
+    return ds.length?`<optgroup label="${esc(g)}">${ds.map(d=>`<option value="${d.iata}">${esc(d.local)}</option>`).join("")}</optgroup>`:"";
+  }).join("");
+  h += `<div class="titulo-secao">Adicionar favorito</div>
+    <div class="cartao"><select id="novoFav"><option value="">Escolha um destino…</option>${opcoes}</select>
+    <div class="acoes"><button class="bt fav" onclick="adicionarFav()">☆ Favoritar pelo Telegram</button></div>
+    <div class="nota">Abre o bot no Telegram com o pedido pronto; é só tocar em Iniciar/Enviar. O robô confirma em até 1 hora.</div></div>`;
+  return h;
+}
+function adicionarFav(){
+  const v = document.getElementById("novoFav").value; const l = v && linkBot("fav", v);
+  if (l) location.href = l; else if (v) alert("O bot ainda não foi configurado.");
+}
+
+/* ---------------- Explorar ---------------- */
+function telaExplorar(){
+  const desc = D.descobertas?.ultima||[];
+  let h = `<div class="titulo-secao">🧭 Mais baratos saindo de Vitória</div>
+    <div class="nota">Varredura semanal do Google Flights (ida e volta, ~1 semana)${D.descobertas?.data?` · ${dt(D.descobertas.data)}`:""}. Destinos que pedem visto ficam de fora.</div>`;
+  const vistos = new Set();
+  const lista = desc.filter(a => a.entrada!=="visto" && !vistos.has(a.aeroporto) && vistos.add(a.aeroporto));
+  h += lista.slice(0,40).map(a=>`<div class="cartao"><div class="linha"><div><h3>${esc(a.cidade)} <span class="meta">(${esc(a.pais)})</span></h3>
+      <div class="meta">${dt(a.ida)} a ${dt(a.volta)} · ${esc(a.cia||"")}${a.paradas===0?" · direto":""}</div></div>
+      <div class="preco">${real(a.preco)}</div></div>
+      ${a.pais&&a.pais!=="Brasil"?`<div class="meta">${entradaTxt(a.pais)}</div>`:""}
+      <div class="acoes">${botaoFav(a.destino||a.aeroporto, a.cidade)}</div></div>`).join("") || `<div class="vazio">A primeira varredura acontece na próxima manhã.</div>`;
+  h += `<div class="titulo-secao">Por região</div><div class="nota">Cada destino é consultado 1 vez por semana; os favoritos, todo dia.</div>`;
+  h += chips("regiao", (D.destinos?.grupos||[]).filter(g=>(D.destinos.destinos||[]).some(d=>d.grupo===g)).map(g=>[g,g]));
+  const favs = new Set((D.favoritos||[]).map(f=>f.iata));
+  const ds = (D.destinos?.destinos||[]).filter(d=>d.grupo===F.regiao).map(d=>{
+    const pts = serieCalendario(D.precos?.[d.iata]); return {d, min: pts.length?Math.min(...pts.map(p=>p[1])):Infinity};
+  }).sort((a,b)=>a.min-b.min);
+  h += ds.map(({d})=>cartaoRota(d.iata, d.local, favs.has(d.iata))).join("");
+  return h;
+}
+
+/* ---------------- Real forte ---------------- */
+function telaCambio(){
+  const rf = D.real_forte?.moedas||[];
+  let h = `<div class="nota">Quanto 1 real compra hoje de cada moeda, comparado com a média dos últimos 12 meses. Verde = seu dinheiro rende mais que o normal lá. Argentina, Venezuela e Turquia ficam de fora (inflação alta distorce a conta).</div>`;
+  if (!rf.length) return h + `<div class="vazio">O câmbio começa a ser acompanhado na próxima manhã.</div>`;
+  for (const m of rf){
+    const largura = Math.min(Math.abs(m.variacao)*5, 100);
+    const paises = m.paises.filter(p=>infoPais(p)?.entrada!=="visto");
+    if (!paises.length) continue;
+    const doc = paises.some(p=>infoPais(p)?.documento==="RG") ? "🪪 RG serve" : "🛂 Passaporte";
+    h += `<div class="cartao"><div class="linha"><div><h3>${esc(paises.slice(0,4).join(", "))}${paises.length>4?` e mais ${paises.length-4}`:""}</h3>
+      <div class="meta">${m.moeda} · R$ 1 = ${m.por_real.toLocaleString("pt-BR",{maximumFractionDigits:4})} · ${doc}</div></div>
+      <div class="preco" style="color:${m.variacao>=0?"var(--verde)":"var(--coral)"}">${m.variacao>0?"+":""}${m.variacao.toLocaleString("pt-BR")}%</div></div>
+      <div class="barra"><i class="${m.variacao<0?"neg":""}" style="width:${largura}%"></i></div></div>`;
+  }
+  return h;
+}
+
+/* ---------------- Visto e saúde ---------------- */
+function telaVisto(){
+  const g = D.guia||{}; const ps = D.destinos?.paises||{};
+  let h = `<div class="nota">Conferido em ${dt(g.verificado_em||D.destinos?.verificado_em)}. ${esc(g.aviso||"")}</div>`;
+  h += `<details open><summary>🛂 Lembretes do passaporte</summary><ul>${(g.lembretes||[]).map(l=>`<li>${esc(l)}</li>`).join("")}</ul>
+    <div class="meta">Para eu te avisar antes de vencer, mande no Telegram: <b>/passaporte 2031-05-20</b> (com a sua data).</div></details>`;
+  h += `<div class="titulo-secao">Autorizações online</div>`;
+  for (const a of g.autorizacoes_online||[]) h += `<details><summary>${esc(a.pais)} · ${esc(a.nome)}</summary>
+    <div class="meta"><b>${esc(a.situacao)}</b></div>${a.custo?`<div class="meta">Custo: ${esc(a.custo)}${a.validade?` · Validade: ${esc(a.validade)}`:""}</div>`:""}
+    <ol>${a.como.map(c=>`<li>${esc(c)}</li>`).join("")}</ol>
+    ${a.atalho?`<div class="meta">💡 ${esc(a.atalho)}</div>`:""}${a.alerta?`<div class="meta">⚠️ ${esc(a.alerta)}</div>`:""}
+    <a href="${esc(a.url)}" target="_blank" rel="noopener">Site oficial ↗</a></details>`;
+  h += `<div class="titulo-secao">Países que pedem visto</div><div class="nota">Esses destinos ficam escondidos nas promoções. Se um dia quiserem tirar o visto, o caminho é este:</div>`;
+  for (const v of g.vistos||[]) h += `<details><summary>${esc(v.pais)} · ${esc(v.nome)}</summary>
+    <div class="meta"><b>Documentos</b></div><ul>${v.documentos.map(c=>`<li>${esc(c)}</li>`).join("")}</ul>
+    <div class="meta"><b>Passo a passo</b></div><ol>${v.como.map(c=>`<li>${esc(c)}</li>`).join("")}</ol>
+    ${(v.atalhos||[]).map(a=>`<div class="meta">💡 ${esc(a)}</div>`).join("")}${v.prazo?`<div class="meta">⏱️ ${esc(v.prazo)}</div>`:""}
+    <a href="${esc(v.url)}" target="_blank" rel="noopener">Site oficial ↗</a></details>`;
+  if (g.assessorias) h += `<div class="nota">${esc(g.assessorias)}</div>`;
+  const VAC = {exige:"💉 Exige",nao:"Não exige",depende:"Depende do roteiro",conferir:"Conferir"};
+  const linhas = Object.entries(ps).filter(([n,p])=>n!=="Brasil" && p.continente!=="Europa" && p.entrada!=="visto")
+    .sort((a,b)=>["exige","depende","conferir","nao"].indexOf(a[1].vacina_fa)-["exige","depende","conferir","nao"].indexOf(b[1].vacina_fa));
+  h += `<div class="titulo-secao">💉 Vacina de febre amarela (CIVP)</div>
+    <div class="nota">Europa não exige. Tome a vacina pelo menos 10 dias antes e emita o certificado grátis no Meu SUS Digital. As exigências mudam: confirme no gov.br/Anvisa.</div>
+    <div class="cartao"><table><tr><th>País</th><th>Certificado</th></tr>${linhas.map(([n,p])=>`<tr><td>${esc(n)}${p.nota_vacina?`<div class="meta">${esc(p.nota_vacina)}</div>`:""}</td><td>${VAC[p.vacina_fa]}</td></tr>`).join("")}</table></div>`;
+  h += `<div class="titulo-secao">Documento por país</div><div class="cartao"><table><tr><th>País</th><th>Entrada</th></tr>${
+    Object.entries(ps).filter(([n])=>n!=="Brasil").map(([n,p])=>`<tr><td>${esc(n)}</td><td>${p.documento==="RG"?"🪪 RG ou passaporte":"🛂 Passaporte"} · ${({livre:"sem visto",online:"autorização online",visto:"⛔ visto",conferir:"⚠️ conferir"})[p.entrada]}${p.nota_entrada?`<div class="meta">${esc(p.nota_entrada)}</div>`:""}</td></tr>`).join("")}</table></div>`;
+  h += (g.links_gerais||[]).map(l=>`<div class="meta">🔗 <a href="${esc(l.url)}" target="_blank" rel="noopener">${esc(l.nome)}</a></div>`).join("");
+  return h;
+}
+
+/* ---------------- Montagem ---------------- */
+function desenhar(){
+  salvarFiltros();
+  document.getElementById("nav").innerHTML = ABAS.map(([id,ic,t])=>`<button class="${F.aba===id?"ativo":""}" onclick="F.aba='${id}';desenhar();scrollTo(0,0)"><span class="ic">${ic}</span>${t}</button>`).join("");
+  const fn = {promo:telaPromo, fav:telaFav, explorar:telaExplorar, cambio:telaCambio, visto:telaVisto}[F.aba] || telaPromo;
+  document.getElementById("tela").innerHTML = fn();
+}
+(async () => {
+  const [promocoes, favoritos, precos, descobertas, real_forte, destinos, status, guia] = await Promise.all([
+    carregar("promocoes",[]), carregar("favoritos",[]), carregar("precos",{}), carregar("descobertas",{}),
+    carregar("real_forte",{}), carregar("destinos",{}), carregar("status",{}), carregar("guia_vistos",{})]);
+  Object.assign(D, {promocoes, favoritos, precos, descobertas, real_forte, destinos, status, guia});
+  const st = status.ultima_execucao ? `atualizado ${dt(status.ultima_execucao)} às ${status.ultima_execucao.slice(11,16)}` : "aguardando a 1ª execução";
+  const mes = new Date().toISOString().slice(0,7);
+  const gasto = status.apify_gasto?.[mes];
+  document.getElementById("sub").textContent = `Saindo de Vitória · ${st}${gasto!=null?` · Apify US$ ${gasto.toFixed(2)} no mês`:""}`;
+  desenhar();
+})();
+</script>
+</body>
+</html>

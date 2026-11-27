@@ -63,5 +63,10 @@
   "iata": "BUE",
   "nome": "Buenos Aires",
   "desde": "2026-11-27"
+ },
+ {
+  "iata": "RIO",
+  "nome": "Rio de Janeiro (RJ)",
+  "desde": "2026-11-27"
  }
 ]

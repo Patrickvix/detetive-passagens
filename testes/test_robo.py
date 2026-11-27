@@ -87,3 +87,29 @@ if __name__ == "__main__":
         if nome.startswith("test_"):
             f()
             print("ok", nome)
+
+
+def test_buscar_precos_repete_o_que_falhou():
+    """O ator às vezes falha em parte das buscas: a 2ª tentativa deve completar o que faltou."""
+    from datetime import date
+    from robo import voos
+
+    class FalsoApify:
+        def __init__(self):
+            self.chamadas = 0
+            self.log = lambda *_: None
+
+        def rodar(self, entrada):
+            self.chamadas += 1
+            buscas = entrada["searches"]
+            if self.chamadas == 1:
+                buscas = buscas[:1]            # 1ª vez: só 1 das buscas responde
+            return [{"destination": b["destination"], "departureDate": b["departureDate"], "price": 800 + self.chamadas,
+                     "airlines": ["Gol"], "stops": 0} for b in buscas]
+
+    api = FalsoApify()
+    r = voos.buscar_precos(api, ["SSA", "FOR"], referencia=date(2026, 11, 27), favoritos={"SSA"})
+    assert set(r) == {"SSA", "FOR"}
+    assert len(r["SSA"]["calendario"]) == 2      # favorito: 2 datas
+    assert len(r["FOR"]["calendario"]) == 1
+    assert api.chamadas == 2

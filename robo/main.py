@@ -186,7 +186,7 @@ def rodar_precos(bot, e, apify):
     favs = [f["iata"] for f in e["favoritos"]]
     rotas = voos.rotas_do_dia(e["favoritos"])
     log(f"Preços: {len(rotas)} rotas, janela +{voos.janela_do_dia()} dias")
-    novos = voos.buscar_precos(apify, rotas)
+    novos = voos.buscar_precos(apify, rotas, favoritos=set(favs))
     alertas = voos.registrar_e_avaliar(e["precos"], novos, set(favs))
     for a in alertas:
         if pais_de(a["iata"], e) and bd.pais_info(pais_de(a["iata"], e))["entrada"] == "visto":
@@ -285,20 +285,22 @@ def main():
     else:
         rodar_promocoes(bot, e)
 
-    if agora().hour >= HORA_DIARIA and e["status"].get("ultimo_voos") != iso(hoje()):
-        cambio_ok = rodar_cambio(bot, e)
-        lembrete_passaporte(bot, e)
-        if token_apify:
-            apify = voos.Apify(token_apify, e["status"], LIMITE_APIFY_USD, log=log)
-            try:
-                rodar_precos(bot, e, apify)
-                if hoje().weekday() == 0 or not e["descobertas"]["ultima"]:
-                    rodar_exploracao(bot, e, apify)
-            except Exception as ex:
-                log(f"Busca de preços falhou: {ex}")
-        else:
-            log("Sem APIFY_TOKEN: pulando preços.")
-        if cambio_ok:                     # se o câmbio falhou, tenta de novo na próxima execução
+    if agora().hour >= HORA_DIARIA:
+        if e["status"].get("ultimo_cambio") != iso(hoje()):
+            if rodar_cambio(bot, e):          # se falhar, tenta de novo na próxima hora (é barato)
+                e["status"]["ultimo_cambio"] = iso(hoje())
+        if e["status"].get("ultimo_voos") != iso(hoje()):
+            lembrete_passaporte(bot, e)
+            if token_apify:
+                apify = voos.Apify(token_apify, e["status"], LIMITE_APIFY_USD, log=log)
+                try:
+                    rodar_precos(bot, e, apify)
+                    if hoje().weekday() == 0 or not e["descobertas"]["ultima"]:
+                        rodar_exploracao(bot, e, apify)
+                except Exception as ex:
+                    log(f"Busca de preços falhou: {ex}")
+            else:
+                log("Sem APIFY_TOKEN: pulando preços.")
             e["status"]["ultimo_voos"] = iso(hoje())
 
     e["status"]["ultima_execucao"] = agora().isoformat(timespec="minutes")

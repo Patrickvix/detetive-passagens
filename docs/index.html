@@ -64,20 +64,46 @@
   .alternar{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--tinta2);margin:0 4px 6px}
   select{font-size:15px;padding:8px;border-radius:10px;border:1px solid var(--linha);background:#fff;width:100%}
   a{color:var(--mar)}
+  header{display:flex;align-items:center;justify-content:space-between;gap:10px}
+  header h1{font-size:17px}
+  .ajuda-bt{flex:none;width:34px;height:34px;border-radius:50%;border:1px solid rgba(255,255,255,.4);background:none;color:#fff;font-size:17px;font-weight:700}
+  .preco{font:700 18px/1.1 -apple-system,BlinkMacSystemFont,sans-serif;color:var(--mar);white-space:nowrap;text-align:right}
+  .preco small{display:block;font:400 11px/1.2 sans-serif;color:var(--suave)}
+  .c{padding:11px 13px;margin:8px 0}
+  .c .topo{display:flex;justify-content:space-between;align-items:flex-start;gap:10px}
+  .c .dest{font-weight:700;font-size:16px;line-height:1.25}
+  .c .sub{font-size:13px;color:var(--tinta2);margin-top:2px}
+  .c .doc{font-size:12.5px;color:var(--tinta2);margin-top:4px}
+  .c .tit{font-size:12px;color:var(--suave);margin-top:5px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+  .c .acoes{margin-top:9px}
+  .bt{padding:8px 12px;font-size:13px}
+  .bt.fav{font-weight:600}
+  .filtros{background:var(--papel);border:1px solid var(--linha);border-radius:var(--raio);margin:6px 0 4px;padding:0 12px}
+  .filtros>summary{padding:9px 0;font-weight:500;font-size:14px;color:var(--tinta2)}
+  .filtros .rot{font-size:12px;color:var(--suave);margin:8px 0 2px}
+  .folha{position:fixed;inset:0;z-index:20;background:rgba(15,42,61,.55);display:flex;align-items:flex-end}
+  .folha>div{background:var(--papel);width:100%;max-width:760px;margin:0 auto;border-radius:18px 18px 0 0;
+    padding:16px 18px calc(20px + env(safe-area-inset-bottom));max-height:86vh;overflow:auto}
+  .folha h2{margin:0 0 8px;font:700 18px Georgia,serif}
+  .folha li{margin:7px 0;font-size:14px}
+  .folha .fechar{width:100%;margin-top:10px;padding:11px;border-radius:12px;border:0;background:var(--tinta);color:#fff;font-size:15px}
+  .num{display:inline-flex;align-items:center;justify-content:center;background:var(--mar);color:#fff;border-radius:50%;width:20px;height:20px;font-size:12px;margin-right:6px}
 </style>
 </head>
 <body>
 <header>
-  <h1>🕵️ Detetive de Passagens</h1>
-  <div class="sub" id="sub">Saindo de Vitória · carregando…</div>
+  <div><h1>🕵️ Detetive de Passagens</h1>
+  <div class="sub" id="sub">Saindo de Vitória · carregando…</div></div>
+  <button class="ajuda-bt" onclick="abrirAjuda()" aria-label="Como usar">?</button>
 </header>
+<div id="folha"></div>
 <main id="tela"></main>
 <nav id="nav"></nav>
 
 <script>
 const ABAS = [
-  ["promo","🔔","Promoções"],["fav","⭐","Favoritos"],["explorar","🧭","Explorar"],
-  ["cambio","💱","Real forte"],["visto","🛂","Visto e saúde"]
+  ["promo","🔔","Ofertas"],["fav","⭐","Favoritos"],["explorar","🧭","Explorar"],
+  ["cambio","💱","Real forte"],["visto","🛂","Visto"]
 ];
 const CAT = {relampago:"⚡ Relâmpago",proximos:"📅 Próximos meses",medio:"🗓️ Médio prazo",longo:"🌴 Longo prazo",sem_data:"❔ Sem data"};
 const MES = ["jan","fev","mar","abr","mai","jun","jul","ago","set","out","nov","dez"];
@@ -102,9 +128,20 @@ function linkBot(acao, iata){
 }
 function botaoFav(iata, nome){
   const ja = (D.favoritos||[]).some(f => f.iata === iata);
-  if (ja) return `<span class="bt fav">⭐ ${esc(nome)} (favorito)</span>`;
+  if (ja) return `<span class="bt fav">⭐ ${esc(nome)}</span>`;
   const l = linkBot("fav", iata);
-  return l ? `<a class="bt fav" href="${l}">☆ Favoritar ${esc(nome)}</a>` : "";
+  return l ? `<a class="bt fav" href="${l}">☆ ${esc(nome)}</a>` : "";
+}
+function resumoDoc(paises){
+  const ps = [...new Set((paises||[]).filter(n=>n&&n!=="Brasil"))];
+  if(!ps.length) return "";
+  const infos = ps.map(n=>infoPais(n)||{documento:"passaporte",entrada:"conferir",vacina_fa:"conferir"});
+  const doc = infos.every(i=>i.documento==="RG") ? "🪪 Só RG" : (infos.some(i=>i.documento==="RG") ? "🪪 RG ou 🛂 passaporte (varia)" : "🛂 Passaporte");
+  const extra = [];
+  if (infos.some(i=>i.entrada==="online")) extra.push("autorização online");
+  if (infos.some(i=>i.entrada==="conferir")) extra.push("⚠️ conferir regra");
+  if (infos.some(i=>["exige","depende","conferir"].includes(i.vacina_fa))) extra.push("💉 vacina");
+  return [doc, ...extra].join(" · ");
 }
 function pais(iata){ return (D.destinos?.destinos||[]).find(d=>d.iata===iata); }
 function infoPais(nome){ return D.destinos?.paises?.[nome]; }
@@ -120,40 +157,39 @@ function entradaTxt(nomePais){
 /* ---------------- Promoções ---------------- */
 function telaPromo(){
   const promos = (D.promocoes||[]);
-  const grupos = ["todos","Milhas","Sai de Vitória", ...(D.destinos?.grupos||[])];
   const ruido = promos.filter(p=>!p.relevante && !p.exige_visto).length;
+  const escondidas = promos.filter(p=>p.exige_visto).length;
   let lista = promos.filter(p => {
     if (!F.ruido && !p.relevante) return false;
     if (!F.visto && p.exige_visto) return false;
     if (F.cat!=="todas" && !p.categorias.includes(F.cat)) return false;
     if (F.grupo==="Milhas") return p.tipo==="milhas";
+    if (F.grupo==="Passagens") return p.tipo==="passagem";
     if (F.grupo==="Sai de Vitória") return p.origem==="Sai de Vitória";
     if (F.grupo!=="todos") return p.grupos.includes(F.grupo);
     return true;
   });
   lista.sort((a,b)=> (b.origem==="Sai de Vitória") - (a.origem==="Sai de Vitória"));
-  const escondidas = promos.filter(p=>p.exige_visto).length;
-  let h = `<div class="meta" style="margin:2px 4px 8px"><b>${lista.length}</b> oferta${lista.length===1?"":"s"} de voo</div>`;
-  h += chips("cat", [["todas","Todas"], ...Object.entries(CAT)]);
-  h += chips("grupo", grupos.map(g=>[g, g==="todos"?"Todas as regiões":g]));
-  h += `<label class="alternar"><input type="checkbox" ${F.visto?"checked":""} onchange="F.visto=this.checked;desenhar()"> Incluir destinos que pedem visto (${escondidas})</label>`;
-  h += `<label class="alternar"><input type="checkbox" ${F.ruido?"checked":""} onchange="F.ruido=this.checked;desenhar()"> Incluir cartões, bônus de pontos e notícias (${ruido})</label>`;
-  if (!lista.length) h += `<div class="vazio">Nenhuma oferta de voo com esses filtros ainda.</div>`;
+  const ativos = (F.cat!=="todas") + (!["todos","Milhas","Passagens","Sai de Vitória"].includes(F.grupo)) + F.visto + F.ruido;
+  let h = chips("grupo", [["todos","Todas"],["Sai de Vitória","Sai de Vitória"],["Milhas","Milhas"],["Passagens","Passagens"]]);
+  h += `<details class="filtros"><summary>⚙️ Mais filtros${ativos?` (${ativos} ativo${ativos>1?"s":""})`:""}</summary>
+    <div class="rot">Quando viajar</div>${chips("cat", [["todas","Qualquer época"], ...Object.entries(CAT)])}
+    <div class="rot">Região do destino</div>${chips("grupo", (D.destinos?.grupos||[]).map(g=>[g,g]))}
+    <label class="alternar"><input type="checkbox" ${F.visto?"checked":""} onchange="F.visto=this.checked;desenhar()"> Incluir destinos que pedem visto (${escondidas})</label>
+    <label class="alternar"><input type="checkbox" ${F.ruido?"checked":""} onchange="F.ruido=this.checked;desenhar()"> Incluir cartões, bônus de pontos e notícias (${ruido})</label></details>`;
+  h += `<div class="meta" style="margin:8px 4px 0"><b>${lista.length}</b> oferta${lista.length===1?"":"s"} de voo</div>`;
+  if (!lista.length) h += `<div class="vazio">Nenhuma oferta com esses filtros.<br>Toque em “Todas” pra limpar.</div>`;
   for (const p of lista.slice(0,120)){
     const nomes = p.destinos.map(i=>pais(i)?.nome||i);
-    const dest = nomes.length ? nomes.slice(0,3).join(", ")+(nomes.length>3?` +${nomes.length-3}`:"") : null;
+    const dest = nomes.length ? nomes.slice(0,2).join(", ")+(nomes.length>2?` +${nomes.length-2}`:"") : "Vários destinos";
     const per = p.viagem_inicio ? `🗓️ ${mesAno(p.viagem_inicio)}${p.viagem_fim!==p.viagem_inicio?" a "+mesAno(p.viagem_fim):""}` : "";
-    const cat = (c1=>c1.length===1?c1:[])(p.categorias.filter(c=>c!=="sem_data")).map(c=>`<span class="etq ${c}">${CAT[c]||c}</span>`).join("");
-    const vix = p.origem==="Sai de Vitória" ? `<span class="etq longo">Sai de Vitória</span>` : "";
-    const milhas = p.tipo==="milhas" ? `<span class="etq milhas">Milhas</span>` : "";
-    const entradas = [...new Set(p.paises)].map(entradaTxt).filter(Boolean).slice(0,1).map(t=>`<div class="meta">${t}</div>`).join("");
+    const sub = [p.origem==="Sai de Vitória"?"✈️ Sai de Vitória":"", p.tipo==="milhas"?"Milhas":"Passagem", per].filter(Boolean).join(" · ");
+    const doc = resumoDoc(p.paises);
     const favs = p.destinos.slice(0,2).map(i=>botaoFav(i, pais(i)?.nome||i)).join("");
-    h += `<div class="cartao">
-      <div class="linha"><div><h3 style="margin:0;font-size:17px">${esc(dest||"Vários destinos")}</h3>
-        <div class="meta">${vix}${milhas}${cat}</div></div>
-        ${p.preco?`<div style="font-weight:700;font-size:16px;white-space:nowrap;text-align:right">${esc(p.preco)}<div class="meta" style="font-weight:400">a partir de</div></div>`:""}</div>
-      ${per?`<div class="meta">${per}</div>`:""}${entradas}
-      <div class="meta" style="opacity:.8">${esc(p.titulo)}</div>
+    h += `<div class="cartao c"><div class="topo"><div><div class="dest">${esc(dest)}</div><div class="sub">${esc(sub)}</div></div>
+      ${p.preco?(pr=>`<div class="preco">${esc(pr[0])}${pr[1]?`<small style="font-size:12px;color:var(--tinta2)">ou ${esc(pr[1])}</small>`:""}<small>a partir de</small></div>`)(p.preco.split(" ou ")):""}</div>
+      ${doc?`<div class="doc">${doc}</div>`:""}
+      <div class="tit">${esc(p.titulo)}</div>
       <div class="acoes"><a class="bt" href="${esc(p.link)}" target="_blank" rel="noopener">Ver oferta ↗</a>${favs}</div></div>`;
   }
   return h;
@@ -186,26 +222,28 @@ function cartaoRota(iata, nome, favorito){
   const pts = serieCalendario(rota);
   const destino = pais(iata);
   const nomePais = destino?.pais || D.descobertas?.historico?.[iata]?.pais;
-  let corpo;
-  if (pts.length){
-    const melhor = pts.reduce((a,b)=>b[1]<a[1]?b:a);
-    const rec = rota.recorde;
-    corpo = `<div class="linha"><div><div class="meta">Mais barato agora</div><div class="preco">${real(melhor[1])}</div>
-      <div class="meta">ida ${dt(melhor[0])} · 7 noites</div></div>
-      ${rec?`<div style="text-align:right"><div class="meta">Menor já visto</div><div><b>${real(rec.min)}</b></div><div class="meta">ida ${dt(rec.ida)}</div></div>`:""}</div>
-      <div class="meta" style="margin-top:8px;font-size:12px">Preço ida e volta por data de ida (7 noites) · <span style="color:#e8a33d">●</span> mais barato</div>${grafico(pts)}`;
-  } else corpo = `<div class="meta">Ainda sem preço: a primeira busca acontece na próxima manhã.</div>`;
   const g = `https://www.google.com/travel/flights?q=Flights%20from%20VIX%20to%20${iata}`;
   const acao = favorito
     ? (linkBot("rem",iata)?`<a class="bt" href="${linkBot("rem",iata)}">Remover</a>`:"")
     : botaoFav(iata, destino?.nome||nome);
-  return `<div class="cartao"><h3>${favorito?"⭐ ":""}Vitória → ${esc(nome)}</h3>${corpo}
-    ${nomePais&&nomePais!=="Brasil"?`<div class="meta">${entradaTxt(nomePais)}</div>`:""}
+  const doc = nomePais ? resumoDoc([nomePais]) : "";
+  let topo, extra = "";
+  if (pts.length){
+    const melhor = pts.reduce((a,b)=>b[1]<a[1]?b:a);
+    const rec = rota.recorde;
+    topo = `<div><div class="dest">${favorito?"⭐ ":""}${esc(nome)}</div>
+      <div class="sub">ida ${dt(melhor[0])} · 7 noites${rec&&rec.min<melhor[1]?` · já vi ${real(rec.min)}`:""}</div></div>
+      <div class="preco">${real(melhor[1])}<small>ida e volta</small></div>`;
+    extra = `<details style="border:0;padding:0;margin:6px 0 0;background:none"><summary style="font-size:12.5px;font-weight:500;color:var(--mar)">Ver preços por data</summary>${grafico(pts)}</details>`;
+  } else {
+    topo = `<div><div class="dest">${favorito?"⭐ ":""}${esc(nome)}</div><div class="sub">Sem preço ainda (a busca roda todo dia de manhã)</div></div>`;
+  }
+  return `<div class="cartao c"><div class="topo">${topo}</div>${doc?`<div class="doc">${doc}</div>`:""}${extra}
     <div class="acoes"><a class="bt" href="${g}" target="_blank" rel="noopener">Google Flights ↗</a>${acao}</div></div>`;
 }
 function telaFav(){
   const favs = D.favoritos||[];
-  let h = `<div class="nota">Vigiados todo dia, de 1 mês a 1 ano à frente (uma janela de 3 meses por dia, em rodízio). Aviso no Telegram quando cai 15% abaixo do normal.</div>`;
+  let h = `<div class="nota">Destinos que eu vigio todo dia. Você recebe aviso no Telegram quando o preço cai 15% abaixo do normal.</div>`;
   h += favs.map(f=>cartaoRota(f.iata, f.nome, true)).join("") || `<div class="vazio">Nenhum favorito.</div>`;
   const opcoes = (D.destinos?.grupos||[]).map(g=>{
     const ds = (D.destinos.destinos||[]).filter(d=>d.grupo===g && !favs.some(f=>f.iata===d.iata));
@@ -226,14 +264,15 @@ function adicionarFav(){
 function telaExplorar(){
   const desc = D.descobertas?.ultima||[];
   let h = `<div class="titulo-secao">🧭 Mais baratos saindo de Vitória</div>
-    <div class="nota">Varredura semanal do Google Flights (ida e volta, ~1 semana)${D.descobertas?.data?` · ${dt(D.descobertas.data)}`:""}. Destinos que pedem visto ficam de fora.</div>`;
+    <div class="nota">Varredura semanal (ida e volta, ~1 semana)${D.descobertas?.data?` · ${dt(D.descobertas.data)}`:""}. Destinos que pedem visto ficam de fora.</div>`;
   const vistos = new Set();
   const lista = desc.filter(a => a.entrada!=="visto" && !vistos.has(a.aeroporto) && vistos.add(a.aeroporto));
-  h += lista.slice(0,40).map(a=>`<div class="cartao"><div class="linha"><div><h3>${esc(a.cidade)} <span class="meta">(${esc(a.pais)})</span></h3>
-      <div class="meta">${dt(a.ida)} a ${dt(a.volta)} · ${esc(a.cia||"")}${a.paradas===0?" · direto":""}</div></div>
-      <div class="preco">${real(a.preco)}</div></div>
-      ${a.pais&&a.pais!=="Brasil"?`<div class="meta">${entradaTxt(a.pais)}</div>`:""}
-      <div class="acoes">${botaoFav(a.destino||a.aeroporto, a.cidade)}</div></div>`).join("") || `<div class="vazio">A primeira varredura acontece na próxima manhã.</div>`;
+  h += lista.slice(0,30).map(a=>{ const doc = a.pais&&a.pais!=="Brasil" ? resumoDoc([a.pais]) : "";
+    return `<div class="cartao c"><div class="topo"><div><div class="dest">${esc(a.cidade)} <span class="meta">${esc(a.pais||"")}</span></div>
+      <div class="sub">${dt(a.ida).slice(0,5)} a ${dt(a.volta)} · ${esc(a.cia||"")}${a.paradas===0?" · direto":""}</div></div>
+      <div class="preco">${real(a.preco)}<small>ida e volta</small></div></div>
+      ${doc?`<div class="doc">${doc}</div>`:""}
+      <div class="acoes">${botaoFav(a.destino||a.aeroporto, a.cidade)}</div></div>`; }).join("") || `<div class="vazio">A primeira varredura acontece na próxima segunda-feira.</div>`;
   h += `<div class="titulo-secao">Por região</div><div class="nota">Cada destino é consultado 1 vez por semana; os favoritos, todo dia.</div>`;
   h += chips("regiao", (D.destinos?.grupos||[]).filter(g=>(D.destinos.destinos||[]).some(d=>d.grupo===g)).map(g=>[g,g]));
   const favs = new Set((D.favoritos||[]).map(f=>f.iata));
@@ -293,6 +332,24 @@ function telaVisto(){
   return h;
 }
 
+/* ---------------- Como usar ---------------- */
+function abrirAjuda(){
+  const mes = new Date().toISOString().slice(0,7), gasto = D.status?.apify_gasto?.[mes];
+  document.getElementById("folha").innerHTML = `<div class="folha" onclick="if(event.target===this)fecharAjuda()"><div>
+    <h2>Como usar</h2>
+    <ul style="padding-left:0;list-style:none;margin:0">
+    <li><span class="num">1</span><b>🔔 Ofertas</b>: promoções de passagem e milhas que eu encontro nos blogs. Mostro só voo: destino, preço, período e se basta RG. Toque em <b>Ver oferta</b> pra abrir.</li>
+    <li><span class="num">2</span><b>☆ Favoritar</b>: toque num destino e o Telegram abre com o pedido pronto. É só tocar em <b>Iniciar</b>. Em até 1 hora ele aparece em ⭐.</li>
+    <li><span class="num">3</span><b>⭐ Favoritos</b>: destinos que vigio todo dia. Aviso no Telegram quando o preço cai.</li>
+    <li><span class="num">4</span><b>🧭 Explorar</b>: os destinos mais baratos saindo de Vitória e preços por região.</li>
+    <li><span class="num">5</span><b>💱 Real forte</b>: onde o real vale mais agora. <b>🛂 Visto</b>: documentos, vistos e vacinas.</li>
+    <li><span class="num">6</span><b>Telegram</b>: eu aviso de tudo por lá. Comandos: <b>/favoritos</b>, <b>/favoritar SSA</b>, <b>/remover SSA</b>, <b>/passaporte 2031-05-20</b>, <b>/status</b>.</li>
+    </ul>
+    <div class="nota" style="margin-top:12px">Atualizo as ofertas de hora em hora e os preços 1 vez por dia${gasto!=null?` (gasto do Apify neste mês: US$ ${gasto.toFixed(2)} de US$ 5)`:""}. Destinos que pedem visto ficam escondidos.</div>
+    <button class="fechar" onclick="fecharAjuda()">Entendi</button></div></div>`;
+}
+function fecharAjuda(){ document.getElementById("folha").innerHTML=""; try{localStorage.setItem("detetive-viu-ajuda","1");}catch(e){} }
+
 /* ---------------- Montagem ---------------- */
 function desenhar(){
   salvarFiltros();
@@ -308,8 +365,9 @@ function desenhar(){
   const st = status.ultima_execucao ? `atualizado ${dt(status.ultima_execucao)} às ${status.ultima_execucao.slice(11,16)}` : "aguardando a 1ª execução";
   const mes = new Date().toISOString().slice(0,7);
   const gasto = status.apify_gasto?.[mes];
-  document.getElementById("sub").textContent = `Saindo de Vitória · ${st}${gasto!=null?` · Apify US$ ${gasto.toFixed(2)} no mês`:""}`;
+  document.getElementById("sub").textContent = `Saindo de Vitória · ${st}`;
   desenhar();
+  try{ if(!localStorage.getItem("detetive-viu-ajuda")) abrirAjuda(); }catch(e){}
 })();
 </script>
 </body>

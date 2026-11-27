@@ -15,14 +15,40 @@ def moedas_monitoradas():
     return sorted({p["moeda"] for p in bd.PAISES.values() if p.get("moeda")} - FORA)
 
 
+URL_HIST2 = "https://api.frankfurter.dev/v1/{ini}..{fim}"     # BCE: ~30 moedas principais, grátis
+
+
+def _semear_frankfurter(cambio, faltando, log):
+    """2ª fonte do histórico (moedas do BCE: EUR, USD, GBP, CAD, AUD, MXN, etc.)."""
+    from datetime import timedelta
+    fim = hoje()
+    try:
+        r = requests.get(URL_HIST2.format(ini=iso(fim - timedelta(days=365)), fim=iso(fim)),
+                         params={"base": "BRL", "symbols": ",".join(sorted(faltando))}, timeout=60)
+        r.raise_for_status()
+        for dia, taxas in (r.json().get("rates") or {}).items():
+            for m, v in taxas.items():
+                if v and m in faltando:
+                    cambio.setdefault(m, {}).setdefault(dia, round(float(v), 6))
+    except Exception as e:
+        log(f"Histórico (Frankfurter) indisponível: {e}")
+
+
 def semear_historico(cambio, log=print):
     """Na primeira vez, busca 1 ano de histórico (quando a fonte tem a moeda)."""
+    falhas = 0
     for m in moedas_monitoradas():
         h = cambio.setdefault(m, {})
         if len(h) >= 30:
             continue
+        if falhas >= 3:                  # fonte fora do ar: não insiste moeda por moeda
+            break
         try:
-            dados = requests.get(URL_HIST.format(m=m), timeout=30).json()
+            resp = requests.get(URL_HIST.format(m=m), timeout=30)
+            dados = resp.json()
+            if not isinstance(dados, list):
+                falhas += 1
+                log(f"Histórico de {m} indisponível: resposta inesperada ({str(dados)[:120]})")
             for linha in dados if isinstance(dados, list) else []:
                 from datetime import datetime
                 dia = datetime.fromtimestamp(int(linha["timestamp"])).date().isoformat()
@@ -30,7 +56,11 @@ def semear_historico(cambio, log=print):
                 if bid > 0:
                     h.setdefault(dia, round(1 / bid, 6))
         except Exception as e:
+            falhas += 1
             log(f"Histórico de {m} indisponível: {e}")
+    faltando = {m for m in moedas_monitoradas() if len(cambio.get(m, {})) < 30}
+    if faltando:
+        _semear_frankfurter(cambio, faltando, log)
 
 
 def atualizar(cambio, log=print):

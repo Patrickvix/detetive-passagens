@@ -254,15 +254,15 @@ def rodar_cambio(bot, e):
         log(f"Câmbio falhou: {ex}")
     rank = cambio.ranking(e["cambio"])
     salvar(DADOS / "real_forte.json", dict(data=iso(hoje()), moedas=rank))
-    return bool(rank)
     if hoje().weekday() == 0:
-        fortes = [r for r in rank if r["variacao"] >= 5][:6]
+        fortes = [r for r in rank if (r["variacao"] or 0) >= 5][:6]
         if fortes:
             linhas = []
             for r in fortes:
                 p = r["paises"][0]
                 linhas.append(f"• {esc(', '.join(r['paises'][:3]))} ({r['moeda']}): real {r['variacao']:+.1f}% vs média do ano · {bd.resumo_entrada(p)}")
             bot.enviar("💱 <b>Real forte esta semana</b>\n" + "\n".join(linhas))
+    return any(r["variacao"] is not None for r in rank)
 
 
 def lembrete_passaporte(bot, e):

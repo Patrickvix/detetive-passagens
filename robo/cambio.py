@@ -8,11 +8,41 @@ from .util import hoje, iso, para_data
 
 URL_HOJE = "https://open.er-api.com/v6/latest/BRL"          # grátis, sem chave, todas as moedas
 URL_HIST = "https://economia.awesomeapi.com.br/json/daily/{m}-BRL/365"  # histórico para começar
-FORA = {"ARS", "VES", "TRY", "BRL"}   # inflação alta (comparação engana) ou a própria moeda
+INFLACAO = {"ARS", "VES", "TRY", "CUP"}   # inflação alta / câmbio oficial irreal: a comparação com o ano engana
+URL_DIA = ["https://cdn.jsdelivr.net/npm/@fawazahmed0/currency-api@{d}/v1/currencies/brl.json",
+           "https://{d}.currency-api.pages.dev/v1/currencies/brl.json"]   # grátis, todas as moedas, por data
 
 
 def moedas_monitoradas():
-    return sorted({p["moeda"] for p in bd.PAISES.values() if p.get("moeda")} - FORA)
+    return sorted({p["moeda"] for p in bd.PAISES.values() if p.get("moeda")} - {"BRL"})
+
+
+def _cotacoes_do_dia(d):
+    for url in URL_DIA:
+        try:
+            r = requests.get(url.format(d=d), timeout=30)
+            if r.ok:
+                return {k.upper(): v for k, v in (r.json().get("brl") or {}).items()}
+        except Exception:
+            pass
+    return {}
+
+
+def _semear_mensal(cambio, log):
+    """1 cotação por mês nos últimos 12 meses, para todas as moedas (fonte com histórico por data)."""
+    from datetime import timedelta
+    ref = hoje()
+    ok = 0
+    for meses in range(1, 13):
+        d = iso(ref - timedelta(days=30 * meses))
+        taxas = _cotacoes_do_dia(d)
+        if taxas:
+            ok += 1
+        for m in moedas_monitoradas():
+            if taxas.get(m):
+                cambio.setdefault(m, {}).setdefault(d, round(float(taxas[m]), 6))
+    if not ok:
+        log("Histórico mensal de câmbio indisponível")
 
 
 URL_HIST2 = "https://api.frankfurter.dev/v1/{ini}..{fim}"     # BCE: ~30 moedas principais, grátis
@@ -39,9 +69,9 @@ def semear_historico(cambio, log=print):
     falhas = 0
     for m in moedas_monitoradas():
         h = cambio.setdefault(m, {})
-        if len(h) >= 30:
+        if len(h) >= 30 or m in INFLACAO:
             continue
-        if falhas >= 3:                  # fonte fora do ar: não insiste moeda por moeda
+        if falhas >= 1:                  # fonte fora do ar: não insiste moeda por moeda
             break
         try:
             resp = requests.get(URL_HIST.format(m=m), timeout=30)
@@ -61,6 +91,8 @@ def semear_historico(cambio, log=print):
     faltando = {m for m in moedas_monitoradas() if len(cambio.get(m, {})) < 30}
     if faltando:
         _semear_frankfurter(cambio, faltando, log)
+    if any(len(cambio.get(m, {})) < 8 for m in moedas_monitoradas()):
+        _semear_mensal(cambio, log)
 
 
 def atualizar(cambio, log=print):
@@ -78,7 +110,7 @@ def atualizar(cambio, log=print):
 
 
 def ranking(cambio):
-    """Lista de moedas com quanto o real está mais forte (+) ou mais fraco (−) que a média do ano."""
+    """Por moeda: quanto R$ 100 compram hoje e quanto o real está mais forte (+) ou fraco (−) que a média do ano."""
     lista = []
     ref = hoje()
     for m in moedas_monitoradas():
@@ -86,16 +118,18 @@ def ranking(cambio):
         if not h:
             continue
         ultimo = max(h)
-        ano = [v for d, v in h.items() if (ref - para_data(d)).days <= 365]
-        if len(ano) < 20:
-            continue
-        media = statistics.mean(ano)
         atual = h[ultimo]
-        variacao = (atual / media - 1) * 100
-        if abs(variacao) > 60:      # fontes com unidades diferentes ou dado quebrado: melhor não mostrar
+        ano = [v for d, v in h.items() if (ref - para_data(d)).days <= 365 and d != ultimo]
+        variacao = None
+        if m not in INFLACAO and len(ano) >= 6:
+            v = (atual / statistics.mean(ano) - 1) * 100
+            if abs(v) <= 60:            # dado quebrado ou unidade diferente: melhor não mostrar
+                variacao = round(v, 1)
+        paises = sorted(n for n, p in bd.PAISES.items() if p.get("moeda") == m and p.get("entrada") != "visto")
+        if not paises:
             continue
-        paises = sorted(n for n, p in bd.PAISES.items() if p.get("moeda") == m)
-        lista.append(dict(moeda=m, por_real=atual, media_ano=round(media, 6), variacao=round(variacao, 1),
-                          data=ultimo, paises=paises))
-    lista.sort(key=lambda x: -x["variacao"])
+        lista.append(dict(moeda=m, nome=bd.NOME_MOEDA.get(m, m), por_100=round(atual * 100, 2), variacao=variacao,
+                          inflacao=m in INFLACAO, data=ultimo, paises=paises,
+                          dolar={p: bd.DOLAR[p] for p in paises if p in bd.DOLAR}))
+    lista.sort(key=lambda x: -(x["variacao"] if x["variacao"] is not None else -999))
     return lista

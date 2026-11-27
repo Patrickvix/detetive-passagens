@@ -286,17 +286,38 @@ function telaExplorar(){
 /* ---------------- Real forte ---------------- */
 function telaCambio(){
   const rf = D.real_forte?.moedas||[];
-  let h = `<div class="nota">Quanto 1 real compra hoje de cada moeda, comparado com a média dos últimos 12 meses. Verde = seu dinheiro rende mais que o normal lá. Argentina, Venezuela e Turquia ficam de fora (inflação alta distorce a conta).</div>`;
-  if (!rf.length) return h + `<div class="vazio">O câmbio começa a ser acompanhado na próxima manhã.</div>`;
-  for (const m of rf){
-    const largura = Math.min(Math.abs(m.variacao)*5, 100);
-    const paises = m.paises.filter(p=>infoPais(p)?.entrada!=="visto");
-    if (!paises.length) continue;
-    const doc = paises.some(p=>infoPais(p)?.documento==="RG") ? "🪪 RG serve" : "🛂 Passaporte";
-    h += `<div class="cartao"><div class="linha"><div><h3>${esc(paises.slice(0,4).join(", "))}${paises.length>4?` e mais ${paises.length-4}`:""}</h3>
-      <div class="meta">${m.moeda} · R$ 1 = ${m.por_real.toLocaleString("pt-BR",{maximumFractionDigits:4})} · ${doc}</div></div>
-      <div class="preco" style="color:${m.variacao>=0?"var(--verde)":"var(--coral)"}">${m.variacao>0?"+":""}${m.variacao.toLocaleString("pt-BR")}%</div></div>
-      <div class="barra"><i class="${m.variacao<0?"neg":""}" style="width:${largura}%"></i></div></div>`;
+  let h = `<div class="nota">Quanto R$ 100 compram em cada país hoje, e se o real está <b>mais forte</b> (rende mais) ou <b>mais fraco</b> que a média dos últimos 12 meses. Só países sem visto.</div>`;
+  if (!rf.length) return h + `<div class="vazio">O câmbio é atualizado toda manhã.</div>`;
+  const num = (v)=> v>=100 ? Math.round(v).toLocaleString("pt-BR") : v.toLocaleString("pt-BR",{maximumFractionDigits:2});
+  const card = (m, titulo) => {
+    const v = m.variacao;
+    const cor = v==null ? "var(--suave)" : v>=3 ? "var(--verde)" : v<=-3 ? "var(--coral)" : "var(--tinta2)";
+    const selo = m.inflacao ? `<div class="preco" style="font-size:13px;color:var(--suave)">inflação alta<small>sem comparação</small></div>`
+      : v==null ? `<div class="preco" style="font-size:13px;color:var(--suave)">—<small>sem histórico</small></div>`
+      : `<div class="preco" style="color:${cor}">${v>0?"+":""}${v.toLocaleString("pt-BR")}%<small>vs média do ano</small></div>`;
+    const doc = resumoDoc(m.paises);
+    const dol = Object.entries(m.dolar||{}).map(([p,t])=>`<div class="doc">💵 ${m.paises.length>1?`<b>${esc(p)}:</b> `:""}${esc(t)}</div>`).join("");
+    const infl = m.inflacao ? `<div class="doc">⚠️ Preços sobem rápido lá, então comparar com o ano engana. Pesquise o custo da viagem direto.</div>` : "";
+    return `<div class="cartao c"><div class="topo"><div><div class="dest">${esc(titulo)}</div>
+      <div class="sub">${esc(m.nome)} (${m.moeda}) · R$ 100 = ${num(m.por_100)} ${m.moeda}</div></div>${selo}</div>
+      ${doc?`<div class="doc">${doc}</div>`:""}${dol}${infl}</div>`;
+  };
+  const titulo = m => m.moeda==="EUR" ? `Zona do euro (${m.paises.length} países)` : m.paises.join(", ");
+  const grupos = [
+    ["🟢 Real mais forte que o normal", rf.filter(m=>m.variacao!=null && m.variacao>=3)],
+    ["⚪ Perto do normal", rf.filter(m=>m.variacao!=null && m.variacao>-3 && m.variacao<3)],
+    ["🔴 Real mais fraco que o normal", rf.filter(m=>m.variacao!=null && m.variacao<=-3)],
+    ["❔ Sem comparação", rf.filter(m=>m.variacao==null)],
+  ];
+  const fortes = grupos[0][1].length;
+  h += `<div class="meta" style="margin:6px 4px">${fortes ? `${fortes} moeda${fortes>1?"s":""} com o real mais forte que o normal.` : "Nenhuma moeda com o real mais forte que o normal agora: este ano o real perdeu valor para quase todas. Use a lista pra comparar entre os países."}</div>`;
+  for (const [nome, lista] of grupos){
+    if (!lista.length) continue;
+    h += `<div class="titulo-secao">${nome}</div>` + lista.map(m=>card(m, titulo(m))).join("");
+    if (lista.some(m=>m.moeda==="EUR")) {
+      const eur = lista.find(m=>m.moeda==="EUR");
+      h += `<details class="filtros"><summary>Países do euro</summary><div class="meta" style="padding-bottom:10px">${esc(eur.paises.join(", "))}</div></details>`;
+    }
   }
   return h;
 }

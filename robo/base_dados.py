@@ -266,3 +266,36 @@ AEROPORTOS_DA_CIDADE = {
     "SAO": "GRU,CGH,VCP", "RIO": "GIG,SDU", "BUE": "EZE,AEP", "PAR": "CDG,ORY", "ROM": "FCO",
     "MIL": "MXP,LIN", "LON": "LHR,LGW", "STO": "ARN", "REK": "KEF",
 }
+
+
+# ---------------- Moedas (nome) e uso do dólar ----------------
+NOME_MOEDA = {
+    "ARS": "peso argentino", "UYU": "peso uruguaio", "PYG": "guarani", "CLP": "peso chileno", "BOB": "boliviano",
+    "PEN": "sol peruano", "USD": "dólar americano", "COP": "peso colombiano", "VES": "bolívar", "EUR": "euro",
+    "CHF": "franco suíço", "CZK": "coroa tcheca", "HUF": "florim húngaro", "PLN": "zloty polonês",
+    "DKK": "coroa dinamarquesa", "SEK": "coroa sueca", "NOK": "coroa norueguesa", "ISK": "coroa islandesa",
+    "RON": "leu romeno", "GBP": "libra esterlina", "TRY": "lira turca", "RSD": "dinar sérvio", "ALL": "lek albanês",
+    "BAM": "marco conversível", "MKD": "dinar macedônio", "MXN": "peso mexicano", "CAD": "dólar canadense",
+    "CRC": "colón costarriquenho", "CUP": "peso cubano", "AWG": "florim arubano", "ANG": "florim antilhano",
+    "DOP": "peso dominicano", "ZAR": "rand sul-africano", "AUD": "dólar australiano", "CNY": "yuan chinês",
+    "JPY": "iene", "AED": "dirham",
+}
+
+# Onde o dólar é moeda oficial ou bem aceito por turistas (vale levar dólar em espécie)
+DOLAR = {
+    "Equador": "O dólar é a moeda oficial",
+    "Panamá": "O dólar é a moeda oficial (junto com o balboa)",
+    "Argentina": "Dólar em espécie é muito aceito e costuma render mais; cartão brasileiro paga no câmbio MEP",
+    "Uruguai": "Dólar aceito em hotéis, restaurantes e lojas turísticas",
+    "Paraguai": "Dólar e real aceitos, principalmente na fronteira",
+    "Peru": "Dólar aceito em hotéis, passeios e lojas turísticas",
+    "Bolívia": "Dólar aceito em turismo; troque o resto em casas de câmbio",
+    "Costa Rica": "Dólar amplamente aceito",
+    "República Dominicana": "Dólar aceito em resorts e passeios",
+    "Aruba": "Dólar amplamente aceito",
+    "Curaçao": "Dólar amplamente aceito",
+    "México": "Dólar aceito em Cancún e zonas turísticas, mas com câmbio pior",
+    "Cuba": "Leve dólar ou euro em espécie; cartões brasileiros podem não funcionar",
+    "Colômbia": "Pouco aceito: pague em peso",
+    "Chile": "Pouco aceito: pague em peso",
+}

@@ -3,99 +3,108 @@
  "moedas": [
   {
    "moeda": "MXN",
-   "por_real": 3.417848,
-   "media_ano": 3.389929,
+   "nome": "peso mexicano",
+   "por_100": 341.78,
    "variacao": 0.8,
+   "inflacao": false,
    "data": "2026-11-27",
    "paises": [
     "México"
-   ]
+   ],
+   "dolar": {
+    "México": "Dólar aceito em Cancún e zonas turísticas, mas com câmbio pior"
+   }
   },
   {
    "moeda": "PLN",
-   "por_real": 0.708645,
-   "media_ano": 0.713678,
+   "nome": "zloty polonês",
+   "por_100": 70.86,
    "variacao": -0.7,
+   "inflacao": false,
    "data": "2026-11-27",
    "paises": [
     "Polônia"
-   ]
+   ],
+   "dolar": {}
   },
   {
    "moeda": "RON",
-   "por_real": 0.843518,
-   "media_ano": 0.865325,
+   "nome": "leu romeno",
+   "por_100": 84.35,
    "variacao": -2.5,
+   "inflacao": false,
    "data": "2026-11-27",
    "paises": [
     "Romênia"
-   ]
+   ],
+   "dolar": {}
   },
   {
    "moeda": "SEK",
-   "por_real": 1.773105,
-   "media_ano": 1.820219,
+   "nome": "coroa sueca",
+   "por_100": 177.31,
    "variacao": -2.6,
+   "inflacao": false,
    "data": "2026-11-27",
    "paises": [
     "Suécia"
-   ]
+   ],
+   "dolar": {}
   },
   {
    "moeda": "ZAR",
-   "por_real": 3.045649,
-   "media_ano": 3.162842,
+   "nome": "rand sul-africano",
+   "por_100": 304.56,
    "variacao": -3.7,
+   "inflacao": false,
    "data": "2026-11-27",
    "paises": [
     "África do Sul"
-   ]
-  },
-  {
-   "moeda": "HUF",
-   "por_real": 58.592619,
-   "media_ano": 61.514245,
-   "variacao": -4.7,
-   "data": "2026-11-27",
-   "paises": [
-    "Hungria"
-   ]
+   ],
+   "dolar": {}
   },
   {
    "moeda": "CZK",
-   "por_real": 3.848327,
-   "media_ano": 4.04332,
+   "nome": "coroa tcheca",
+   "por_100": 384.83,
    "variacao": -4.8,
+   "inflacao": false,
    "data": "2026-11-27",
    "paises": [
     "Tchéquia"
-   ]
+   ],
+   "dolar": {}
   },
   {
-   "moeda": "AUD",
-   "por_real": 0.261599,
-   "media_ano": 0.275218,
-   "variacao": -4.9,
+   "moeda": "HUF",
+   "nome": "florim húngaro",
+   "por_100": 5859.26,
+   "variacao": -4.8,
+   "inflacao": false,
    "data": "2026-11-27",
    "paises": [
-    "Austrália"
-   ]
+    "Hungria"
+   ],
+   "dolar": {}
   },
   {
    "moeda": "DKK",
-   "por_real": 1.179912,
-   "media_ano": 1.243671,
+   "nome": "coroa dinamarquesa",
+   "por_100": 117.99,
    "variacao": -5.1,
+   "inflacao": false,
    "data": "2026-11-27",
    "paises": [
     "Dinamarca"
-   ]
+   ],
+   "dolar": {}
   },
   {
    "moeda": "EUR",
-   "por_real": 0.157937,
-   "media_ano": 0.166419,
+   "nome": "euro",
+   "por_100": 15.79,
    "variacao": -5.1,
+   "inflacao": false,
    "data": "2026-11-27",
    "paises": [
     "Alemanha",
@@ -120,89 +129,310 @@
     "Países Baixos",
     "Portugal",
     "Áustria"
-   ]
+   ],
+   "dolar": {}
   },
   {
    "moeda": "CHF",
-   "por_real": 0.144706,
-   "media_ano": 0.153879,
+   "nome": "franco suíço",
+   "por_100": 14.47,
    "variacao": -6.0,
+   "inflacao": false,
    "data": "2026-11-27",
    "paises": [
     "Suíça"
-   ]
-  },
-  {
-   "moeda": "CAD",
-   "por_real": 0.247008,
-   "media_ano": 0.266975,
-   "variacao": -7.5,
-   "data": "2026-11-27",
-   "paises": [
-    "Canadá"
-   ]
+   ],
+   "dolar": {}
   },
   {
    "moeda": "GBP",
-   "por_real": 0.132489,
-   "media_ano": 0.143181,
+   "nome": "libra esterlina",
+   "por_100": 13.25,
    "variacao": -7.5,
+   "inflacao": false,
    "data": "2026-11-27",
    "paises": [
     "Reino Unido"
-   ]
+   ],
+   "dolar": {}
   },
   {
    "moeda": "NOK",
-   "por_real": 1.69348,
-   "media_ano": 1.841855,
+   "nome": "coroa norueguesa",
+   "por_100": 169.35,
    "variacao": -8.1,
+   "inflacao": false,
    "data": "2026-11-27",
    "paises": [
     "Noruega"
-   ]
+   ],
+   "dolar": {}
   },
   {
    "moeda": "ISK",
-   "por_real": 21.628398,
-   "media_ano": 23.740728,
+   "nome": "coroa islandesa",
+   "por_100": 2162.84,
    "variacao": -8.9,
+   "inflacao": false,
    "data": "2026-11-27",
    "paises": [
     "Islândia"
-   ]
+   ],
+   "dolar": {}
   },
   {
    "moeda": "JPY",
-   "por_real": 27.639215,
-   "media_ano": 30.399087,
+   "nome": "iene",
+   "por_100": 2763.92,
    "variacao": -9.1,
+   "inflacao": false,
    "data": "2026-11-27",
    "paises": [
     "Japão"
-   ]
+   ],
+   "dolar": {}
   },
   {
    "moeda": "USD",
-   "por_real": 0.173419,
-   "media_ano": 0.192045,
+   "nome": "dólar americano",
+   "por_100": 17.34,
    "variacao": -9.7,
+   "inflacao": false,
    "data": "2026-11-27",
    "paises": [
     "Equador",
-    "Estados Unidos",
     "Panamá"
-   ]
+   ],
+   "dolar": {
+    "Equador": "O dólar é a moeda oficial",
+    "Panamá": "O dólar é a moeda oficial (junto com o balboa)"
+   }
   },
   {
    "moeda": "CNY",
-   "por_real": 1.1472,
-   "media_ano": 1.309168,
+   "nome": "yuan chinês",
+   "por_100": 114.72,
    "variacao": -12.4,
+   "inflacao": false,
    "data": "2026-11-27",
    "paises": [
     "China"
-   ]
+   ],
+   "dolar": {}
+  },
+  {
+   "moeda": "AED",
+   "nome": "dirham",
+   "por_100": 63.69,
+   "variacao": null,
+   "inflacao": false,
+   "data": "2026-11-27",
+   "paises": [
+    "Emirados Árabes Unidos"
+   ],
+   "dolar": {}
+  },
+  {
+   "moeda": "ALL",
+   "nome": "lek albanês",
+   "por_100": 1415.98,
+   "variacao": null,
+   "inflacao": false,
+   "data": "2026-11-27",
+   "paises": [
+    "Albânia"
+   ],
+   "dolar": {}
+  },
+  {
+   "moeda": "ANG",
+   "nome": "florim antilhano",
+   "por_100": 31.04,
+   "variacao": null,
+   "inflacao": false,
+   "data": "2026-11-27",
+   "paises": [
+    "Curaçao"
+   ],
+   "dolar": {
+    "Curaçao": "Dólar amplamente aceito"
+   }
+  },
+  {
+   "moeda": "AWG",
+   "nome": "florim arubano",
+   "por_100": 31.04,
+   "variacao": null,
+   "inflacao": false,
+   "data": "2026-11-27",
+   "paises": [
+    "Aruba"
+   ],
+   "dolar": {
+    "Aruba": "Dólar amplamente aceito"
+   }
+  },
+  {
+   "moeda": "BAM",
+   "nome": "marco conversível",
+   "por_100": 30.95,
+   "variacao": null,
+   "inflacao": false,
+   "data": "2026-11-27",
+   "paises": [
+    "Bósnia e Herzegovina"
+   ],
+   "dolar": {}
+  },
+  {
+   "moeda": "BOB",
+   "nome": "boliviano",
+   "por_100": 204.34,
+   "variacao": null,
+   "inflacao": false,
+   "data": "2026-11-27",
+   "paises": [
+    "Bolívia"
+   ],
+   "dolar": {
+    "Bolívia": "Dólar aceito em turismo; troque o resto em casas de câmbio"
+   }
+  },
+  {
+   "moeda": "CLP",
+   "nome": "peso chileno",
+   "por_100": 17914.46,
+   "variacao": null,
+   "inflacao": false,
+   "data": "2026-11-27",
+   "paises": [
+    "Chile"
+   ],
+   "dolar": {
+    "Chile": "Pouco aceito: pague em peso"
+   }
+  },
+  {
+   "moeda": "COP",
+   "nome": "peso colombiano",
+   "por_100": 61734.48,
+   "variacao": null,
+   "inflacao": false,
+   "data": "2026-11-27",
+   "paises": [
+    "Colômbia"
+   ],
+   "dolar": {
+    "Colômbia": "Pouco aceito: pague em peso"
+   }
+  },
+  {
+   "moeda": "CRC",
+   "nome": "colón costarriquenho",
+   "por_100": 7664.83,
+   "variacao": null,
+   "inflacao": false,
+   "data": "2026-11-27",
+   "paises": [
+    "Costa Rica"
+   ],
+   "dolar": {
+    "Costa Rica": "Dólar amplamente aceito"
+   }
+  },
+  {
+   "moeda": "CUP",
+   "nome": "peso cubano",
+   "por_100": 416.19,
+   "variacao": null,
+   "inflacao": true,
+   "data": "2026-11-27",
+   "paises": [
+    "Cuba"
+   ],
+   "dolar": {
+    "Cuba": "Leve dólar ou euro em espécie; cartões brasileiros podem não funcionar"
+   }
+  },
+  {
+   "moeda": "DOP",
+   "nome": "peso dominicano",
+   "por_100": 1037.3,
+   "variacao": null,
+   "inflacao": false,
+   "data": "2026-11-27",
+   "paises": [
+    "República Dominicana"
+   ],
+   "dolar": {
+    "República Dominicana": "Dólar aceito em resorts e passeios"
+   }
+  },
+  {
+   "moeda": "MKD",
+   "nome": "dinar macedônio",
+   "por_100": 971.59,
+   "variacao": null,
+   "inflacao": false,
+   "data": "2026-11-27",
+   "paises": [
+    "Macedônia do Norte"
+   ],
+   "dolar": {}
+  },
+  {
+   "moeda": "PEN",
+   "nome": "sol peruano",
+   "por_100": 60.32,
+   "variacao": null,
+   "inflacao": false,
+   "data": "2026-11-27",
+   "paises": [
+    "Peru"
+   ],
+   "dolar": {
+    "Peru": "Dólar aceito em hotéis, passeios e lojas turísticas"
+   }
+  },
+  {
+   "moeda": "PYG",
+   "nome": "guarani",
+   "por_100": 110889.18,
+   "variacao": null,
+   "inflacao": false,
+   "data": "2026-11-27",
+   "paises": [
+    "Paraguai"
+   ],
+   "dolar": {
+    "Paraguai": "Dólar e real aceitos, principalmente na fronteira"
+   }
+  },
+  {
+   "moeda": "RSD",
+   "nome": "dinar sérvio",
+   "por_100": 1850.85,
+   "variacao": null,
+   "inflacao": false,
+   "data": "2026-11-27",
+   "paises": [
+    "Sérvia"
+   ],
+   "dolar": {}
+  },
+  {
+   "moeda": "UYU",
+   "nome": "peso uruguaio",
+   "por_100": 700.22,
+   "variacao": null,
+   "inflacao": false,
+   "data": "2026-11-27",
+   "paises": [
+    "Uruguai"
+   ],
+   "dolar": {
+    "Uruguai": "Dólar aceito em hotéis, restaurantes e lojas turísticas"
+   }
   }
  ]
 }

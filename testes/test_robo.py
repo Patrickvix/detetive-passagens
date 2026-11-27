@@ -99,9 +99,9 @@ def test_buscar_precos_repete_o_que_falhou():
             self.chamadas = 0
             self.log = lambda *_: None
 
-        def rodar(self, entrada):
+        def rodar(self, entrada, **_):
             self.chamadas += 1
-            buscas = entrada["searches"]
+            buscas = entrada["routes"]
             if self.chamadas == 1:
                 buscas = buscas[:1]            # 1ª vez: só 1 das buscas responde
             return [{"destination": b["destination"], "departureDate": b["departureDate"], "price": 800 + self.chamadas,

@@ -85,7 +85,7 @@ def falso_post(url, json=None, **kw):
         else:
             ITENS_APIFY["atual"] = [{"destination": s["destination"], "price": 900, "airlines": ["Gol"], "stops": 1,
                                      "departureDate": s["departureDate"],
-                                     "calendarPrices": [{"date": s["departureDate"], "price": 900}]} for s in json["searches"]]
+                                     "calendarPrices": [{"date": s["departureDate"], "price": 900}]} for s in json.get("routes") or json["searches"]]
         return R({"data": {"id": "r", "status": "SUCCEEDED", "usageTotalUsd": 0.002, "defaultDatasetId": "d"}})
     raise AssertionError(url)
 

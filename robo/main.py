@@ -20,7 +20,10 @@ HORA_DIARIA = 7
 
 
 def log(msg):
-    print(f"[{agora():%H:%M}] {msg}", flush=True)
+    if str(msg).startswith("::"):      # anotações do GitHub precisam começar a linha
+        print(msg, flush=True)
+    else:
+        print(f"[{agora():%H:%M}] {msg}", flush=True)
 
 
 def carregar():

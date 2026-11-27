@@ -48,7 +48,7 @@
     color:var(--tinta);text-decoration:none;display:inline-flex;align-items:center;gap:4px}
   .bt.fav{border-color:#f0d38f;background:#fff8e6}
   .preco{font:700 22px/1 Georgia,serif;color:var(--mar)}
-  .linha{display:flex;justify-content:space-between;align-items:flex-end;gap:10px}
+  .linha{display:flex;justify-content:space-between;align-items:flex-start;gap:10px}
   .titulo-secao{font:700 16px/1.2 Georgia,serif;margin:18px 4px 4px}
   .nota{font-size:12.5px;color:var(--suave);margin:4px 4px 10px}
   .vazio{text-align:center;color:var(--suave);padding:30px 10px}
@@ -82,7 +82,7 @@ const ABAS = [
 const CAT = {relampago:"⚡ Relâmpago",proximos:"📅 Próximos meses",medio:"🗓️ Médio prazo",longo:"🌴 Longo prazo",sem_data:"❔ Sem data"};
 const MES = ["jan","fev","mar","abr","mai","jun","jul","ago","set","out","nov","dez"];
 const D = {};                       // dados carregados
-const F = {aba:"promo", cat:"todas", grupo:"todos", visto:false, regiao:"Nordeste"};
+const F = {aba:"promo", cat:"todas", grupo:"todos", visto:false, ruido:false, regiao:"Nordeste"};
 try{ Object.assign(F, JSON.parse(localStorage.getItem("detetive-filtros")||"{}")); }catch(e){}
 
 const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
@@ -121,7 +121,9 @@ function entradaTxt(nomePais){
 function telaPromo(){
   const promos = (D.promocoes||[]);
   const grupos = ["todos","Milhas","Sai de Vitória", ...(D.destinos?.grupos||[])];
+  const ruido = promos.filter(p=>!p.relevante && !p.exige_visto).length;
   let lista = promos.filter(p => {
+    if (!F.ruido && !p.relevante) return false;
     if (!F.visto && p.exige_visto) return false;
     if (F.cat!=="todas" && !p.categorias.includes(F.cat)) return false;
     if (F.grupo==="Milhas") return p.tipo==="milhas";
@@ -129,24 +131,30 @@ function telaPromo(){
     if (F.grupo!=="todos") return p.grupos.includes(F.grupo);
     return true;
   });
+  lista.sort((a,b)=> (b.origem==="Sai de Vitória") - (a.origem==="Sai de Vitória"));
   const escondidas = promos.filter(p=>p.exige_visto).length;
-  let h = chips("cat", [["todas","Todas"], ...Object.entries(CAT)]);
+  let h = `<div class="meta" style="margin:2px 4px 8px"><b>${lista.length}</b> oferta${lista.length===1?"":"s"} de voo</div>`;
+  h += chips("cat", [["todas","Todas"], ...Object.entries(CAT)]);
   h += chips("grupo", grupos.map(g=>[g, g==="todos"?"Todas as regiões":g]));
-  h += `<label class="alternar"><input type="checkbox" ${F.visto?"checked":""} onchange="F.visto=this.checked;desenhar()"> Mostrar destinos que pedem visto (${escondidas})</label>`;
-  if (!lista.length) h += `<div class="vazio">Nenhuma promoção com esses filtros ainda.</div>`;
-  for (const p of lista.slice(0,150)){
-    const cats = p.categorias.map(c=>`<span class="etq ${c}">${CAT[c]||c}</span>`).join("");
-    const tipo = p.tipo==="milhas" ? `<span class="etq milhas">Milhas</span>` : "";
+  h += `<label class="alternar"><input type="checkbox" ${F.visto?"checked":""} onchange="F.visto=this.checked;desenhar()"> Incluir destinos que pedem visto (${escondidas})</label>`;
+  h += `<label class="alternar"><input type="checkbox" ${F.ruido?"checked":""} onchange="F.ruido=this.checked;desenhar()"> Incluir cartões, bônus de pontos e notícias (${ruido})</label>`;
+  if (!lista.length) h += `<div class="vazio">Nenhuma oferta de voo com esses filtros ainda.</div>`;
+  for (const p of lista.slice(0,120)){
     const nomes = p.destinos.map(i=>pais(i)?.nome||i);
-    const per = p.viagem_inicio ? `🗓️ Viagem: ${mesAno(p.viagem_inicio)}${p.viagem_fim!==p.viagem_inicio?" a "+mesAno(p.viagem_fim):""}` : "🗓️ Período não informado no texto";
-    const entradas = [...new Set(p.paises)].map(entradaTxt).filter(Boolean).map(t=>`<div class="meta">${t}</div>`).join("");
-    const favs = p.destinos.slice(0,3).map(i=>botaoFav(i, pais(i)?.nome||i)).join("");
-    h += `<div class="cartao">${cats}${tipo}
-      <h3><a href="${esc(p.link)}" target="_blank" rel="noopener">${esc(p.titulo)}</a></h3>
-      <div class="meta">📍 ${esc(p.origem)}${nomes.length?" → "+esc(nomes.join(", ")):""}</div>
-      <div class="meta">${per}</div>${entradas}
-      <div class="meta">📰 ${esc(p.fonte)} · ${dt(p.publicado)}</div>
-      <div class="acoes"><a class="bt" href="${esc(p.link)}" target="_blank" rel="noopener">Abrir oferta ↗</a>${favs}</div></div>`;
+    const dest = nomes.length ? nomes.slice(0,3).join(", ")+(nomes.length>3?` +${nomes.length-3}`:"") : null;
+    const per = p.viagem_inicio ? `🗓️ ${mesAno(p.viagem_inicio)}${p.viagem_fim!==p.viagem_inicio?" a "+mesAno(p.viagem_fim):""}` : "";
+    const cat = (c1=>c1.length===1?c1:[])(p.categorias.filter(c=>c!=="sem_data")).map(c=>`<span class="etq ${c}">${CAT[c]||c}</span>`).join("");
+    const vix = p.origem==="Sai de Vitória" ? `<span class="etq longo">Sai de Vitória</span>` : "";
+    const milhas = p.tipo==="milhas" ? `<span class="etq milhas">Milhas</span>` : "";
+    const entradas = [...new Set(p.paises)].map(entradaTxt).filter(Boolean).slice(0,1).map(t=>`<div class="meta">${t}</div>`).join("");
+    const favs = p.destinos.slice(0,2).map(i=>botaoFav(i, pais(i)?.nome||i)).join("");
+    h += `<div class="cartao">
+      <div class="linha"><div><h3 style="margin:0;font-size:17px">${esc(dest||"Vários destinos")}</h3>
+        <div class="meta">${vix}${milhas}${cat}</div></div>
+        ${p.preco?`<div style="font-weight:700;font-size:16px;white-space:nowrap;text-align:right">${esc(p.preco)}<div class="meta" style="font-weight:400">a partir de</div></div>`:""}</div>
+      ${per?`<div class="meta">${per}</div>`:""}${entradas}
+      <div class="meta" style="opacity:.8">${esc(p.titulo)}</div>
+      <div class="acoes"><a class="bt" href="${esc(p.link)}" target="_blank" rel="noopener">Ver oferta ↗</a>${favs}</div></div>`;
   }
   return h;
 }

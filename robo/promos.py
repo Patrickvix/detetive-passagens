@@ -114,6 +114,40 @@ def destinos_citados(texto):
     return achados
 
 
+RUIDO = ["cartao", "cartoes", "pontos por real", "pontos bonus", "bonus", "transferencia", "livelo", "esfera",
+         "clube ", "upgrade", "hotel", "hoteis", "hospedagem", "carro", "cupom", "cupons", "anac", "netshoes",
+         "casas bahia", "mcdonald", "shopping", "acumulo", "acumular", "assinatura", "seguro", "ocorrencias",
+         "radar ppv", "resumo das promocoes", "pontos pra", "ganhe ate", "pontos por"]
+SINAL_VOO = ["voo", "voos", "voe ", "voe para", "passagem", "passagens", "trecho", "ida e volta", "mega promo",
+             "viaje para", "viajar para", "executiva para", "classe executiva", "primeira classe"]
+
+
+def _preco(texto):
+    """Extrai o preço em destaque (R$ ou milhas) do título/resumo."""
+    achados = []
+    for m in re.finditer(r"R\$\s?\d[\d\.]*(?:,\d{2})?", texto):
+        achados.append(re.sub(r"\s+", " ", m[0]).replace("R$ ", "R$ "))
+    for m in re.finditer(r"(\d[\d\.]*)\s*mil\s*(milhas|pontos)", texto, flags=re.I):
+        achados.append(f"{m[1]} mil {m[2].lower()}")
+    for m in re.finditer(r"\b(\d{1,3}(?:\.\d{3})+)\s*(milhas|pontos)", texto, flags=re.I):
+        achados.append(f"{m[1]} {m[2].lower()}")
+    unicos = []
+    for a in achados:
+        if a not in unicos:
+            unicos.append(a)
+    return " ou ".join(unicos[:2]) or None
+
+
+def enriquecer(p):
+    """Marca se é oferta de voo de verdade (e não cartão, bônus de pontos, hotel, notícia) e acha o preço."""
+    t = sem_acento(p["titulo"])
+    ruido = any(r in t for r in RUIDO)
+    voo = any(r in t for r in SINAL_VOO)
+    p["relevante"] = bool(voo and not ruido)
+    p["preco"] = _preco(p["titulo"]) or _preco(p.get("resumo", ""))
+    return p
+
+
 def classificar(item, texto_completo):
     titulo_n = sem_acento(item["titulo"])
     tudo = f'{item["titulo"]} . {item["resumo"]} . {texto_completo}'
@@ -151,13 +185,13 @@ def classificar(item, texto_completo):
     else:
         origem = "Origem não informada"
 
-    return dict(
+    return enriquecer(dict(
         titulo=item["titulo"], link=item["link"], fonte=item.get("fonte"), publicado=item.get("publicado"),
         resumo=item["resumo"][:300], tipo="milhas" if e_milhas else "passagem",
         destinos=iatas, grupos=grupos, paises=paises, origem=origem,
         viagem_inicio=inicio.isoformat() if inicio else None, viagem_fim=fim.isoformat() if fim else None,
         categorias=cats, exige_visto=exige_visto,
-    )
+    ))
 
 
 def buscar_novas(vistos, limite_paginas=25, log=print):

@@ -15,7 +15,9 @@
   "categorias": [
    "sem_data"
   ],
-  "exige_visto": false
+  "exige_visto": false,
+  "relevante": false,
+  "preco": "80.000 pontos"
  },
  {
   "titulo": "Azul Friday! Azul Fidelidade oferece até 18 pontos por real na Netshoes",
@@ -39,7 +41,9 @@
   "categorias": [
    "longo"
   ],
-  "exige_visto": false
+  "exige_visto": false,
+  "relevante": false,
+  "preco": null
  },
  {
   "titulo": "Oferta relâmpago! Clube Azul com 50% de desconto + 12% OFF com cartão Azul Itaú",
@@ -57,7 +61,9 @@
   "categorias": [
    "longo"
   ],
-  "exige_visto": false
+  "exige_visto": false,
+  "relevante": false,
+  "preco": null
  },
  {
   "titulo": "Anac registra 211 ocorrências de indisciplina em voos e aeroportos após novas regras",
@@ -75,7 +81,9 @@
   "categorias": [
    "medio"
   ],
-  "exige_visto": false
+  "exige_visto": false,
+  "relevante": false,
+  "preco": null
  },
  {
   "titulo": "Alerta PPV! Voos internacionais a partir de 22 mil milhas Smiles + taxas",
@@ -118,7 +126,9 @@
    "medio",
    "longo"
   ],
-  "exige_visto": false
+  "exige_visto": false,
+  "relevante": true,
+  "preco": "22 mil milhas"
  },
  {
   "titulo": "Corre! Últimos dias para ganhar até 55 mil milhas com os cartões GOL Smiles",
@@ -136,7 +146,9 @@
   "categorias": [
    "medio"
   ],
-  "exige_visto": false
+  "exige_visto": false,
+  "relevante": false,
+  "preco": "55 mil milhas"
  },
  {
   "titulo": "Pink Friday! Ganhe até 390 mil pontos no upgrade para o Clube Livelo Premium",
@@ -154,7 +166,9 @@
   "categorias": [
    "longo"
   ],
-  "exige_visto": false
+  "exige_visto": false,
+  "relevante": false,
+  "preco": "390 mil pontos"
  },
  {
   "titulo": "LATAM anuncia mais seis destinos no Brasil com Embraer E195-E2",
@@ -188,7 +202,9 @@
   "categorias": [
    "longo"
   ],
-  "exige_visto": false
+  "exige_visto": false,
+  "relevante": false,
+  "preco": null
  },
  {
   "titulo": "LATAM Friday! Shopping LATAM Pass oferece até 10 milhas por real na Casas Bahia",
@@ -206,7 +222,9 @@
   "categorias": [
    "longo"
   ],
-  "exige_visto": false
+  "exige_visto": false,
+  "relevante": false,
+  "preco": null
  },
  {
   "titulo": "Azul Friday! Garanta até 35% de desconto em voos nacionais e internacionais com pontos",
@@ -246,7 +264,9 @@
    "medio",
    "longo"
   ],
-  "exige_visto": false
+  "exige_visto": false,
+  "relevante": true,
+  "preco": "3.250 pontos"
  },
  {
   "titulo": "Prorrogou! Ganhe 10 pontos Livelo por real gasto em combo promocional do McDonald’s",
@@ -264,7 +284,9 @@
   "categorias": [
    "sem_data"
   ],
-  "exige_visto": false
+  "exige_visto": false,
+  "relevante": false,
+  "preco": null
  },
  {
   "titulo": "LATAM Friday! Voos nacionais a partir de R$ 119 ou 2.535 milhas",
@@ -305,7 +327,9 @@
    "medio",
    "longo"
   ],
-  "exige_visto": false
+  "exige_visto": false,
+  "relevante": true,
+  "preco": "R$ 119 ou 2.535 milhas"
  },
  {
   "titulo": "LATAM Pass e Premmia oferecem até 60% de bônus na transferência de pontos",
@@ -323,7 +347,9 @@
   "categorias": [
    "longo"
   ],
-  "exige_visto": false
+  "exige_visto": false,
+  "relevante": false,
+  "preco": null
  },
  {
   "titulo": "Azul Friday! Reserve hotéis ou carros com 20% de desconto em reais ou pontos Azul Fidelidade",
@@ -341,7 +367,9 @@
   "categorias": [
    "longo"
   ],
-  "exige_visto": false
+  "exige_visto": false,
+  "relevante": false,
+  "preco": null
  },
  {
   "titulo": "Radar PPV! Resumo das promoções de acúmulo e transferência de pontos do dia 26 de novembro de 2026",
@@ -368,7 +396,9 @@
    "medio",
    "longo"
   ],
-  "exige_visto": false
+  "exige_visto": false,
+  "relevante": false,
+  "preco": null
  },
  {
   "titulo": "Pink Friday! Livelo oferece até 21 pontos por real gasto em mais de 130 parceiros",
@@ -400,7 +430,9 @@
    "medio",
    "longo"
   ],
-  "exige_visto": false
+  "exige_visto": false,
+  "relevante": false,
+  "preco": null
  },
  {
   "titulo": "Blackíssima! Esfera oferece até 18 pontos por real gasto em mais de 40 lojas",
@@ -421,7 +453,9 @@
    "medio",
    "longo"
   ],
-  "exige_visto": false
+  "exige_visto": false,
+  "relevante": false,
+  "preco": null
  },
  {
   "titulo": "Europa de Executiva! Mega Promo Latam tem voos para Lisboa, Madri e outras cidades a partir de R$ 10.070 ida e volta!",
@@ -464,7 +498,9 @@
    "medio",
    "longo"
   ],
-  "exige_visto": false
+  "exige_visto": false,
+  "relevante": true,
+  "preco": "R$ 10.070"
  },
  {
   "titulo": "México e Caribe! Mega Promo Latam tem voos para Costa Rica, Cancún e mais a partir de R$ 2.348 ida e volta!",
@@ -482,7 +518,9 @@
   "categorias": [
    "sem_data"
   ],
-  "exige_visto": false
+  "exige_visto": false,
+  "relevante": true,
+  "preco": "R$ 2.348"
  },
  {
   "titulo": "[Esgotado] 20 cupons exclusivos com R$ 500 OFF na Decolar para passagem, pacote, hotel ou passeio",
@@ -500,7 +538,9 @@
   "categorias": [
    "medio"
   ],
-  "exige_visto": false
+  "exige_visto": false,
+  "relevante": false,
+  "preco": "R$ 500"
  },
  {
   "titulo": "América do Sul! Latam, Jetsmart e Sky têm voos para Argentina, Chile, Uruguai e mais destinos a partir de R$ 940 ida e volta!",
@@ -536,7 +576,9 @@
   "categorias": [
    "proximos"
   ],
-  "exige_visto": false
+  "exige_visto": false,
+  "relevante": true,
+  "preco": "R$ 940"
  },
  {
   "titulo": "Oceania! Mega Promo Latam tem voos para Austrália ou Nova Zelândia a partir de R$ 6.044 ida e volta!",
@@ -560,7 +602,9 @@
   "categorias": [
    "medio"
   ],
-  "exige_visto": false
+  "exige_visto": false,
+  "relevante": true,
+  "preco": "R$ 6.044"
  },
  {
   "titulo": "🔴 [LIVE] MEGA PROMO LATAM: até 40% OFF! Brasil, Chile, EUA e Europa | Nacionais desde R$ 267 ida e volta",
@@ -591,7 +635,9 @@
   "categorias": [
    "sem_data"
   ],
-  "exige_visto": false
+  "exige_visto": false,
+  "relevante": true,
+  "preco": "R$ 267"
  },
  {
   "titulo": "África do Sul 🇿🇦 Mega Promo Latam tem voos para Joanesburgo ou Cidade do Cabo a partir de R$ 3.564 ida e volta!",
@@ -616,7 +662,9 @@
   "categorias": [
    "proximos"
   ],
-  "exige_visto": false
+  "exige_visto": false,
+  "relevante": true,
+  "preco": "R$ 3.564"
  },
  {
   "titulo": "Voe para Lima a partir de 29 mil milhas LATAM Pass + taxas o trecho",
@@ -643,7 +691,9 @@
   "categorias": [
    "sem_data"
   ],
-  "exige_visto": false
+  "exige_visto": false,
+  "relevante": true,
+  "preco": "29 mil milhas"
  },
  {
   "titulo": "Pink Hour Livelo! Acumule até 21 pontos por real gasto na Insider, Olympikus e mais parceiros",
@@ -670,7 +720,9 @@
   "categorias": [
    "sem_data"
   ],
-  "exige_visto": false
+  "exige_visto": false,
+  "relevante": false,
+  "preco": null
  },
  {
   "titulo": "Receba 10.000 pontos Livelo ao assinar o Clube Mini por apenas R$ 24,90 por mês",
@@ -688,7 +740,9 @@
   "categorias": [
    "sem_data"
   ],
-  "exige_visto": false
+  "exige_visto": false,
+  "relevante": false,
+  "preco": "R$ 24,90 ou 10.000 pontos"
  },
  {
   "titulo": "Partiu Tóquio? Viaje para a capital do Japão a partir de 207 mil pontos Azul + taxas",
@@ -712,7 +766,9 @@
   "categorias": [
    "sem_data"
   ],
-  "exige_visto": false
+  "exige_visto": false,
+  "relevante": true,
+  "preco": "207 mil pontos"
  },
  {
   "titulo": "Livelo oferece até 30% off em passagens para Portugal + 40% de pointsback na CVC",
@@ -730,7 +786,9 @@
   "categorias": [
    "sem_data"
   ],
-  "exige_visto": false
+  "exige_visto": false,
+  "relevante": false,
+  "preco": null
  },
  {
   "titulo": "Trecho de Recife para Barcelona em Executiva a partir de 194 milhas LATAM Pass + taxas",
@@ -757,7 +815,9 @@
   "categorias": [
    "sem_data"
   ],
-  "exige_visto": false
+  "exige_visto": false,
+  "relevante": true,
+  "preco": "194.041 milhas"
  },
  {
   "titulo": "Livelo oferece até 57,1 % de desconto na compra de pontos para assinantes do Clube – milheiro a partir de R$ 29,13",
@@ -775,7 +835,9 @@
   "categorias": [
    "sem_data"
   ],
-  "exige_visto": false
+  "exige_visto": false,
+  "relevante": false,
+  "preco": "R$ 29,13"
  },
  {
   "titulo": "Executiva para Orlando a partir de 176 mil milhas Smiles + taxas",
@@ -799,7 +861,9 @@
   "categorias": [
    "proximos"
   ],
-  "exige_visto": false
+  "exige_visto": false,
+  "relevante": true,
+  "preco": "176 mil milhas"
  },
  {
   "titulo": "Azul tem passagens a partir de R$ 176 por trecho",
@@ -817,7 +881,9 @@
   "categorias": [
    "sem_data"
   ],
-  "exige_visto": false
+  "exige_visto": false,
+  "relevante": true,
+  "preco": "R$ 176"
  },
  {
   "titulo": "Aproveite! Mercado Livre oferece cupom de até 25% de desconto em compras",
@@ -835,7 +901,9 @@
   "categorias": [
    "sem_data"
   ],
-  "exige_visto": false
+  "exige_visto": false,
+  "relevante": false,
+  "preco": null
  },
  {
   "titulo": "Receba até 392.000 pontos ao assinar o Clube Livelo Premium – Milheiro a partir de R$ 23,92",
@@ -853,7 +921,9 @@
   "categorias": [
    "sem_data"
   ],
-  "exige_visto": false
+  "exige_visto": false,
+  "relevante": false,
+  "preco": "R$ 23,92 ou 392.000 pontos"
  },
  {
   "titulo": "ÚLTIMO DIA! 50% OFF nos Alertas do PP (maior desconto do ano!)",
@@ -871,7 +941,9 @@
   "categorias": [
    "medio"
   ],
-  "exige_visto": false
+  "exige_visto": false,
+  "relevante": false,
+  "preco": null
  },
  {
   "titulo": "Black da UDM: aproveite 60% OFF para entrar no Mundo Avios",
@@ -889,7 +961,9 @@
   "categorias": [
    "sem_data"
   ],
-  "exige_visto": false
+  "exige_visto": false,
+  "relevante": false,
+  "preco": null
  },
  {
   "titulo": "Últimas horas para assinar assinar o Clube Livelo Premium e receber até 390.000 pontos- CPM a partir de R$ 24,04",
@@ -907,7 +981,9 @@
   "categorias": [
    "sem_data"
   ],
-  "exige_visto": false
+  "exige_visto": false,
+  "relevante": false,
+  "preco": "R$ 24,04 ou 390.000 pontos"
  },
  {
   "titulo": "Voe para Barbados no Caribe a partir de 76 mil pontos Azul + taxas",
@@ -931,7 +1007,9 @@
   "categorias": [
    "sem_data"
   ],
-  "exige_visto": false
+  "exige_visto": false,
+  "relevante": true,
+  "preco": "76 mil pontos"
  },
  {
   "titulo": "Segue valendo a oferta da Livelo de até 10 pontos por real gasto na compra de um combo McDonald’s",
@@ -949,7 +1027,9 @@
   "categorias": [
    "sem_data"
   ],
-  "exige_visto": false
+  "exige_visto": false,
+  "relevante": false,
+  "preco": null
  },
  {
   "titulo": "Últimos dias para ganhar até 55 mil milhas bônus solicitando o cartão GOL Smiles",
@@ -973,7 +1053,9 @@
   "categorias": [
    "sem_data"
   ],
-  "exige_visto": false
+  "exige_visto": false,
+  "relevante": false,
+  "preco": "55 mil milhas"
  },
  {
   "titulo": "Imperdível! Tauá Hotel & Convention João Pessoa com mais de 22% de desconto durante o Carnaval na Azul Viagens",
@@ -997,7 +1079,9 @@
   "categorias": [
    "sem_data"
   ],
-  "exige_visto": false
+  "exige_visto": false,
+  "relevante": false,
+  "preco": null
  },
  {
   "titulo": "Voe para Nova York a partir de 66 mil milhas Smiles + taxas",
@@ -1021,7 +1105,9 @@
   "categorias": [
    "sem_data"
   ],
-  "exige_visto": false
+  "exige_visto": false,
+  "relevante": true,
+  "preco": "66 mil milhas"
  },
  {
   "titulo": "Black Friday é amanhã! Receba de graça no seu WhatsApp as melhores ofertas e descontos",
@@ -1048,7 +1134,9 @@
   "categorias": [
    "sem_data"
   ],
-  "exige_visto": false
+  "exige_visto": false,
+  "relevante": false,
+  "preco": null
  },
  {
   "titulo": "Azul Fidelidade oferece até 14 pontos por real gasto no Magalu",
@@ -1066,7 +1154,9 @@
   "categorias": [
    "sem_data"
   ],
-  "exige_visto": false
+  "exige_visto": false,
+  "relevante": false,
+  "preco": null
  },
  {
   "titulo": "LATAM Friday oferece passagens promocionais a partir de R$ 119",
@@ -1084,7 +1174,9 @@
   "categorias": [
    "sem_data"
   ],
-  "exige_visto": false
+  "exige_visto": false,
+  "relevante": true,
+  "preco": "R$ 119"
  },
  {
   "titulo": "Azul Fidelidade oferece até 35% de desconto no resgate de passagens nacionais e internacionais",
@@ -1105,7 +1197,9 @@
    "medio",
    "longo"
   ],
-  "exige_visto": false
+  "exige_visto": false,
+  "relevante": true,
+  "preco": null
  },
  {
   "titulo": "Cupom de até 50% de desconto em pacotes de viagem na Azul Viagens",
@@ -1123,7 +1217,9 @@
   "categorias": [
    "sem_data"
   ],
-  "exige_visto": false
+  "exige_visto": false,
+  "relevante": false,
+  "preco": null
  },
  {
   "titulo": "Seja rápido! Mercado Livre oferece cupom de até 25% de desconto em compras",
@@ -1141,7 +1237,9 @@
   "categorias": [
    "sem_data"
   ],
-  "exige_visto": false
+  "exige_visto": false,
+  "relevante": false,
+  "preco": "R$ 30."
  },
  {
   "titulo": "Black Friday Marriott! Diárias a partir de R$ 399 no maior desconto do ano",
@@ -1159,7 +1257,9 @@
   "categorias": [
    "medio"
   ],
-  "exige_visto": false
+  "exige_visto": false,
+  "relevante": false,
+  "preco": "R$ 399"
  },
  {
   "titulo": "Acaba em menos de 24h: Ganhe até 10.000 pontos Livelo adquirindo dólares digitais no ARQ",
@@ -1177,6 +1277,8 @@
   "categorias": [
    "medio"
   ],
-  "exige_visto": false
+  "exige_visto": false,
+  "relevante": false,
+  "preco": "10.000 pontos"
  }
 ]

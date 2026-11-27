@@ -133,7 +133,8 @@ def aviso_promocao(p):
         ini, fim = mes_ano(p["viagem_inicio"]), mes_ano(p["viagem_fim"])
         periodo = f"\n🗓️ Viagem: {ini}" + (f" a {fim}" if fim != ini else "")
     destinos = ", ".join(bd.DESTINO_POR_IATA[i]["nome"] for i in p["destinos"][:6])
-    texto = (f"{' · '.join(cats)} | {tipo}\n<b>{esc(p['titulo'])}</b>\n"
+    preco = f"💰 {esc(p['preco'])}\n" if p.get("preco") else ""
+    texto = (f"{' · '.join(cats)} | {tipo}\n<b>{esc(p['titulo'])}</b>\n{preco}"
              f"📍 {esc(p['origem'])}" + (f" → {esc(destinos)}" if destinos else "") + periodo)
     entrada = linha_entrada(p["paises"])
     if entrada:
@@ -153,8 +154,8 @@ def rodar_promocoes(bot, e):
             continue          # repetida (mesma oferta em outro blog)
         titulos.add(util_sem_acento(p["titulo"]))
         e["promocoes"].insert(0, p)
-        if p["exige_visto"]:
-            continue          # destino que pede visto: fica no app (escondido), sem aviso
+        if p["exige_visto"] or not p.get("relevante"):
+            continue          # visto ou não é oferta de voo (cartão, bônus, hotel): fica no app escondido, sem aviso
         texto, botoes = aviso_promocao(p)
         bot.enviar(texto, botoes)
         enviadas += 1
@@ -266,6 +267,8 @@ def main():
     e["status"]["bot"] = bot.nome_do_bot()
     primeira_vez = not e["vistos"]
 
+    for antigo in e["promocoes"]:
+        promos.enriquecer(antigo)
     tratar_comandos(bot, e)
     if not bot.chat:
         log("Sem TELEGRAM_CHAT_ID: mande /start ao bot para receber o código e crie o segredo no GitHub.")

@@ -20,8 +20,11 @@ HORA_DIARIA = 7
 
 
 def log(msg):
-    if str(msg).startswith("::"):      # anotações do GitHub precisam começar a linha
-        print(msg, flush=True)
+    m = str(msg)
+    if m.startswith("::"):             # anotações do GitHub precisam começar a linha
+        print(m, flush=True)
+    elif any(t in m for t in ("falhou", "indisponível", "Sem APIFY", "Sem TELEGRAM")):
+        print(f"::warning title=Atenção::{m[:300]}", flush=True)
     else:
         print(f"[{agora():%H:%M}] {msg}", flush=True)
 
@@ -219,6 +222,7 @@ def rodar_cambio(bot, e):
         log(f"Câmbio falhou: {ex}")
     rank = cambio.ranking(e["cambio"])
     salvar(DADOS / "real_forte.json", dict(data=iso(hoje()), moedas=rank))
+    return bool(rank)
     if hoje().weekday() == 0:
         fortes = [r for r in rank if r["variacao"] >= 5][:6]
         if fortes:
@@ -279,7 +283,7 @@ def main():
         rodar_promocoes(bot, e)
 
     if agora().hour >= HORA_DIARIA and e["status"].get("ultimo_voos") != iso(hoje()):
-        rodar_cambio(bot, e)
+        cambio_ok = rodar_cambio(bot, e)
         lembrete_passaporte(bot, e)
         if token_apify:
             apify = voos.Apify(token_apify, e["status"], LIMITE_APIFY_USD, log=log)
@@ -291,7 +295,8 @@ def main():
                 log(f"Busca de preços falhou: {ex}")
         else:
             log("Sem APIFY_TOKEN: pulando preços.")
-        e["status"]["ultimo_voos"] = iso(hoje())
+        if cambio_ok:                     # se o câmbio falhou, tenta de novo na próxima execução
+            e["status"]["ultimo_voos"] = iso(hoje())
 
     e["status"]["ultima_execucao"] = agora().isoformat(timespec="minutes")
     guardar(e)

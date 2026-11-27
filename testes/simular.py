@@ -45,11 +45,10 @@ def falso_get(url, **kw):
     if url.startswith("https://blog/"):
         return R(texto="<article>Viagens de março a junho de 2027. Saindo de Vitória.</article>")
     if "actor-runs" in url:
-        return R({"data": {"id": "r", "status": "SUCCEEDED", "usageTotalUsd": 0.002, "defaultDatasetId": "d"}})
+        rid = url.rsplit("/", 1)[-1]
+        return R({"data": {"id": rid, "status": "SUCCEEDED", "usageTotalUsd": 0.002, "defaultDatasetId": "d" + rid}})
     if "datasets" in url:
-        if kw.get("params") and "exploreOrigin" in str(kw):
-            pass
-        return R(ITENS_APIFY["atual"])
+        return R(ITENS_APIFY["dp" if "/dp/" in url else "atual"])
     if "open.er-api" in url:
         return R({"rates": {"EUR": 0.17, "CLP": 170.0, "USD": 0.19, "UYU": 7.9}})
     if "awesomeapi" in url:
@@ -82,6 +81,10 @@ def falso_post(url, json=None, **kw):
         if json.get("exploreOrigin"):
             ITENS_APIFY["atual"] = [{"airport": "SCL", "city": "Santiago", "country": "Chile", "departureDate": "2027-06-10",
                                      "returnDate": "2027-06-17", "price": 1500, "airline": "LATAM", "stops": 0}]
+        elif json.get("routes"):
+            ITENS_APIFY["dp"] = [{"type": "flight", "destination": r["destination"], "price": 900, "airline": "Gol",
+                                  "stops": 1, "departureDate": r["departureDate"]} for r in json["routes"]]
+            return R({"data": {"id": "p", "status": "RUNNING", "defaultDatasetId": "dp"}})
         else:
             ITENS_APIFY["atual"] = [{"destination": s["destination"], "price": 900, "airlines": ["Gol"], "stops": 1,
                                      "departureDate": s["departureDate"],
@@ -117,7 +120,9 @@ RODADA["updates"] = [msg("/favoritar Gramado", 3), msg("/passaporte 2027-06-01",
 main.agora = lambda: util.datetime(2026, 11, 27, 6, 0, tzinfo=util.FUSO_BR)   # antes das 7h: sem preços
 rodar("2ª execução (promoções novas + comandos; callback de estranho ignorado)")
 main.agora = lambda: util.datetime(2026, 11, 27, 8, 0, tzinfo=util.FUSO_BR)
-rodar("3ª execução (diária: preços, câmbio, exploração)")
+rodar("3ª execução (diária: dispara preços, câmbio, exploração)")
+main.agora = lambda: util.datetime(2026, 11, 27, 9, 0, tzinfo=util.FUSO_BR)
+rodar("4ª execução (colhe os preços)")
 
 d = util.DADOS
 favs = json.loads((d / "favoritos.json").read_text())

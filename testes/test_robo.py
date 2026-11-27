@@ -89,27 +89,14 @@ if __name__ == "__main__":
             print("ok", nome)
 
 
-def test_buscar_precos_repete_o_que_falhou():
-    """O ator às vezes falha em parte das buscas: a 2ª tentativa deve completar o que faltou."""
+def test_pedido_e_leitura_de_precos():
     from datetime import date
     from robo import voos
-
-    class FalsoApify:
-        def __init__(self):
-            self.chamadas = 0
-            self.log = lambda *_: None
-
-        def rodar(self, entrada, **_):
-            self.chamadas += 1
-            buscas = entrada["routes"]
-            if self.chamadas == 1:
-                buscas = buscas[:1]            # 1ª vez: só 1 das buscas responde
-            return [{"destination": b["destination"], "departureDate": b["departureDate"], "price": 800 + self.chamadas,
-                     "airlines": ["Gol"], "stops": 0} for b in buscas]
-
-    api = FalsoApify()
-    r = voos.buscar_precos(api, ["SSA", "FOR"], referencia=date(2026, 11, 27), favoritos={"SSA"})
+    entrada, mapa, jan = voos.pedido_de_precos(["SSA", "FOR"], referencia=date(2026, 11, 27), favoritos={"SSA"})
+    assert len(entrada["routes"]) == 3                  # favorito ganha 2 datas
+    itens = [{"type": "flight", "destination": r["destination"], "departureDate": r["departureDate"],
+              "price": 800 + n, "airline": "Gol", "stops": 0} for n, r in enumerate(entrada["routes"])]
+    itens.append({"type": "notice"})
+    r = voos.ler_precos(itens, mapa, jan)
     assert set(r) == {"SSA", "FOR"}
-    assert len(r["SSA"]["calendario"]) == 2      # favorito: 2 datas
-    assert len(r["FOR"]["calendario"]) == 1
-    assert api.chamadas == 2
+    assert len(r["SSA"]["calendario"]) == 2 and r["SSA"]["menor"] == 800

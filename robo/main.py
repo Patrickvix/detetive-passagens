@@ -6,7 +6,7 @@
 """
 import os
 import sys
-from datetime import timedelta
+from datetime import datetime, timedelta
 
 from . import base_dados as bd
 from . import cambio, promos, voos
@@ -182,17 +182,48 @@ def aviso_preco(a, e):
     return texto, botoes
 
 
-def rodar_precos(bot, e, apify):
+def iniciar_precos(e, apify):
+    """Dispara a busca do dia no Apify sem esperar; o resultado é lido numa próxima execução."""
     favs = [f["iata"] for f in e["favoritos"]]
     rotas = voos.rotas_do_dia(e["favoritos"])
-    log(f"Preços: {len(rotas)} rotas, janela +{voos.janela_do_dia()} dias")
-    novos = voos.buscar_precos(apify, rotas, favoritos=set(favs))
-    alertas = voos.registrar_e_avaliar(e["precos"], novos, set(favs))
+    entrada, mapa, jan = voos.pedido_de_precos(rotas, favoritos=set(favs))
+    run_id = apify.iniciar(entrada, voos.ATOR_PRECOS, voos.TETO_PRECOS_USD)
+    if run_id:
+        e["status"]["precos_pendente"] = dict(run=run_id, mapa=mapa, janela=jan, desde=agora().isoformat(timespec="minutes"))
+        log(f"::notice title=Preços::busca de {len(entrada['routes'])} consultas disparada; resultado na próxima execução")
+
+
+def colher_precos(bot, e, apify):
+    """Se há busca de preços em andamento, lê o resultado quando ficar pronta."""
+    pend = e["status"].get("precos_pendente")
+    if not pend:
+        return
+    st, itens = apify.consultar(pend["run"])
+    if itens is None:
+        if (agora() - datetime.fromisoformat(pend["desde"])).total_seconds() > 4 * 3600:
+            log("Busca de preços falhou: ficou mais de 4 horas sem terminar")
+            e["status"].pop("precos_pendente", None)
+        return
+    e["status"].pop("precos_pendente", None)
+    novos = voos.ler_precos(itens, pend["mapa"], pend["janela"])
+    # o Google às vezes bloqueia parte das buscas: repete só essas, uma vez, 1 hora depois
+    falhas = [{k: it[k] for k in ("origin", "destination", "departureDate", "returnDate") if it.get(k)}
+              for it in itens or [] if it.get("type") in ("notice", "error") and it.get("departureDate")]
+    falhas = [f for f in falhas if f.get("destination") and f.get("returnDate")]
+    if falhas and not pend.get("repeticao"):
+        f0 = dict(voos.pedido_de_precos([], favoritos=())[0], routes=[dict(f, origin=voos.ORIGEM) for f in falhas])
+        run_id = apify.iniciar(f0, voos.ATOR_PRECOS, voos.TETO_PRECOS_USD)
+        if run_id:
+            e["status"]["precos_pendente"] = dict(run=run_id, mapa=pend["mapa"], janela=pend["janela"], repeticao=True,
+                                                  desde=agora().isoformat(timespec="minutes"))
+            log(f"::notice title=Preços::repetindo {len(falhas)} buscas que o Google bloqueou")
+    favs = {f["iata"] for f in e["favoritos"]}
+    alertas = voos.registrar_e_avaliar(e["precos"], novos, favs)
     for a in alertas:
         if pais_de(a["iata"], e) and bd.pais_info(pais_de(a["iata"], e))["entrada"] == "visto":
             continue
         bot.enviar(*aviso_preco(a, e))
-    log(f"Preços: {len(novos)} rotas com preço, {len(alertas)} quedas")
+    log(f"::notice title=Preços::{len(novos)} rotas com preço, {len(alertas)} quedas ({st})")
 
 
 def rodar_exploracao(bot, e, apify):
@@ -285,6 +316,12 @@ def main():
     else:
         rodar_promocoes(bot, e)
 
+    if token_apify and e["status"].get("precos_pendente"):
+        try:
+            colher_precos(bot, e, voos.Apify(token_apify, e["status"], LIMITE_APIFY_USD, log=log))
+        except Exception as ex:
+            log(f"Leitura dos preços falhou: {ex}")
+
     if agora().hour >= HORA_DIARIA:
         if e["status"].get("ultimo_cambio") != iso(hoje()):
             if rodar_cambio(bot, e):          # se falhar, tenta de novo na próxima hora (é barato)
@@ -294,7 +331,8 @@ def main():
             if token_apify:
                 apify = voos.Apify(token_apify, e["status"], LIMITE_APIFY_USD, log=log)
                 try:
-                    rodar_precos(bot, e, apify)
+                    if not e["status"].get("precos_pendente"):
+                        iniciar_precos(e, apify)
                     if hoje().weekday() == 0 or not e["descobertas"]["ultima"]:
                         rodar_exploracao(bot, e, apify)
                 except Exception as ex:

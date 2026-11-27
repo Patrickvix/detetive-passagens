@@ -38,6 +38,33 @@ class Apify:
         g = self.status.setdefault("apify_gasto", {})
         g[mes] = round(g.get(mes, 0.0) + (valor or 0.0), 5)
 
+    def iniciar(self, entrada, ator, teto):
+        """Dispara uma execução sem esperar. Devolve o id (ou None se o limite do mês não permitir)."""
+        if self.gasto_mes() + teto > self.limite:
+            self.log(f"Apify: limite mensal de US$ {self.limite} atingido, pulando.")
+            return None
+        r = requests.post(f"{API}/acts/{ator}/runs", headers={"Authorization": f"Bearer {self.token}"},
+                          json=entrada, timeout=60, params={"maxTotalChargeUsd": teto, "timeout": 3600})
+        r.raise_for_status()
+        return r.json()["data"]["id"]
+
+    def consultar(self, run_id):
+        """Devolve (status, itens). Itens só quando terminou com sucesso; soma o custo ao terminar."""
+        h = {"Authorization": f"Bearer {self.token}"}
+        run = requests.get(f"{API}/actor-runs/{run_id}", headers=h, timeout=30).json()["data"]
+        st = run["status"]
+        if st in ("READY", "RUNNING"):
+            return st, None
+        custo = run.get("usageTotalUsd") or 0.0
+        self._somar(custo)
+        self.log(f"Apify: execução {st}, custo US$ {custo:.4f}, mês US$ {self.gasto_mes():.3f}")
+        if st != "SUCCEEDED":
+            return st, []
+        itens = requests.get(f"{API}/datasets/{run['defaultDatasetId']}/items", headers=h, timeout=60,
+                             params={"clean": "true"})
+        itens.raise_for_status()
+        return st, itens.json()
+
     def rodar(self, entrada, ator=ATOR, teto=TETO_POR_EXECUCAO_USD):
         if self.gasto_mes() + teto > self.limite:
             self.log(f"Apify: limite mensal de US$ {self.limite} atingido, pulando.")
@@ -81,55 +108,44 @@ def janela_do_dia(referencia=None):
     return JANELAS[ref.toordinal() % len(JANELAS)]
 
 
-LOTE = 40            # rotas por execução do Apify
-TENTATIVAS = 2       # o ator às vezes falha em algumas buscas: repete só as que faltaram
-
-
-def buscar_precos(apify, iatas, referencia=None, favoritos=()):
-    """Preço ida e volta (7 noites) de cada rota na janela do dia (favoritos: 2 datas; demais: 1).
-    Usa a busca simples do Google Flights, porque o modo calendário do ator está instável."""
+def pedido_de_precos(iatas, referencia=None, favoritos=()):
+    """Monta a busca do dia: ida e volta (7 noites) na janela do dia; favoritos ganham 2 datas."""
     ref = referencia or hoje()
     jan = janela_do_dia(ref)
     ida = ref + timedelta(days=jan)
-    pendentes = []
+    pares = []
     for x in iatas:
-        pendentes.append((x, ida))
+        pares.append((x, ida))
         if x in favoritos:
-            pendentes.append((x, min(ida + timedelta(days=30), ref + timedelta(days=320))))
+            pares.append((x, min(ida + timedelta(days=30), ref + timedelta(days=320))))
+    mapa = {}
+    for x, _d in pares:
+        mapa[x] = x
+        for cod in _codigo_busca(x).split(","):
+            mapa[cod] = x
+    entrada = {
+        "routes": [{"origin": ORIGEM, "destination": _codigo_busca(x).split(",")[0], "departureDate": iso(d),
+                    "returnDate": iso(d + timedelta(days=NOITES))} for x, d in pares],
+        "currency": "BRL", "market": "BR", "language": "pt-BR", "maxResults": 1, "sortBy": "price",
+        "includePriceInsights": False, "kayakWhenGoogleEmpty": False, "includeRunSummary": False,
+    }
+    return entrada, mapa, jan
+
+
+def ler_precos(itens, mapa, jan):
+    """Transforma o resultado do coletor em {iata: menor preço, datas, cia}."""
     coletado = {}
-    for _ in range(TENTATIVAS):
-        if not pendentes:
-            break
-        faltam = list(pendentes)
-        for i in range(0, len(pendentes), LOTE):
-            lote = pendentes[i:i + LOTE]
-            mapa = {}
-            for x, _d in lote:
-                mapa[x] = x
-                for cod in _codigo_busca(x).split(","):
-                    mapa[cod] = x
-            entrada = {
-                "routes": [{"origin": ORIGEM, "destination": _codigo_busca(x).split(",")[0], "departureDate": iso(d),
-                            "returnDate": iso(d + timedelta(days=NOITES))} for x, d in lote],
-                "currency": "BRL", "market": "BR", "language": "pt-BR", "maxResults": 1, "sortBy": "price",
-                "includePriceInsights": False, "kayakWhenGoogleEmpty": False, "includeRunSummary": False,
-            }
-            itens = apify.rodar(entrada, ator=ATOR_PRECOS, teto=TETO_PRECOS_USD) or []
-            for it in itens:
-                if it.get("type", "flight") != "flight":
-                    continue
-                dest = (it.get("destination") or "").split(",")[0]
-                iata = mapa.get(dest)
-                data, preco = it.get("departureDate"), it.get("price")
-                if not iata or not data or not preco:
-                    continue
-                if data in coletado.get(iata, {}) and coletado[iata][data]["preco"] <= preco:
-                    continue
-                cia = it.get("airline") or ", ".join(it.get("airlines") or [])
-                coletado.setdefault(iata, {})[data] = dict(preco=preco, cia=cia,
-                                                           paradas=it.get("stops"))
-                faltam = [(x, d) for x, d in faltam if not (x == iata and iso(d) == data)]
-        pendentes = faltam
+    for it in itens or []:
+        if it.get("type", "flight") != "flight":
+            continue
+        iata = mapa.get((it.get("destination") or "").split(",")[0])
+        data, preco = it.get("departureDate"), it.get("price")
+        if not iata or not data or not preco:
+            continue
+        if data in coletado.get(iata, {}) and coletado[iata][data]["preco"] <= preco:
+            continue
+        cia = it.get("airline") or ", ".join(it.get("airlines") or [])
+        coletado.setdefault(iata, {})[data] = dict(preco=preco, cia=cia, paradas=it.get("stops"))
     resultados = {}
     for iata, por_data in coletado.items():
         cal = sorted((d, v["preco"]) for d, v in por_data.items())
@@ -138,8 +154,6 @@ def buscar_precos(apify, iatas, referencia=None, favoritos=()):
         resultados[iata] = dict(janela=jan, calendario=cal, menor=melhor[1], ida=melhor[0],
                                 volta=iso(para_data(melhor[0]) + timedelta(days=NOITES)),
                                 cia=v["cia"], paradas=v["paradas"])
-    if pendentes:
-        apify.log(f"::warning title=Preços::{len(pendentes)} consulta(s) sem resposta do Google Flights (tento de novo amanhã)")
     return resultados
 
 

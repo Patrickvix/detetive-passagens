@@ -1,0 +1,1761 @@
+{
+ "grupos": [
+  "Norte",
+  "Nordeste",
+  "Centro-Oeste",
+  "Sudeste",
+  "Sul",
+  "América do Sul",
+  "Europa",
+  "América do Norte e Caribe",
+  "Outros"
+ ],
+ "destinos": [
+  {
+   "iata": "BEL",
+   "nome": "Belém",
+   "local": "Belém (PA)",
+   "pais": "Brasil",
+   "grupo": "Norte",
+   "uf": "PA",
+   "termos": [
+    "belem",
+    "belém"
+   ]
+  },
+  {
+   "iata": "MAO",
+   "nome": "Manaus",
+   "local": "Manaus (AM)",
+   "pais": "Brasil",
+   "grupo": "Norte",
+   "uf": "AM",
+   "termos": [
+    "manaus"
+   ]
+  },
+  {
+   "iata": "STM",
+   "nome": "Santarém",
+   "local": "Santarém e Alter do Chão (PA)",
+   "pais": "Brasil",
+   "grupo": "Norte",
+   "uf": "PA",
+   "termos": [
+    "alter do chão",
+    "santarem",
+    "santarém"
+   ]
+  },
+  {
+   "iata": "PMW",
+   "nome": "Palmas",
+   "local": "Palmas e Jalapão (TO)",
+   "pais": "Brasil",
+   "grupo": "Norte",
+   "uf": "TO",
+   "termos": [
+    "em palmas",
+    "jalapão",
+    "palmas (to)",
+    "para palmas"
+   ]
+  },
+  {
+   "iata": "MCP",
+   "nome": "Macapá",
+   "local": "Macapá (AP)",
+   "pais": "Brasil",
+   "grupo": "Norte",
+   "uf": "AP",
+   "termos": [
+    "macapá"
+   ]
+  },
+  {
+   "iata": "BVB",
+   "nome": "Boa Vista",
+   "local": "Boa Vista (RR)",
+   "pais": "Brasil",
+   "grupo": "Norte",
+   "uf": "RR",
+   "termos": [
+    "boa vista"
+   ]
+  },
+  {
+   "iata": "PVH",
+   "nome": "Porto Velho",
+   "local": "Porto Velho (RO)",
+   "pais": "Brasil",
+   "grupo": "Norte",
+   "uf": "RO",
+   "termos": [
+    "porto velho"
+   ]
+  },
+  {
+   "iata": "RBR",
+   "nome": "Rio Branco",
+   "local": "Rio Branco (AC)",
+   "pais": "Brasil",
+   "grupo": "Norte",
+   "uf": "AC",
+   "termos": [
+    "rio branco"
+   ]
+  },
+  {
+   "iata": "SLZ",
+   "nome": "São Luís",
+   "local": "São Luís e Lençóis Maranhenses (MA)",
+   "pais": "Brasil",
+   "grupo": "Nordeste",
+   "uf": "MA",
+   "termos": [
+    "barreirinhas",
+    "lençóis maranhenses",
+    "maranhão",
+    "sao luis",
+    "são luís"
+   ]
+  },
+  {
+   "iata": "JJD",
+   "nome": "Jericoacoara",
+   "local": "Jericoacoara (CE)",
+   "pais": "Brasil",
+   "grupo": "Nordeste",
+   "uf": "CE",
+   "termos": [
+    "jeri",
+    "jericoacoara"
+   ]
+  },
+  {
+   "iata": "FOR",
+   "nome": "Fortaleza",
+   "local": "Fortaleza (CE)",
+   "pais": "Brasil",
+   "grupo": "Nordeste",
+   "uf": "CE",
+   "termos": [
+    "fortaleza"
+   ]
+  },
+  {
+   "iata": "SSA",
+   "nome": "Salvador",
+   "local": "Salvador (BA)",
+   "pais": "Brasil",
+   "grupo": "Nordeste",
+   "uf": "BA",
+   "termos": [
+    "salvador"
+   ]
+  },
+  {
+   "iata": "BPS",
+   "nome": "Porto Seguro",
+   "local": "Porto Seguro e Trancoso (BA)",
+   "pais": "Brasil",
+   "grupo": "Nordeste",
+   "uf": "BA",
+   "termos": [
+    "arraial d'ajuda",
+    "porto seguro",
+    "trancoso"
+   ]
+  },
+  {
+   "iata": "IOS",
+   "nome": "Ilhéus",
+   "local": "Ilhéus e Itacaré (BA)",
+   "pais": "Brasil",
+   "grupo": "Nordeste",
+   "uf": "BA",
+   "termos": [
+    "ilheus",
+    "ilhéus",
+    "itacaré"
+   ]
+  },
+  {
+   "iata": "REC",
+   "nome": "Recife",
+   "local": "Recife e Porto de Galinhas (PE)",
+   "pais": "Brasil",
+   "grupo": "Nordeste",
+   "uf": "PE",
+   "termos": [
+    "porto de galinhas",
+    "recife"
+   ]
+  },
+  {
+   "iata": "FEN",
+   "nome": "Fernando de Noronha",
+   "local": "Fernando de Noronha (PE)",
+   "pais": "Brasil",
+   "grupo": "Nordeste",
+   "uf": "PE",
+   "termos": [
+    "fernando de noronha",
+    "noronha"
+   ]
+  },
+  {
+   "iata": "NAT",
+   "nome": "Natal",
+   "local": "Natal e Pipa (RN)",
+   "pais": "Brasil",
+   "grupo": "Nordeste",
+   "uf": "RN",
+   "termos": [
+    "de natal e",
+    "em natal",
+    "natal (rn)",
+    "natal/rn",
+    "para natal",
+    "praia da pipa"
+   ]
+  },
+  {
+   "iata": "JPA",
+   "nome": "João Pessoa",
+   "local": "João Pessoa (PB)",
+   "pais": "Brasil",
+   "grupo": "Nordeste",
+   "uf": "PB",
+   "termos": [
+    "joao pessoa",
+    "joão pessoa"
+   ]
+  },
+  {
+   "iata": "MCZ",
+   "nome": "Maceió",
+   "local": "Maceió e Maragogi (AL)",
+   "pais": "Brasil",
+   "grupo": "Nordeste",
+   "uf": "AL",
+   "termos": [
+    "maceio",
+    "maceió",
+    "maragogi"
+   ]
+  },
+  {
+   "iata": "AJU",
+   "nome": "Aracaju",
+   "local": "Aracaju (SE)",
+   "pais": "Brasil",
+   "grupo": "Nordeste",
+   "uf": "SE",
+   "termos": [
+    "aracaju"
+   ]
+  },
+  {
+   "iata": "THE",
+   "nome": "Teresina",
+   "local": "Teresina (PI)",
+   "pais": "Brasil",
+   "grupo": "Nordeste",
+   "uf": "PI",
+   "termos": [
+    "teresina"
+   ]
+  },
+  {
+   "iata": "PHB",
+   "nome": "Parnaíba",
+   "local": "Parnaíba e Delta do Parnaíba (PI)",
+   "pais": "Brasil",
+   "grupo": "Nordeste",
+   "uf": "PI",
+   "termos": [
+    "delta do parnaíba",
+    "parnaíba"
+   ]
+  },
+  {
+   "iata": "BSB",
+   "nome": "Brasília",
+   "local": "Brasília e Chapada dos Veadeiros (DF/GO)",
+   "pais": "Brasil",
+   "grupo": "Centro-Oeste",
+   "uf": "DF",
+   "termos": [
+    "brasilia",
+    "brasília",
+    "chapada dos veadeiros"
+   ]
+  },
+  {
+   "iata": "CGB",
+   "nome": "Cuiabá",
+   "local": "Cuiabá, Chapada e Pantanal (MT)",
+   "pais": "Brasil",
+   "grupo": "Centro-Oeste",
+   "uf": "MT",
+   "termos": [
+    "chapada dos guimarães",
+    "cuiaba",
+    "cuiabá",
+    "pantanal"
+   ]
+  },
+  {
+   "iata": "CGR",
+   "nome": "Campo Grande",
+   "local": "Campo Grande (MS)",
+   "pais": "Brasil",
+   "grupo": "Centro-Oeste",
+   "uf": "MS",
+   "termos": [
+    "campo grande"
+   ]
+  },
+  {
+   "iata": "BYO",
+   "nome": "Bonito",
+   "local": "Bonito (MS)",
+   "pais": "Brasil",
+   "grupo": "Centro-Oeste",
+   "uf": "MS",
+   "termos": [
+    "bonito (ms)",
+    "bonito/ms",
+    "em bonito",
+    "para bonito"
+   ]
+  },
+  {
+   "iata": "GYN",
+   "nome": "Goiânia",
+   "local": "Goiânia (GO)",
+   "pais": "Brasil",
+   "grupo": "Centro-Oeste",
+   "uf": "GO",
+   "termos": [
+    "goiania",
+    "goiânia"
+   ]
+  },
+  {
+   "iata": "SAO",
+   "nome": "São Paulo",
+   "local": "São Paulo (SP)",
+   "pais": "Brasil",
+   "grupo": "Sudeste",
+   "uf": "SP",
+   "termos": [
+    "congonhas",
+    "guarulhos",
+    "sao paulo",
+    "são paulo"
+   ]
+  },
+  {
+   "iata": "RIO",
+   "nome": "Rio de Janeiro",
+   "local": "Rio de Janeiro (RJ)",
+   "pais": "Brasil",
+   "grupo": "Sudeste",
+   "uf": "RJ",
+   "termos": [
+    "galeão",
+    "rio de janeiro",
+    "santos dumont"
+   ]
+  },
+  {
+   "iata": "CNF",
+   "nome": "Belo Horizonte",
+   "local": "Belo Horizonte (MG)",
+   "pais": "Brasil",
+   "grupo": "Sudeste",
+   "uf": "MG",
+   "termos": [
+    "belo horizonte",
+    "confins"
+   ]
+  },
+  {
+   "iata": "NVT",
+   "nome": "Navegantes",
+   "local": "Beto Carrero World e Balneário Camboriú (SC)",
+   "pais": "Brasil",
+   "grupo": "Sul",
+   "uf": "SC",
+   "termos": [
+    "balneário camboriú",
+    "beto carrero",
+    "navegantes"
+   ]
+  },
+  {
+   "iata": "FLN",
+   "nome": "Florianópolis",
+   "local": "Florianópolis (SC)",
+   "pais": "Brasil",
+   "grupo": "Sul",
+   "uf": "SC",
+   "termos": [
+    "florianopolis",
+    "florianópolis",
+    "floripa"
+   ]
+  },
+  {
+   "iata": "JOI",
+   "nome": "Joinville",
+   "local": "Joinville (SC)",
+   "pais": "Brasil",
+   "grupo": "Sul",
+   "uf": "SC",
+   "termos": [
+    "joinville"
+   ]
+  },
+  {
+   "iata": "POA",
+   "nome": "Porto Alegre",
+   "local": "Porto Alegre (RS)",
+   "pais": "Brasil",
+   "grupo": "Sul",
+   "uf": "RS",
+   "termos": [
+    "porto alegre"
+   ]
+  },
+  {
+   "iata": "CXJ",
+   "nome": "Caxias do Sul",
+   "local": "Serra Gaúcha: Gramado e Canela (RS)",
+   "pais": "Brasil",
+   "grupo": "Sul",
+   "uf": "RS",
+   "termos": [
+    "bento gonçalves",
+    "caxias do sul",
+    "gramado",
+    "serra gaúcha"
+   ]
+  },
+  {
+   "iata": "CWB",
+   "nome": "Curitiba",
+   "local": "Curitiba (PR)",
+   "pais": "Brasil",
+   "grupo": "Sul",
+   "uf": "PR",
+   "termos": [
+    "curitiba"
+   ]
+  },
+  {
+   "iata": "IGU",
+   "nome": "Foz do Iguaçu",
+   "local": "Foz do Iguaçu (PR)",
+   "pais": "Brasil",
+   "grupo": "Sul",
+   "uf": "PR",
+   "termos": [
+    "cataratas",
+    "foz do iguacu",
+    "foz do iguaçu"
+   ]
+  },
+  {
+   "iata": "BUE",
+   "nome": "Buenos Aires",
+   "local": "Buenos Aires",
+   "pais": "Argentina",
+   "grupo": "América do Sul",
+   "uf": null,
+   "termos": [
+    "aeroparque",
+    "buenos aires",
+    "ezeiza"
+   ]
+  },
+  {
+   "iata": "BRC",
+   "nome": "Bariloche",
+   "local": "Bariloche",
+   "pais": "Argentina",
+   "grupo": "América do Sul",
+   "uf": null,
+   "termos": [
+    "bariloche"
+   ]
+  },
+  {
+   "iata": "MDZ",
+   "nome": "Mendoza",
+   "local": "Mendoza",
+   "pais": "Argentina",
+   "grupo": "América do Sul",
+   "uf": null,
+   "termos": [
+    "mendoza"
+   ]
+  },
+  {
+   "iata": "USH",
+   "nome": "Ushuaia",
+   "local": "Ushuaia",
+   "pais": "Argentina",
+   "grupo": "América do Sul",
+   "uf": null,
+   "termos": [
+    "ushuaia"
+   ]
+  },
+  {
+   "iata": "FTE",
+   "nome": "El Calafate",
+   "local": "El Calafate",
+   "pais": "Argentina",
+   "grupo": "América do Sul",
+   "uf": null,
+   "termos": [
+    "el calafate"
+   ]
+  },
+  {
+   "iata": "SCL",
+   "nome": "Santiago",
+   "local": "Santiago",
+   "pais": "Chile",
+   "grupo": "América do Sul",
+   "uf": null,
+   "termos": [
+    "santiago",
+    "santiago do chile"
+   ]
+  },
+  {
+   "iata": "CJC",
+   "nome": "Atacama",
+   "local": "Deserto do Atacama (Calama)",
+   "pais": "Chile",
+   "grupo": "América do Sul",
+   "uf": null,
+   "termos": [
+    "atacama",
+    "calama",
+    "san pedro de atacama"
+   ]
+  },
+  {
+   "iata": "MVD",
+   "nome": "Montevidéu",
+   "local": "Montevidéu",
+   "pais": "Uruguai",
+   "grupo": "América do Sul",
+   "uf": null,
+   "termos": [
+    "montevideo",
+    "montevidéu"
+   ]
+  },
+  {
+   "iata": "PDP",
+   "nome": "Punta del Este",
+   "local": "Punta del Este",
+   "pais": "Uruguai",
+   "grupo": "América do Sul",
+   "uf": null,
+   "termos": [
+    "punta del este"
+   ]
+  },
+  {
+   "iata": "ASU",
+   "nome": "Assunção",
+   "local": "Assunção",
+   "pais": "Paraguai",
+   "grupo": "América do Sul",
+   "uf": null,
+   "termos": [
+    "assunção (paraguai)",
+    "asunción",
+    "para assunção"
+   ]
+  },
+  {
+   "iata": "LIM",
+   "nome": "Lima",
+   "local": "Lima",
+   "pais": "Peru",
+   "grupo": "América do Sul",
+   "uf": null,
+   "termos": [
+    "em lima",
+    "lima (peru)",
+    "lima, no peru",
+    "para lima"
+   ]
+  },
+  {
+   "iata": "CUZ",
+   "nome": "Cusco",
+   "local": "Cusco e Machu Picchu",
+   "pais": "Peru",
+   "grupo": "América do Sul",
+   "uf": null,
+   "termos": [
+    "cusco",
+    "cuzco",
+    "machu picchu"
+   ]
+  },
+  {
+   "iata": "BOG",
+   "nome": "Bogotá",
+   "local": "Bogotá",
+   "pais": "Colômbia",
+   "grupo": "América do Sul",
+   "uf": null,
+   "termos": [
+    "bogotá"
+   ]
+  },
+  {
+   "iata": "CTG",
+   "nome": "Cartagena",
+   "local": "Cartagena",
+   "pais": "Colômbia",
+   "grupo": "América do Sul",
+   "uf": null,
+   "termos": [
+    "cartagena"
+   ]
+  },
+  {
+   "iata": "ADZ",
+   "nome": "San Andrés",
+   "local": "San Andrés",
+   "pais": "Colômbia",
+   "grupo": "América do Sul",
+   "uf": null,
+   "termos": [
+    "san andres",
+    "san andrés"
+   ]
+  },
+  {
+   "iata": "UIO",
+   "nome": "Quito",
+   "local": "Quito",
+   "pais": "Equador",
+   "grupo": "América do Sul",
+   "uf": null,
+   "termos": [
+    "quito"
+   ]
+  },
+  {
+   "iata": "GPS",
+   "nome": "Galápagos",
+   "local": "Ilhas Galápagos",
+   "pais": "Equador",
+   "grupo": "América do Sul",
+   "uf": null,
+   "termos": [
+    "galapagos",
+    "galápagos"
+   ]
+  },
+  {
+   "iata": "VVI",
+   "nome": "Santa Cruz de la Sierra",
+   "local": "Santa Cruz de la Sierra",
+   "pais": "Bolívia",
+   "grupo": "América do Sul",
+   "uf": null,
+   "termos": [
+    "santa cruz de la sierra"
+   ]
+  },
+  {
+   "iata": "LPB",
+   "nome": "La Paz",
+   "local": "La Paz e Uyuni",
+   "pais": "Bolívia",
+   "grupo": "América do Sul",
+   "uf": null,
+   "termos": [
+    "la paz",
+    "uyuni"
+   ]
+  },
+  {
+   "iata": "LIS",
+   "nome": "Lisboa",
+   "local": "Lisboa",
+   "pais": "Portugal",
+   "grupo": "Europa",
+   "uf": null,
+   "termos": [
+    "lisboa",
+    "lisbon"
+   ]
+  },
+  {
+   "iata": "OPO",
+   "nome": "Porto",
+   "local": "Porto (Portugal)",
+   "pais": "Portugal",
+   "grupo": "Europa",
+   "uf": null,
+   "termos": [
+    "cidade do porto",
+    "lisboa e porto",
+    "porto (portugal)",
+    "porto e lisboa",
+    "porto, em portugal"
+   ]
+  },
+  {
+   "iata": "FNC",
+   "nome": "Madeira",
+   "local": "Ilha da Madeira (Funchal)",
+   "pais": "Portugal",
+   "grupo": "Europa",
+   "uf": null,
+   "termos": [
+    "funchal",
+    "ilha da madeira"
+   ]
+  },
+  {
+   "iata": "MAD",
+   "nome": "Madri",
+   "local": "Madri",
+   "pais": "Espanha",
+   "grupo": "Europa",
+   "uf": null,
+   "termos": [
+    "madri",
+    "madrid"
+   ]
+  },
+  {
+   "iata": "BCN",
+   "nome": "Barcelona",
+   "local": "Barcelona",
+   "pais": "Espanha",
+   "grupo": "Europa",
+   "uf": null,
+   "termos": [
+    "barcelona"
+   ]
+  },
+  {
+   "iata": "PAR",
+   "nome": "Paris",
+   "local": "Paris",
+   "pais": "França",
+   "grupo": "Europa",
+   "uf": null,
+   "termos": [
+    "paris"
+   ]
+  },
+  {
+   "iata": "NCE",
+   "nome": "Nice",
+   "local": "Nice e Riviera Francesa",
+   "pais": "França",
+   "grupo": "Europa",
+   "uf": null,
+   "termos": [
+    "nice"
+   ]
+  },
+  {
+   "iata": "ROM",
+   "nome": "Roma",
+   "local": "Roma",
+   "pais": "Itália",
+   "grupo": "Europa",
+   "uf": null,
+   "termos": [
+    "roma",
+    "rome"
+   ]
+  },
+  {
+   "iata": "MIL",
+   "nome": "Milão",
+   "local": "Milão",
+   "pais": "Itália",
+   "grupo": "Europa",
+   "uf": null,
+   "termos": [
+    "milan",
+    "milão"
+   ]
+  },
+  {
+   "iata": "VCE",
+   "nome": "Veneza",
+   "local": "Veneza",
+   "pais": "Itália",
+   "grupo": "Europa",
+   "uf": null,
+   "termos": [
+    "veneza"
+   ]
+  },
+  {
+   "iata": "FLR",
+   "nome": "Florença",
+   "local": "Florença",
+   "pais": "Itália",
+   "grupo": "Europa",
+   "uf": null,
+   "termos": [
+    "florença"
+   ]
+  },
+  {
+   "iata": "BER",
+   "nome": "Berlim",
+   "local": "Berlim",
+   "pais": "Alemanha",
+   "grupo": "Europa",
+   "uf": null,
+   "termos": [
+    "berlim"
+   ]
+  },
+  {
+   "iata": "FRA",
+   "nome": "Frankfurt",
+   "local": "Frankfurt",
+   "pais": "Alemanha",
+   "grupo": "Europa",
+   "uf": null,
+   "termos": [
+    "frankfurt"
+   ]
+  },
+  {
+   "iata": "MUC",
+   "nome": "Munique",
+   "local": "Munique",
+   "pais": "Alemanha",
+   "grupo": "Europa",
+   "uf": null,
+   "termos": [
+    "munique"
+   ]
+  },
+  {
+   "iata": "AMS",
+   "nome": "Amsterdã",
+   "local": "Amsterdã",
+   "pais": "Países Baixos",
+   "grupo": "Europa",
+   "uf": null,
+   "termos": [
+    "amsterdam",
+    "amsterdã",
+    "holanda"
+   ]
+  },
+  {
+   "iata": "BRU",
+   "nome": "Bruxelas",
+   "local": "Bruxelas",
+   "pais": "Bélgica",
+   "grupo": "Europa",
+   "uf": null,
+   "termos": [
+    "bruxelas"
+   ]
+  },
+  {
+   "iata": "LUX",
+   "nome": "Luxemburgo",
+   "local": "Luxemburgo",
+   "pais": "Luxemburgo",
+   "grupo": "Europa",
+   "uf": null,
+   "termos": [
+    "luxemburgo"
+   ]
+  },
+  {
+   "iata": "ZRH",
+   "nome": "Zurique",
+   "local": "Zurique",
+   "pais": "Suíça",
+   "grupo": "Europa",
+   "uf": null,
+   "termos": [
+    "suíça",
+    "zurique"
+   ]
+  },
+  {
+   "iata": "VIE",
+   "nome": "Viena",
+   "local": "Viena",
+   "pais": "Áustria",
+   "grupo": "Europa",
+   "uf": null,
+   "termos": [
+    "viena"
+   ]
+  },
+  {
+   "iata": "PRG",
+   "nome": "Praga",
+   "local": "Praga",
+   "pais": "Tchéquia",
+   "grupo": "Europa",
+   "uf": null,
+   "termos": [
+    "praga"
+   ]
+  },
+  {
+   "iata": "BUD",
+   "nome": "Budapeste",
+   "local": "Budapeste",
+   "pais": "Hungria",
+   "grupo": "Europa",
+   "uf": null,
+   "termos": [
+    "budapeste"
+   ]
+  },
+  {
+   "iata": "WAW",
+   "nome": "Varsóvia",
+   "local": "Varsóvia",
+   "pais": "Polônia",
+   "grupo": "Europa",
+   "uf": null,
+   "termos": [
+    "cracóvia",
+    "varsóvia"
+   ]
+  },
+  {
+   "iata": "BTS",
+   "nome": "Bratislava",
+   "local": "Bratislava",
+   "pais": "Eslováquia",
+   "grupo": "Europa",
+   "uf": null,
+   "termos": [
+    "bratislava"
+   ]
+  },
+  {
+   "iata": "LJU",
+   "nome": "Liubliana",
+   "local": "Liubliana",
+   "pais": "Eslovênia",
+   "grupo": "Europa",
+   "uf": null,
+   "termos": [
+    "liubliana"
+   ]
+  },
+  {
+   "iata": "ZAG",
+   "nome": "Zagreb",
+   "local": "Zagreb e Dubrovnik",
+   "pais": "Croácia",
+   "grupo": "Europa",
+   "uf": null,
+   "termos": [
+    "croácia",
+    "dubrovnik",
+    "split",
+    "zagreb"
+   ]
+  },
+  {
+   "iata": "ATH",
+   "nome": "Atenas",
+   "local": "Atenas e ilhas gregas",
+   "pais": "Grécia",
+   "grupo": "Europa",
+   "uf": null,
+   "termos": [
+    "atenas",
+    "grécia",
+    "mykonos",
+    "santorini"
+   ]
+  },
+  {
+   "iata": "MLA",
+   "nome": "Malta",
+   "local": "Malta",
+   "pais": "Malta",
+   "grupo": "Europa",
+   "uf": null,
+   "termos": [
+    "em malta",
+    "ilha de malta",
+    "para malta"
+   ]
+  },
+  {
+   "iata": "CPH",
+   "nome": "Copenhague",
+   "local": "Copenhague",
+   "pais": "Dinamarca",
+   "grupo": "Europa",
+   "uf": null,
+   "termos": [
+    "copenhague"
+   ]
+  },
+  {
+   "iata": "STO",
+   "nome": "Estocolmo",
+   "local": "Estocolmo",
+   "pais": "Suécia",
+   "grupo": "Europa",
+   "uf": null,
+   "termos": [
+    "estocolmo"
+   ]
+  },
+  {
+   "iata": "OSL",
+   "nome": "Oslo",
+   "local": "Oslo",
+   "pais": "Noruega",
+   "grupo": "Europa",
+   "uf": null,
+   "termos": [
+    "noruega",
+    "oslo"
+   ]
+  },
+  {
+   "iata": "HEL",
+   "nome": "Helsinque",
+   "local": "Helsinque",
+   "pais": "Finlândia",
+   "grupo": "Europa",
+   "uf": null,
+   "termos": [
+    "helsinque",
+    "lapônia"
+   ]
+  },
+  {
+   "iata": "REK",
+   "nome": "Reykjavík",
+   "local": "Reykjavík",
+   "pais": "Islândia",
+   "grupo": "Europa",
+   "uf": null,
+   "termos": [
+    "islândia",
+    "reykjavík"
+   ]
+  },
+  {
+   "iata": "TLL",
+   "nome": "Tallinn",
+   "local": "Tallinn",
+   "pais": "Estônia",
+   "grupo": "Europa",
+   "uf": null,
+   "termos": [
+    "tallinn"
+   ]
+  },
+  {
+   "iata": "RIX",
+   "nome": "Riga",
+   "local": "Riga",
+   "pais": "Letônia",
+   "grupo": "Europa",
+   "uf": null,
+   "termos": [
+    "riga"
+   ]
+  },
+  {
+   "iata": "VNO",
+   "nome": "Vilnius",
+   "local": "Vilnius",
+   "pais": "Lituânia",
+   "grupo": "Europa",
+   "uf": null,
+   "termos": [
+    "vilnius"
+   ]
+  },
+  {
+   "iata": "OTP",
+   "nome": "Bucareste",
+   "local": "Bucareste",
+   "pais": "Romênia",
+   "grupo": "Europa",
+   "uf": null,
+   "termos": [
+    "bucareste"
+   ]
+  },
+  {
+   "iata": "SOF",
+   "nome": "Sófia",
+   "local": "Sófia",
+   "pais": "Bulgária",
+   "grupo": "Europa",
+   "uf": null,
+   "termos": [
+    "sófia"
+   ]
+  },
+  {
+   "iata": "LCA",
+   "nome": "Chipre",
+   "local": "Chipre (Larnaca)",
+   "pais": "Chipre",
+   "grupo": "Europa",
+   "uf": null,
+   "termos": [
+    "chipre",
+    "larnaca"
+   ]
+  },
+  {
+   "iata": "DUB",
+   "nome": "Dublin",
+   "local": "Dublin",
+   "pais": "Irlanda",
+   "grupo": "Europa",
+   "uf": null,
+   "termos": [
+    "dublin",
+    "irlanda"
+   ]
+  },
+  {
+   "iata": "LON",
+   "nome": "Londres",
+   "local": "Londres",
+   "pais": "Reino Unido",
+   "grupo": "Europa",
+   "uf": null,
+   "termos": [
+    "edimburgo",
+    "london",
+    "londres"
+   ]
+  },
+  {
+   "iata": "IST",
+   "nome": "Istambul",
+   "local": "Istambul",
+   "pais": "Turquia",
+   "grupo": "Europa",
+   "uf": null,
+   "termos": [
+    "capadócia",
+    "istambul"
+   ]
+  },
+  {
+   "iata": "BEG",
+   "nome": "Belgrado",
+   "local": "Belgrado",
+   "pais": "Sérvia",
+   "grupo": "Europa",
+   "uf": null,
+   "termos": [
+    "belgrado"
+   ]
+  },
+  {
+   "iata": "TGD",
+   "nome": "Podgorica",
+   "local": "Montenegro",
+   "pais": "Montenegro",
+   "grupo": "Europa",
+   "uf": null,
+   "termos": [
+    "podgorica"
+   ]
+  },
+  {
+   "iata": "TIA",
+   "nome": "Tirana",
+   "local": "Tirana",
+   "pais": "Albânia",
+   "grupo": "Europa",
+   "uf": null,
+   "termos": [
+    "tirana"
+   ]
+  },
+  {
+   "iata": "SJJ",
+   "nome": "Sarajevo",
+   "local": "Sarajevo",
+   "pais": "Bósnia e Herzegovina",
+   "grupo": "Europa",
+   "uf": null,
+   "termos": [
+    "sarajevo"
+   ]
+  },
+  {
+   "iata": "SKP",
+   "nome": "Escópia",
+   "local": "Escópia",
+   "pais": "Macedônia do Norte",
+   "grupo": "Europa",
+   "uf": null,
+   "termos": [
+    "escópia"
+   ]
+  }
+ ],
+ "paises": {
+  "Brasil": {
+   "continente": "Brasil",
+   "documento": "RG",
+   "entrada": "livre",
+   "vacina_fa": "nao",
+   "moeda": "BRL"
+  },
+  "Argentina": {
+   "continente": "América do Sul",
+   "documento": "RG",
+   "entrada": "livre",
+   "vacina_fa": "nao",
+   "moeda": "ARS",
+   "nota_moeda": "Inflação alta: a comparação do câmbio com a média do ano engana, por isso fica fora do Real forte."
+  },
+  "Uruguai": {
+   "continente": "América do Sul",
+   "documento": "RG",
+   "entrada": "livre",
+   "vacina_fa": "nao",
+   "moeda": "UYU"
+  },
+  "Paraguai": {
+   "continente": "América do Sul",
+   "documento": "RG",
+   "entrada": "livre",
+   "vacina_fa": "conferir",
+   "moeda": "PYG",
+   "nota_vacina": "Já exigiu o certificado para voos a Assunção. Confira antes."
+  },
+  "Chile": {
+   "continente": "América do Sul",
+   "documento": "RG",
+   "entrada": "livre",
+   "vacina_fa": "nao",
+   "moeda": "CLP"
+  },
+  "Bolívia": {
+   "continente": "América do Sul",
+   "documento": "RG",
+   "entrada": "livre",
+   "vacina_fa": "depende",
+   "moeda": "BOB",
+   "nota_vacina": "Pedido principalmente em roteiros por Santa Cruz, Amazônia boliviana e áreas tropicais."
+  },
+  "Peru": {
+   "continente": "América do Sul",
+   "documento": "RG",
+   "entrada": "livre",
+   "vacina_fa": "nao",
+   "moeda": "PEN",
+   "nota_vacina": "Não exige hoje, mas recomenda a vacina para a Amazônia peruana."
+  },
+  "Equador": {
+   "continente": "América do Sul",
+   "documento": "RG",
+   "entrada": "livre",
+   "vacina_fa": "nao",
+   "moeda": "USD",
+   "nota_vacina": "A exigência foi retirada em agosto de 2025; a vacina segue recomendada."
+  },
+  "Colômbia": {
+   "continente": "América do Sul",
+   "documento": "RG",
+   "entrada": "livre",
+   "vacina_fa": "conferir",
+   "moeda": "COP",
+   "nota_vacina": "Teve casos de febre amarela em 2026 e costuma pedir o certificado. Confira antes."
+  },
+  "Venezuela": {
+   "continente": "América do Sul",
+   "documento": "RG",
+   "entrada": "livre",
+   "vacina_fa": "conferir",
+   "moeda": "VES",
+   "nota_moeda": "Inflação alta: fica fora do Real forte."
+  },
+  "Portugal": {
+   "continente": "Europa",
+   "schengen": true,
+   "moeda": "EUR",
+   "documento": "passaporte",
+   "entrada": "livre",
+   "vacina_fa": "nao",
+   "nota_entrada": "Sem visto (até 90 dias). ETIAS (autorização eletrônica da Europa, €20): ainda NÃO está valendo e não tem data oficial. Quando começar, será pedido pela internet antes da viagem."
+  },
+  "Espanha": {
+   "continente": "Europa",
+   "schengen": true,
+   "moeda": "EUR",
+   "documento": "passaporte",
+   "entrada": "livre",
+   "vacina_fa": "nao",
+   "nota_entrada": "Sem visto (até 90 dias). ETIAS (autorização eletrônica da Europa, €20): ainda NÃO está valendo e não tem data oficial. Quando começar, será pedido pela internet antes da viagem."
+  },
+  "França": {
+   "continente": "Europa",
+   "schengen": true,
+   "moeda": "EUR",
+   "documento": "passaporte",
+   "entrada": "livre",
+   "vacina_fa": "nao",
+   "nota_entrada": "Sem visto (até 90 dias). ETIAS (autorização eletrônica da Europa, €20): ainda NÃO está valendo e não tem data oficial. Quando começar, será pedido pela internet antes da viagem."
+  },
+  "Itália": {
+   "continente": "Europa",
+   "schengen": true,
+   "moeda": "EUR",
+   "documento": "passaporte",
+   "entrada": "livre",
+   "vacina_fa": "nao",
+   "nota_entrada": "Sem visto (até 90 dias). ETIAS (autorização eletrônica da Europa, €20): ainda NÃO está valendo e não tem data oficial. Quando começar, será pedido pela internet antes da viagem."
+  },
+  "Alemanha": {
+   "continente": "Europa",
+   "schengen": true,
+   "moeda": "EUR",
+   "documento": "passaporte",
+   "entrada": "livre",
+   "vacina_fa": "nao",
+   "nota_entrada": "Sem visto (até 90 dias). ETIAS (autorização eletrônica da Europa, €20): ainda NÃO está valendo e não tem data oficial. Quando começar, será pedido pela internet antes da viagem."
+  },
+  "Países Baixos": {
+   "continente": "Europa",
+   "schengen": true,
+   "moeda": "EUR",
+   "documento": "passaporte",
+   "entrada": "livre",
+   "vacina_fa": "nao",
+   "nota_entrada": "Sem visto (até 90 dias). ETIAS (autorização eletrônica da Europa, €20): ainda NÃO está valendo e não tem data oficial. Quando começar, será pedido pela internet antes da viagem."
+  },
+  "Bélgica": {
+   "continente": "Europa",
+   "schengen": true,
+   "moeda": "EUR",
+   "documento": "passaporte",
+   "entrada": "livre",
+   "vacina_fa": "nao",
+   "nota_entrada": "Sem visto (até 90 dias). ETIAS (autorização eletrônica da Europa, €20): ainda NÃO está valendo e não tem data oficial. Quando começar, será pedido pela internet antes da viagem."
+  },
+  "Luxemburgo": {
+   "continente": "Europa",
+   "schengen": true,
+   "moeda": "EUR",
+   "documento": "passaporte",
+   "entrada": "livre",
+   "vacina_fa": "nao",
+   "nota_entrada": "Sem visto (até 90 dias). ETIAS (autorização eletrônica da Europa, €20): ainda NÃO está valendo e não tem data oficial. Quando começar, será pedido pela internet antes da viagem."
+  },
+  "Suíça": {
+   "continente": "Europa",
+   "schengen": true,
+   "moeda": "CHF",
+   "documento": "passaporte",
+   "entrada": "livre",
+   "vacina_fa": "nao",
+   "nota_entrada": "Sem visto (até 90 dias). ETIAS (autorização eletrônica da Europa, €20): ainda NÃO está valendo e não tem data oficial. Quando começar, será pedido pela internet antes da viagem."
+  },
+  "Áustria": {
+   "continente": "Europa",
+   "schengen": true,
+   "moeda": "EUR",
+   "documento": "passaporte",
+   "entrada": "livre",
+   "vacina_fa": "nao",
+   "nota_entrada": "Sem visto (até 90 dias). ETIAS (autorização eletrônica da Europa, €20): ainda NÃO está valendo e não tem data oficial. Quando começar, será pedido pela internet antes da viagem."
+  },
+  "Tchéquia": {
+   "continente": "Europa",
+   "schengen": true,
+   "moeda": "CZK",
+   "documento": "passaporte",
+   "entrada": "livre",
+   "vacina_fa": "nao",
+   "nota_entrada": "Sem visto (até 90 dias). ETIAS (autorização eletrônica da Europa, €20): ainda NÃO está valendo e não tem data oficial. Quando começar, será pedido pela internet antes da viagem."
+  },
+  "Hungria": {
+   "continente": "Europa",
+   "schengen": true,
+   "moeda": "HUF",
+   "documento": "passaporte",
+   "entrada": "livre",
+   "vacina_fa": "nao",
+   "nota_entrada": "Sem visto (até 90 dias). ETIAS (autorização eletrônica da Europa, €20): ainda NÃO está valendo e não tem data oficial. Quando começar, será pedido pela internet antes da viagem."
+  },
+  "Polônia": {
+   "continente": "Europa",
+   "schengen": true,
+   "moeda": "PLN",
+   "documento": "passaporte",
+   "entrada": "livre",
+   "vacina_fa": "nao",
+   "nota_entrada": "Sem visto (até 90 dias). ETIAS (autorização eletrônica da Europa, €20): ainda NÃO está valendo e não tem data oficial. Quando começar, será pedido pela internet antes da viagem."
+  },
+  "Eslováquia": {
+   "continente": "Europa",
+   "schengen": true,
+   "moeda": "EUR",
+   "documento": "passaporte",
+   "entrada": "livre",
+   "vacina_fa": "nao",
+   "nota_entrada": "Sem visto (até 90 dias). ETIAS (autorização eletrônica da Europa, €20): ainda NÃO está valendo e não tem data oficial. Quando começar, será pedido pela internet antes da viagem."
+  },
+  "Eslovênia": {
+   "continente": "Europa",
+   "schengen": true,
+   "moeda": "EUR",
+   "documento": "passaporte",
+   "entrada": "livre",
+   "vacina_fa": "nao",
+   "nota_entrada": "Sem visto (até 90 dias). ETIAS (autorização eletrônica da Europa, €20): ainda NÃO está valendo e não tem data oficial. Quando começar, será pedido pela internet antes da viagem."
+  },
+  "Croácia": {
+   "continente": "Europa",
+   "schengen": true,
+   "moeda": "EUR",
+   "documento": "passaporte",
+   "entrada": "livre",
+   "vacina_fa": "nao",
+   "nota_entrada": "Sem visto (até 90 dias). ETIAS (autorização eletrônica da Europa, €20): ainda NÃO está valendo e não tem data oficial. Quando começar, será pedido pela internet antes da viagem."
+  },
+  "Grécia": {
+   "continente": "Europa",
+   "schengen": true,
+   "moeda": "EUR",
+   "documento": "passaporte",
+   "entrada": "livre",
+   "vacina_fa": "nao",
+   "nota_entrada": "Sem visto (até 90 dias). ETIAS (autorização eletrônica da Europa, €20): ainda NÃO está valendo e não tem data oficial. Quando começar, será pedido pela internet antes da viagem."
+  },
+  "Malta": {
+   "continente": "Europa",
+   "schengen": true,
+   "moeda": "EUR",
+   "documento": "passaporte",
+   "entrada": "livre",
+   "vacina_fa": "nao",
+   "nota_entrada": "Sem visto (até 90 dias). ETIAS (autorização eletrônica da Europa, €20): ainda NÃO está valendo e não tem data oficial. Quando começar, será pedido pela internet antes da viagem."
+  },
+  "Dinamarca": {
+   "continente": "Europa",
+   "schengen": true,
+   "moeda": "DKK",
+   "documento": "passaporte",
+   "entrada": "livre",
+   "vacina_fa": "nao",
+   "nota_entrada": "Sem visto (até 90 dias). ETIAS (autorização eletrônica da Europa, €20): ainda NÃO está valendo e não tem data oficial. Quando começar, será pedido pela internet antes da viagem."
+  },
+  "Suécia": {
+   "continente": "Europa",
+   "schengen": true,
+   "moeda": "SEK",
+   "documento": "passaporte",
+   "entrada": "livre",
+   "vacina_fa": "nao",
+   "nota_entrada": "Sem visto (até 90 dias). ETIAS (autorização eletrônica da Europa, €20): ainda NÃO está valendo e não tem data oficial. Quando começar, será pedido pela internet antes da viagem."
+  },
+  "Noruega": {
+   "continente": "Europa",
+   "schengen": true,
+   "moeda": "NOK",
+   "documento": "passaporte",
+   "entrada": "livre",
+   "vacina_fa": "nao",
+   "nota_entrada": "Sem visto (até 90 dias). ETIAS (autorização eletrônica da Europa, €20): ainda NÃO está valendo e não tem data oficial. Quando começar, será pedido pela internet antes da viagem."
+  },
+  "Finlândia": {
+   "continente": "Europa",
+   "schengen": true,
+   "moeda": "EUR",
+   "documento": "passaporte",
+   "entrada": "livre",
+   "vacina_fa": "nao",
+   "nota_entrada": "Sem visto (até 90 dias). ETIAS (autorização eletrônica da Europa, €20): ainda NÃO está valendo e não tem data oficial. Quando começar, será pedido pela internet antes da viagem."
+  },
+  "Islândia": {
+   "continente": "Europa",
+   "schengen": true,
+   "moeda": "ISK",
+   "documento": "passaporte",
+   "entrada": "livre",
+   "vacina_fa": "nao",
+   "nota_entrada": "Sem visto (até 90 dias). ETIAS (autorização eletrônica da Europa, €20): ainda NÃO está valendo e não tem data oficial. Quando começar, será pedido pela internet antes da viagem."
+  },
+  "Estônia": {
+   "continente": "Europa",
+   "schengen": true,
+   "moeda": "EUR",
+   "documento": "passaporte",
+   "entrada": "livre",
+   "vacina_fa": "nao",
+   "nota_entrada": "Sem visto (até 90 dias). ETIAS (autorização eletrônica da Europa, €20): ainda NÃO está valendo e não tem data oficial. Quando começar, será pedido pela internet antes da viagem."
+  },
+  "Letônia": {
+   "continente": "Europa",
+   "schengen": true,
+   "moeda": "EUR",
+   "documento": "passaporte",
+   "entrada": "livre",
+   "vacina_fa": "nao",
+   "nota_entrada": "Sem visto (até 90 dias). ETIAS (autorização eletrônica da Europa, €20): ainda NÃO está valendo e não tem data oficial. Quando começar, será pedido pela internet antes da viagem."
+  },
+  "Lituânia": {
+   "continente": "Europa",
+   "schengen": true,
+   "moeda": "EUR",
+   "documento": "passaporte",
+   "entrada": "livre",
+   "vacina_fa": "nao",
+   "nota_entrada": "Sem visto (até 90 dias). ETIAS (autorização eletrônica da Europa, €20): ainda NÃO está valendo e não tem data oficial. Quando começar, será pedido pela internet antes da viagem."
+  },
+  "Romênia": {
+   "continente": "Europa",
+   "schengen": true,
+   "moeda": "RON",
+   "documento": "passaporte",
+   "entrada": "livre",
+   "vacina_fa": "nao",
+   "nota_entrada": "Sem visto (até 90 dias). ETIAS (autorização eletrônica da Europa, €20): ainda NÃO está valendo e não tem data oficial. Quando começar, será pedido pela internet antes da viagem."
+  },
+  "Bulgária": {
+   "continente": "Europa",
+   "schengen": true,
+   "moeda": "EUR",
+   "documento": "passaporte",
+   "entrada": "livre",
+   "vacina_fa": "nao",
+   "nota_entrada": "Sem visto (até 90 dias). ETIAS (autorização eletrônica da Europa, €20): ainda NÃO está valendo e não tem data oficial. Quando começar, será pedido pela internet antes da viagem."
+  },
+  "Chipre": {
+   "continente": "Europa",
+   "moeda": "EUR",
+   "nota_entrada": "Fora do Schengen, mas da União Europeia: entra no ETIAS quando começar.",
+   "documento": "passaporte",
+   "entrada": "livre",
+   "vacina_fa": "nao"
+  },
+  "Irlanda": {
+   "continente": "Europa",
+   "moeda": "EUR",
+   "nota_entrada": "Fora do Schengen e do ETIAS. Entrada sem visto para turismo.",
+   "documento": "passaporte",
+   "entrada": "livre",
+   "vacina_fa": "nao"
+  },
+  "Reino Unido": {
+   "continente": "Europa",
+   "entrada": "online",
+   "moeda": "GBP",
+   "nota_entrada": "Precisa da ETA (autorização eletrônica, £16, vale 2 anos). Pedido pelo app ou site oficial do governo britânico.",
+   "documento": "passaporte",
+   "vacina_fa": "nao"
+  },
+  "Turquia": {
+   "continente": "Europa",
+   "moeda": "TRY",
+   "nota_entrada": "Sem visto para turismo curto.",
+   "nota_moeda": "Inflação alta: fica fora do Real forte.",
+   "documento": "passaporte",
+   "entrada": "livre",
+   "vacina_fa": "nao"
+  },
+  "Sérvia": {
+   "continente": "Europa",
+   "moeda": "RSD",
+   "documento": "passaporte",
+   "entrada": "livre",
+   "vacina_fa": "nao"
+  },
+  "Montenegro": {
+   "continente": "Europa",
+   "moeda": "EUR",
+   "documento": "passaporte",
+   "entrada": "livre",
+   "vacina_fa": "nao"
+  },
+  "Albânia": {
+   "continente": "Europa",
+   "moeda": "ALL",
+   "documento": "passaporte",
+   "entrada": "livre",
+   "vacina_fa": "nao"
+  },
+  "Bósnia e Herzegovina": {
+   "continente": "Europa",
+   "moeda": "BAM",
+   "documento": "passaporte",
+   "entrada": "livre",
+   "vacina_fa": "nao"
+  },
+  "Macedônia do Norte": {
+   "continente": "Europa",
+   "moeda": "MKD",
+   "documento": "passaporte",
+   "entrada": "livre",
+   "vacina_fa": "nao"
+  },
+  "México": {
+   "continente": "América do Norte e Caribe",
+   "entrada": "online",
+   "vacina_fa": "nao",
+   "moeda": "MXN",
+   "nota_entrada": "Visto eletrônico pela internet desde fev/2026 (cerca de R$ 55). Quem tem visto americano válido não precisa.",
+   "documento": "passaporte"
+  },
+  "Estados Unidos": {
+   "continente": "América do Norte e Caribe",
+   "entrada": "visto",
+   "vacina_fa": "nao",
+   "moeda": "USD",
+   "documento": "passaporte"
+  },
+  "Canadá": {
+   "continente": "América do Norte e Caribe",
+   "entrada": "visto",
+   "vacina_fa": "nao",
+   "moeda": "CAD",
+   "nota_entrada": "Quem tem visto americano válido ou teve visto canadense nos últimos 10 anos pode pedir só a eTA (online) para ir de avião. Confira no site oficial.",
+   "documento": "passaporte"
+  },
+  "Panamá": {
+   "continente": "América do Norte e Caribe",
+   "vacina_fa": "conferir",
+   "moeda": "USD",
+   "documento": "passaporte",
+   "entrada": "livre"
+  },
+  "Costa Rica": {
+   "continente": "América do Norte e Caribe",
+   "vacina_fa": "conferir",
+   "moeda": "CRC",
+   "documento": "passaporte",
+   "entrada": "livre"
+  },
+  "Cuba": {
+   "continente": "América do Norte e Caribe",
+   "entrada": "online",
+   "vacina_fa": "exige",
+   "moeda": "CUP",
+   "nota_entrada": "Pede cartão de turista (comprado com a companhia aérea ou agência).",
+   "documento": "passaporte"
+  },
+  "Aruba": {
+   "continente": "América do Norte e Caribe",
+   "vacina_fa": "exige",
+   "moeda": "AWG",
+   "documento": "passaporte",
+   "entrada": "livre"
+  },
+  "Curaçao": {
+   "continente": "América do Norte e Caribe",
+   "vacina_fa": "exige",
+   "moeda": "ANG",
+   "documento": "passaporte",
+   "entrada": "livre"
+  },
+  "República Dominicana": {
+   "continente": "América do Norte e Caribe",
+   "vacina_fa": "conferir",
+   "moeda": "DOP",
+   "documento": "passaporte",
+   "entrada": "livre"
+  },
+  "África do Sul": {
+   "continente": "Outros",
+   "vacina_fa": "exige",
+   "moeda": "ZAR",
+   "documento": "passaporte",
+   "entrada": "livre"
+  },
+  "Austrália": {
+   "continente": "Outros",
+   "entrada": "visto",
+   "vacina_fa": "exige",
+   "moeda": "AUD",
+   "documento": "passaporte"
+  },
+  "China": {
+   "continente": "Outros",
+   "entrada": "conferir",
+   "vacina_fa": "exige",
+   "moeda": "CNY",
+   "documento": "passaporte"
+  },
+  "Japão": {
+   "continente": "Outros",
+   "moeda": "JPY",
+   "nota_entrada": "Sem visto para turismo curto desde 2023.",
+   "documento": "passaporte",
+   "entrada": "livre",
+   "vacina_fa": "conferir"
+  },
+  "Emirados Árabes Unidos": {
+   "continente": "Outros",
+   "moeda": "AED",
+   "vacina_fa": "conferir",
+   "documento": "passaporte",
+   "entrada": "livre"
+  }
+ },
+ "verificado_em": "2026-11-27",
+ "etias": "ETIAS (autorização eletrônica da Europa, €20): ainda NÃO está valendo e não tem data oficial. Quando começar, será pedido pela internet antes da viagem.",
+ "categorias": [
+  {
+   "cod": "relampago",
+   "nome": "⚡ Relâmpago",
+   "de": 0,
+   "ate": 30
+  },
+  {
+   "cod": "proximos",
+   "nome": "📅 Próximos meses",
+   "de": 30,
+   "ate": 90
+  },
+  {
+   "cod": "medio",
+   "nome": "🗓️ Médio prazo",
+   "de": 90,
+   "ate": 180
+  },
+  {
+   "cod": "longo",
+   "nome": "🌴 Longo prazo",
+   "de": 180,
+   "ate": 10000
+  }
+ ]
+}

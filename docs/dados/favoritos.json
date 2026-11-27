@@ -1,0 +1,57 @@
+[
+ {
+  "iata": "SLZ",
+  "nome": "São Luís e Lençóis Maranhenses (MA)",
+  "desde": "2026-11-27"
+ },
+ {
+  "iata": "JJD",
+  "nome": "Jericoacoara (CE)",
+  "desde": "2026-11-27"
+ },
+ {
+  "iata": "NVT",
+  "nome": "Beto Carrero World e Balneário Camboriú (SC)",
+  "desde": "2026-11-27"
+ },
+ {
+  "iata": "SSA",
+  "nome": "Salvador (BA)",
+  "desde": "2026-11-27"
+ },
+ {
+  "iata": "REC",
+  "nome": "Recife e Porto de Galinhas (PE)",
+  "desde": "2026-11-27"
+ },
+ {
+  "iata": "FOR",
+  "nome": "Fortaleza (CE)",
+  "desde": "2026-11-27"
+ },
+ {
+  "iata": "NAT",
+  "nome": "Natal e Pipa (RN)",
+  "desde": "2026-11-27"
+ },
+ {
+  "iata": "JPA",
+  "nome": "João Pessoa (PB)",
+  "desde": "2026-11-27"
+ },
+ {
+  "iata": "MCZ",
+  "nome": "Maceió e Maragogi (AL)",
+  "desde": "2026-11-27"
+ },
+ {
+  "iata": "AJU",
+  "nome": "Aracaju (SE)",
+  "desde": "2026-11-27"
+ },
+ {
+  "iata": "THE",
+  "nome": "Teresina (PI)",
+  "desde": "2026-11-27"
+ }
+]

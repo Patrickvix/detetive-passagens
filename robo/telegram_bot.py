@@ -17,7 +17,7 @@ class Bot:
         r = requests.post(f"{self.url}/{metodo}", json=dados, timeout=30)
         resposta = r.json()
         if not resposta.get("ok"):
-            self.log(f"Telegram {metodo} falhou: {resposta.get('description')}")
+            self.log(f"::warning title=Telegram {metodo}::{resposta.get('description')}")
         return resposta
 
     @property
@@ -56,8 +56,14 @@ class Bot:
 
     def ler_comandos(self):
         """Devolve a lista de comandos recebidos desde a última execução: [(comando, argumento)]."""
+        info = self._api("getWebhookInfo").get("result") or {}
+        if info.get("url"):
+            # este robô lê as mensagens por consulta; um webhook antigo as roubaria
+            self.log(f"::notice title=Webhook antigo::removendo webhook de {info['url'][:40]}")
+            self._api("deleteWebhook", drop_pending_updates=False)
         r = self._api("getUpdates", offset=self.estado.get("offset", 0), timeout=0,
                       allowed_updates=["message", "callback_query"])
+        self.log(f"::notice title=Telegram::{len(r.get('result', []))} mensagem(ns) nova(s) lida(s)")
         comandos = []
         for up in r.get("result", []):
             self.estado["offset"] = up["update_id"] + 1

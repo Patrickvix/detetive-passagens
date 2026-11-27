@@ -249,8 +249,12 @@ def main():
     e = carregar()
     if e["favoritos"] is None:
         e["favoritos"] = [dict(iata=i, nome=bd.DESTINO_POR_IATA[i]["local"], desde=iso(hoje())) for i in bd.FAVORITOS_INICIAIS]
-    if os.environ.get("TELEGRAM_CHAT_ID"):
-        e["tg"]["chat_id"] = int(os.environ["TELEGRAM_CHAT_ID"])
+    chat_env = (os.environ.get("TELEGRAM_CHAT_ID") or "").strip()
+    if chat_env:
+        try:
+            e["tg"]["chat_id"] = int(chat_env)
+        except ValueError:
+            sys.exit("O segredo TELEGRAM_CHAT_ID deve ter só o número do chat (ex.: 123456789).")
     bot = Bot(token_tg, e["tg"], log=log)
     e["status"]["bot"] = bot.nome_do_bot()
     primeira_vez = not e["vistos"]
@@ -291,4 +295,13 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    try:
+        main()
+    except SystemExit:
+        raise
+    except Exception as erro:   # mostra o motivo no resumo da execução no GitHub
+        import traceback
+        traceback.print_exc()
+        msg = f"{type(erro).__name__}: {erro}".replace("\n", " ")
+        print(f"::error title=Erro no robô::{msg[:400]}")
+        sys.exit(1)

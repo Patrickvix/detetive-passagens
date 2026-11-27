@@ -2,6 +2,7 @@
 <html lang="pt-BR">
 <head>
 <meta charset="utf-8">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-title" content="Detetive">
@@ -87,6 +88,8 @@
   .folha h2{margin:0 0 8px;font:700 18px Georgia,serif}
   .folha li{margin:7px 0;font-size:14px}
   .folha .fechar{width:100%;margin-top:10px;padding:11px;border-radius:12px;border:0;background:var(--tinta);color:#fff;font-size:15px}
+  .bt.comprar{background:var(--mar);color:#fff;border-color:var(--mar);font-weight:600}
+  .toast{position:fixed;left:50%;bottom:calc(84px + env(safe-area-inset-bottom));transform:translateX(-50%);background:var(--tinta);color:#fff;padding:10px 16px;border-radius:12px;font-size:14px;z-index:30;max-width:90%;text-align:center}
   .num{display:inline-flex;align-items:center;justify-content:center;background:var(--mar);color:#fff;border-radius:50%;width:20px;height:20px;font-size:12px;margin-right:6px}
 </style>
 </head>
@@ -122,15 +125,93 @@ async function carregar(nome, padrao){
   catch(e){ return padrao; }
 }
 
-function linkBot(acao, iata){
-  const bot = D.status?.bot;
-  return bot ? `https://t.me/${bot}?start=${acao}_${iata}` : null;
+/* Comprar: Google Flights já com origem, destino e datas (dali escolhe a companhia/agência e compra) */
+function linkCompra(iata, ida, volta){
+  let q = `Flights to ${iata} from VIX`;
+  if (ida) q += ` on ${ida}` + (volta ? ` through ${volta}` : " one way");
+  return `https://www.google.com/travel/flights?q=${encodeURIComponent(q)}&curr=BRL&hl=pt-BR&gl=BR`;
 }
-function botaoFav(iata, nome){
-  const ja = (D.favoritos||[]).some(f => f.iata === iata);
-  if (ja) return `<span class="bt fav">⭐ ${esc(nome)}</span>`;
-  const l = linkBot("fav", iata);
-  return l ? `<a class="bt fav" href="${l}">☆ ${esc(nome)}</a>` : "";
+function botaoCompra(iata, ida, volta){
+  return `<a class="bt comprar" href="${linkCompra(iata, ida, volta)}" target="_blank" rel="noopener">🛒 Comprar</a>`;
+}
+
+/* Favoritos: salvos direto no repositório pelo app (sem Telegram) */
+const REPO = "Patrickvix/detetive-passagens", ARQ_PEDIDOS = "estado/pedidos_app.json";
+const ls = { get:k=>{try{return localStorage.getItem(k)}catch(e){return null}}, set:(k,v)=>{try{localStorage.setItem(k,v)}catch(e){}} };
+function pendentes(){ try{ return JSON.parse(ls.get("fav-pendentes")||"[]"); }catch(e){ return []; } }
+function ehFavorito(iata){
+  let sim = (D.favoritos||[]).some(f=>f.iata===iata);
+  for (const p of pendentes()) if (p.iata===iata) sim = p.acao==="fav";
+  return sim;
+}
+function favoritosVisiveis(){
+  const lista = (D.favoritos||[]).filter(f=>ehFavorito(f.iata));
+  for (const p of pendentes()) if (p.acao==="fav" && !lista.some(f=>f.iata===p.iata)) lista.push({iata:p.iata, nome:p.nome, pendente:true});
+  return lista;
+}
+function botaoFav(iata, nome, comNome){
+  const sim = ehFavorito(iata);
+  const rot = comNome ? `${sim?"⭐":"☆"} ${esc(nome)}` : (sim?"⭐ Favorito":"☆ Favoritar");
+  return `<button class="bt fav" onclick="alternarFav('${iata}', ${JSON.stringify(nome).replace(/"/g,"&quot;")})">${rot}</button>`;
+}
+async function alternarFav(iata, nome){
+  const acao = ehFavorito(iata) ? "rem" : "fav";
+  if (!ls.get("gh-chave")) return abrirChave(()=>alternarFav(iata, nome));
+  const lista = pendentes().filter(p=>p.iata!==iata); lista.push({acao, iata, nome, quando:new Date().toISOString()});
+  ls.set("fav-pendentes", JSON.stringify(lista)); desenhar();
+  try { await enviarPedido({acao, iata, nome, quando:new Date().toISOString()}); aviso(acao==="fav"?`⭐ ${nome} salvo nos favoritos`:`${nome} removido dos favoritos`); }
+  catch(e){ aviso("Não consegui salvar: "+e.message+". Confira a chave em ?"); }
+}
+async function gh(caminho, opcoes={}){
+  const r = await fetch(`https://api.github.com/repos/${REPO}/${caminho}`, {...opcoes,
+    headers:{Authorization:`Bearer ${ls.get("gh-chave")}`, Accept:"application/vnd.github+json", ...(opcoes.headers||{})}});
+  if (!r.ok && r.status!==404) throw new Error(r.status===401||r.status===403 ? "chave inválida ou sem permissão" : "erro "+r.status);
+  return r;
+}
+async function enviarPedido(pedido){
+  for (let tentativa=0; tentativa<3; tentativa++){
+    const r = await gh(`contents/${ARQ_PEDIDOS}?ref=main&t=${Date.now()}`);
+    let atual = [], sha;
+    if (r.status!==404){ const j = await r.json(); sha = j.sha; atual = JSON.parse(decodeURIComponent(escape(atob(j.content.replace(/\n/g,""))))||"[]"); }
+    atual.push(pedido);
+    const corpo = {message:`App: ${pedido.acao==="fav"?"favoritar":"remover"} ${pedido.iata}`, branch:"main",
+      content: btoa(unescape(encodeURIComponent(JSON.stringify(atual, null, 1)))), ...(sha?{sha}:{})};
+    const w = await fetch(`https://api.github.com/repos/${REPO}/contents/${ARQ_PEDIDOS}`, {method:"PUT",
+      headers:{Authorization:`Bearer ${ls.get("gh-chave")}`, Accept:"application/vnd.github+json"}, body:JSON.stringify(corpo)});
+    if (w.ok) return;
+    if (w.status!==409 && w.status!==422) throw new Error(w.status===401||w.status===403 ? "chave inválida ou sem permissão" : "erro "+w.status);
+  }
+  throw new Error("o repositório estava ocupado, tente de novo");
+}
+function aviso(t){
+  const d = document.createElement("div"); d.className="toast"; d.textContent=t; document.body.appendChild(d);
+  setTimeout(()=>d.remove(), 3200);
+}
+let depoisDaChave = null;
+function abrirChave(depois){
+  depoisDaChave = depois || null;
+  document.getElementById("folha").innerHTML = `<div class="folha" onclick="if(event.target===this)fecharAjuda()"><div>
+    <h2>Ligar os favoritos (1 vez só)</h2>
+    <div class="nota">Pra o app salvar favoritos sozinho, sem Telegram, ele precisa de uma chave do seu GitHub que só mexe neste projeto. Ela fica guardada só neste celular.</div>
+    <ol style="padding-left:20px;font-size:14px">
+      <li>Abra <a href="https://github.com/settings/personal-access-tokens/new" target="_blank" rel="noopener">github.com/settings/personal-access-tokens/new</a></li>
+      <li><b>Token name:</b> detetive-app · <b>Expiration:</b> 1 year (ou No expiration)</li>
+      <li><b>Repository access:</b> Only select repositories → <b>detetive-passagens</b></li>
+      <li><b>Permissions → Repository permissions → Contents:</b> Read and write</li>
+      <li>Toque em <b>Generate token</b>, copie e cole aqui:</li>
+    </ol>
+    <input id="chaveGh" type="password" placeholder="github_pat_..." autocomplete="off" style="width:100%;padding:11px;border-radius:10px;border:1px solid var(--linha);font-size:15px">
+    <button class="fechar" onclick="salvarChave()">Salvar chave</button>
+    <button class="fechar" style="background:none;color:var(--tinta2)" onclick="fecharAjuda()">Agora não</button></div></div>`;
+}
+async function salvarChave(){
+  const v = document.getElementById("chaveGh").value.trim();
+  if (!v) return;
+  ls.set("gh-chave", v);
+  try { const r = await gh(""); if (!r.ok) throw new Error("repositório não encontrado"); }
+  catch(e){ ls.set("gh-chave",""); return aviso("Chave não funcionou: "+e.message); }
+  fecharAjuda(); aviso("Chave salva ✅");
+  if (depoisDaChave) { const f = depoisDaChave; depoisDaChave = null; f(); }
 }
 function resumoDoc(paises){
   const ps = [...new Set((paises||[]).filter(n=>n&&n!=="Brasil"))];
@@ -185,12 +266,12 @@ function telaPromo(){
     const per = p.viagem_inicio ? `🗓️ ${mesAno(p.viagem_inicio)}${p.viagem_fim!==p.viagem_inicio?" a "+mesAno(p.viagem_fim):""}` : "";
     const sub = [p.origem==="Sai de Vitória"?"✈️ Sai de Vitória":"", p.tipo==="milhas"?"Milhas":"Passagem", per].filter(Boolean).join(" · ");
     const doc = resumoDoc(p.paises);
-    const favs = p.destinos.slice(0,2).map(i=>botaoFav(i, pais(i)?.nome||i)).join("");
+    const favs = p.destinos.slice(0,2).map(i=>botaoFav(i, pais(i)?.nome||i, true)).join("");
     h += `<div class="cartao c"><div class="topo"><div><div class="dest">${esc(dest)}</div><div class="sub">${esc(sub)}</div></div>
       ${p.preco?(pr=>`<div class="preco">${esc(pr[0])}${pr[1]?`<small style="font-size:12px;color:var(--tinta2)">ou ${esc(pr[1])}</small>`:""}<small>a partir de</small></div>`)(p.preco.split(" ou ")):""}</div>
       ${doc?`<div class="doc">${doc}</div>`:""}
       <div class="tit">${esc(p.titulo)}</div>
-      <div class="acoes"><a class="bt" href="${esc(p.link)}" target="_blank" rel="noopener">Ver oferta ↗</a>${favs}</div></div>`;
+      <div class="acoes"><a class="bt comprar" href="${esc(p.link)}" target="_blank" rel="noopener">🛒 Ver oferta</a>${favs}</div></div>`;
   }
   return h;
 }
@@ -222,15 +303,15 @@ function cartaoRota(iata, nome, favorito){
   const pts = serieCalendario(rota);
   const destino = pais(iata);
   const nomePais = destino?.pais || D.descobertas?.historico?.[iata]?.pais;
-  const g = `https://www.google.com/travel/flights?q=Flights%20from%20VIX%20to%20${iata}`;
-  const acao = favorito
-    ? (linkBot("rem",iata)?`<a class="bt" href="${linkBot("rem",iata)}">Remover</a>`:"")
-    : botaoFav(iata, destino?.nome||nome);
+  const acao = botaoFav(iata, destino?.nome||nome);
+  let compra = botaoCompra(iata);
   const doc = nomePais ? resumoDoc([nomePais]) : "";
   let topo, extra = "";
   if (pts.length){
     const melhor = pts.reduce((a,b)=>b[1]<a[1]?b:a);
     const rec = rota.recorde;
+    const volta = new Date(melhor[0]+"T12:00:00"); volta.setDate(volta.getDate()+7);
+    compra = botaoCompra(iata, melhor[0], volta.toISOString().slice(0,10));
     topo = `<div><div class="dest">${favorito?"⭐ ":""}${esc(nome)}</div>
       <div class="sub">ida ${dt(melhor[0])} · 7 noites${rec&&rec.min<melhor[1]?` · já vi ${real(rec.min)}`:""}</div></div>
       <div class="preco">${real(melhor[1])}<small>ida e volta</small></div>`;
@@ -239,11 +320,11 @@ function cartaoRota(iata, nome, favorito){
     topo = `<div><div class="dest">${favorito?"⭐ ":""}${esc(nome)}</div><div class="sub">Sem preço ainda (a busca roda todo dia de manhã)</div></div>`;
   }
   return `<div class="cartao c"><div class="topo">${topo}</div>${doc?`<div class="doc">${doc}</div>`:""}${extra}
-    <div class="acoes"><a class="bt" href="${g}" target="_blank" rel="noopener">Google Flights ↗</a>${acao}</div></div>`;
+    <div class="acoes">${compra}${acao}</div></div>`;
 }
 function telaFav(){
-  const favs = D.favoritos||[];
-  let h = `<div class="nota">Destinos que eu vigio todo dia. Você recebe aviso no Telegram quando o preço cai 15% abaixo do normal.</div>`;
+  const favs = favoritosVisiveis();
+  let h = `<div class="nota">Destinos que eu vigio todo dia. Você recebe aviso no Telegram quando o preço cai 15% abaixo do normal. Um favorito novo ganha preço na próxima manhã.</div>`;
   h += favs.map(f=>cartaoRota(f.iata, f.nome, true)).join("") || `<div class="vazio">Nenhum favorito.</div>`;
   const opcoes = (D.destinos?.grupos||[]).map(g=>{
     const ds = (D.destinos.destinos||[]).filter(d=>d.grupo===g && !favs.some(f=>f.iata===d.iata));
@@ -251,13 +332,12 @@ function telaFav(){
   }).join("");
   h += `<div class="titulo-secao">Adicionar favorito</div>
     <div class="cartao"><select id="novoFav"><option value="">Escolha um destino…</option>${opcoes}</select>
-    <div class="acoes"><button class="bt fav" onclick="adicionarFav()">☆ Favoritar pelo Telegram</button></div>
-    <div class="nota">Abre o bot no Telegram com o pedido pronto; é só tocar em Iniciar/Enviar. O robô confirma em até 1 hora.</div></div>`;
+    <div class="acoes"><button class="bt fav" onclick="adicionarFav()">☆ Favoritar</button></div></div>`;
   return h;
 }
 function adicionarFav(){
-  const v = document.getElementById("novoFav").value; const l = v && linkBot("fav", v);
-  if (l) location.href = l; else if (v) alert("O bot ainda não foi configurado.");
+  const sel = document.getElementById("novoFav"); const v = sel.value;
+  if (v) alternarFav(v, sel.options[sel.selectedIndex].text);
 }
 
 /* ---------------- Explorar ---------------- */
@@ -272,7 +352,7 @@ function telaExplorar(){
       <div class="sub">${dt(a.ida).slice(0,5)} a ${dt(a.volta)} · ${esc(a.cia||"")}${a.paradas===0?" · direto":""}</div></div>
       <div class="preco">${real(a.preco)}<small>ida e volta</small></div></div>
       ${doc?`<div class="doc">${doc}</div>`:""}
-      <div class="acoes">${botaoFav(a.destino||a.aeroporto, a.cidade)}</div></div>`; }).join("") || `<div class="vazio">A primeira varredura acontece na próxima segunda-feira.</div>`;
+      <div class="acoes">${botaoCompra(a.aeroporto||a.destino, a.ida, a.volta)}${botaoFav(a.destino||a.aeroporto, a.cidade)}</div></div>`; }).join("") || `<div class="vazio">A primeira varredura acontece na próxima segunda-feira.</div>`;
   h += `<div class="titulo-secao">Por região</div><div class="nota">Cada destino é consultado 1 vez por semana; os favoritos, todo dia.</div>`;
   h += chips("regiao", (D.destinos?.grupos||[]).filter(g=>(D.destinos.destinos||[]).some(d=>d.grupo===g)).map(g=>[g,g]));
   const favs = new Set((D.favoritos||[]).map(f=>f.iata));
@@ -359,15 +439,17 @@ function abrirAjuda(){
   document.getElementById("folha").innerHTML = `<div class="folha" onclick="if(event.target===this)fecharAjuda()"><div>
     <h2>Como usar</h2>
     <ul style="padding-left:0;list-style:none;margin:0">
-    <li><span class="num">1</span><b>🔔 Ofertas</b>: promoções de passagem e milhas que eu encontro nos blogs. Mostro só voo: destino, preço, período e se basta RG. Toque em <b>Ver oferta</b> pra abrir.</li>
-    <li><span class="num">2</span><b>☆ Favoritar</b>: toque num destino e o Telegram abre com o pedido pronto. É só tocar em <b>Iniciar</b>. Em até 1 hora ele aparece em ⭐.</li>
-    <li><span class="num">3</span><b>⭐ Favoritos</b>: destinos que vigio todo dia. Aviso no Telegram quando o preço cai.</li>
-    <li><span class="num">4</span><b>🧭 Explorar</b>: os destinos mais baratos saindo de Vitória e preços por região.</li>
-    <li><span class="num">5</span><b>💱 Real forte</b>: onde o real vale mais agora. <b>🛂 Visto</b>: documentos, vistos e vacinas.</li>
-    <li><span class="num">6</span><b>Telegram</b>: eu aviso de tudo por lá. Comandos: <b>/favoritos</b>, <b>/favoritar SSA</b>, <b>/remover SSA</b>, <b>/passaporte 2031-05-20</b>, <b>/status</b>.</li>
+    <li><span class="num">1</span><b>🔔 Ofertas</b>: promoções de passagem e milhas que eu encontro nos blogs. Mostro só voo: destino, preço, período e se basta RG. <b>🛒 Ver oferta</b> abre a matéria com o link de compra da companhia.</li>
+    <li><span class="num">2</span><b>🛒 Comprar</b>: abre o Google Flights já com Vitória, destino e datas. Lá você escolhe a companhia ou agência e compra.</li>
+    <li><span class="num">3</span><b>☆ Favoritar</b>: salva na hora, direto no app. Na primeira vez ele pede uma chave do GitHub (1 vez só). O preço do favorito novo aparece na próxima manhã.</li>
+    <li><span class="num">4</span><b>⭐ Favoritos</b>: destinos que vigio todo dia. Aviso no Telegram quando o preço cai.</li>
+    <li><span class="num">5</span><b>🧭 Explorar</b>: os destinos mais baratos saindo de Vitória e preços por região.</li>
+    <li><span class="num">6</span><b>💱 Real forte</b>: onde o real vale mais agora. <b>🛂 Visto</b>: documentos, vistos e vacinas.</li>
+    <li><span class="num">7</span><b>Telegram</b>: só pra receber avisos. Se quiser, também aceita comandos: <b>/favoritos</b>, <b>/favoritar SSA</b>, <b>/remover SSA</b>, <b>/passaporte 2031-05-20</b>, <b>/status</b>.</li>
     </ul>
     <div class="nota" style="margin-top:12px">Atualizo as ofertas de hora em hora e os preços 1 vez por dia${gasto!=null?` (gasto do Apify neste mês: US$ ${gasto.toFixed(2)} de US$ 5)`:""}. Destinos que pedem visto ficam escondidos.</div>
-    <button class="fechar" onclick="fecharAjuda()">Entendi</button></div></div>`;
+    <button class="fechar" onclick="fecharAjuda()">Entendi</button>
+    <button class="fechar" style="background:none;color:var(--tinta2)" onclick="abrirChave()">🔑 Chave do GitHub (favoritos)</button></div></div>`;
 }
 function fecharAjuda(){ document.getElementById("folha").innerHTML=""; try{localStorage.setItem("detetive-viu-ajuda","1");}catch(e){} }
 
@@ -376,7 +458,13 @@ function desenhar(){
   salvarFiltros();
   document.getElementById("nav").innerHTML = ABAS.map(([id,ic,t])=>`<button class="${F.aba===id?"ativo":""}" onclick="F.aba='${id}';desenhar();scrollTo(0,0)"><span class="ic">${ic}</span>${t}</button>`).join("");
   const fn = {promo:telaPromo, fav:telaFav, explorar:telaExplorar, cambio:telaCambio, visto:telaVisto}[F.aba] || telaPromo;
-  document.getElementById("tela").innerHTML = fn();
+  try { document.getElementById("tela").innerHTML = fn(); }
+  catch(err){
+    // app guardado em cache e dados novos: recarrega uma vez buscando a versão nova
+    let ja = null; try{ ja = sessionStorage.getItem("recarregou"); }catch(e){}
+    if (!ja){ try{ sessionStorage.setItem("recarregou","1"); }catch(e){} location.replace(location.pathname+"?v="+Date.now()); return; }
+    document.getElementById("tela").innerHTML = `<div class="vazio">Algo deu errado nesta aba (${esc(err.message)}). Feche e abra o app de novo.</div>`;
+  }
 }
 (async () => {
   const [promocoes, favoritos, precos, descobertas, real_forte, destinos, status, guia] = await Promise.all([
@@ -387,6 +475,10 @@ function desenhar(){
   const mes = new Date().toISOString().slice(0,7);
   const gasto = status.apify_gasto?.[mes];
   document.getElementById("sub").textContent = `Saindo de Vitória · ${st}`;
+  ls.set("fav-pendentes", JSON.stringify(pendentes().filter(p => {
+    const no = (D.favoritos||[]).some(f=>f.iata===p.iata);
+    return p.acao==="fav" ? !no : no;          // some quando o robô já aplicou
+  })));
   desenhar();
   try{ if(!localStorage.getItem("detetive-viu-ajuda")) abrirAjuda(); }catch(e){}
 })();

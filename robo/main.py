@@ -81,6 +81,26 @@ def pais_de(iata, e):
 
 # ---------------- Telegram: comandos ----------------
 
+def pedidos_do_app(bot, e):
+    """Favoritar/remover feitos no app (gravados em estado/pedidos_app.json pela API do GitHub)."""
+    arq = ESTADO / "pedidos_app.json"
+    pedidos = ler(arq, [])
+    if not pedidos:
+        return
+    for p in sorted(pedidos, key=lambda x: x.get("quando", "")):
+        iata = achar_iata(p.get("iata", "")) or p.get("iata")
+        if not iata:
+            continue
+        favs = e["favoritos"]
+        if p.get("acao") == "fav" and not any(f["iata"] == iata for f in favs):
+            favs.append(dict(iata=iata, nome=nome_destino(iata, e), desde=iso(hoje())))
+            bot.enviar(f"⭐ Favoritado pelo app: <b>{esc(nome_destino(iata, e))}</b>. Começo a vigiar amanhã cedo.")
+        elif p.get("acao") == "rem" and any(f["iata"] == iata for f in favs):
+            e["favoritos"] = [f for f in favs if f["iata"] != iata]
+            bot.enviar(f"Removido pelo app: {esc(nome_destino(iata, e))}.")
+    salvar(arq, [])
+
+
 def tratar_comandos(bot, e):
     for cmd, arg in bot.ler_comandos():
         favs = e["favoritos"]
@@ -300,6 +320,7 @@ def main():
 
     for antigo in e["promocoes"]:
         promos.enriquecer(antigo)
+    pedidos_do_app(bot, e)
     tratar_comandos(bot, e)
     if not bot.chat:
         log("Sem TELEGRAM_CHAT_ID: mande /start ao bot para receber o código e crie o segredo no GitHub.")

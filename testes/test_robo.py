@@ -100,3 +100,18 @@ def test_pedido_e_leitura_de_precos():
     r = voos.ler_precos(itens, mapa, jan)
     assert set(r) == {"SSA", "FOR"}
     assert len(r["SSA"]["calendario"]) == 2 and r["SSA"]["menor"] == 800
+
+
+def test_pedidos_do_app(tmp_path, monkeypatch):
+    from robo import main
+    monkeypatch.setattr(main, "ESTADO", tmp_path)
+    (tmp_path / "pedidos_app.json").write_text('[{"acao":"fav","iata":"LIS","quando":"1"},{"acao":"rem","iata":"SSA","quando":"2"}]')
+    enviados = []
+
+    class B:
+        def enviar(self, *a, **k):
+            enviados.append(a)
+    e = dict(favoritos=[dict(iata="SSA", nome="Salvador")], descobertas={"historico": {}})
+    main.pedidos_do_app(B(), e)
+    assert [f["iata"] for f in e["favoritos"]] == ["LIS"]
+    assert (tmp_path / "pedidos_app.json").read_text().strip() == "[]"

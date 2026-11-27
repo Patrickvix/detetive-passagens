@@ -2,6 +2,34 @@
  "data": "2026-11-27",
  "moedas": [
   {
+   "moeda": "BOB",
+   "nome": "boliviano",
+   "por_100": 204.34,
+   "variacao": 24.5,
+   "inflacao": false,
+   "data": "2026-11-27",
+   "paises": [
+    "Bolívia"
+   ],
+   "dolar": {
+    "Bolívia": "Dólar aceito em turismo; troque o resto em casas de câmbio"
+   }
+  },
+  {
+   "moeda": "CLP",
+   "nome": "peso chileno",
+   "por_100": 17914.46,
+   "variacao": 1.5,
+   "inflacao": false,
+   "data": "2026-11-27",
+   "paises": [
+    "Chile"
+   ],
+   "dolar": {
+    "Chile": "Pouco aceito: pague em peso"
+   }
+  },
+  {
    "moeda": "MXN",
    "nome": "peso mexicano",
    "por_100": 341.78,
@@ -64,6 +92,30 @@
    "dolar": {}
   },
   {
+   "moeda": "BAM",
+   "nome": "marco conversível",
+   "por_100": 30.95,
+   "variacao": -4.7,
+   "inflacao": false,
+   "data": "2026-11-27",
+   "paises": [
+    "Bósnia e Herzegovina"
+   ],
+   "dolar": {}
+  },
+  {
+   "moeda": "HUF",
+   "nome": "florim húngaro",
+   "por_100": 5859.26,
+   "variacao": -4.7,
+   "inflacao": false,
+   "data": "2026-11-27",
+   "paises": [
+    "Hungria"
+   ],
+   "dolar": {}
+  },
+  {
    "moeda": "CZK",
    "nome": "coroa tcheca",
    "por_100": 384.83,
@@ -76,14 +128,14 @@
    "dolar": {}
   },
   {
-   "moeda": "HUF",
-   "nome": "florim húngaro",
-   "por_100": 5859.26,
-   "variacao": -4.8,
+   "moeda": "MKD",
+   "nome": "dinar macedônio",
+   "por_100": 971.59,
+   "variacao": -5.0,
    "inflacao": false,
    "data": "2026-11-27",
    "paises": [
-    "Hungria"
+    "Macedônia do Norte"
    ],
    "dolar": {}
   },
@@ -133,6 +185,18 @@
    "dolar": {}
   },
   {
+   "moeda": "RSD",
+   "nome": "dinar sérvio",
+   "por_100": 1850.85,
+   "variacao": -5.1,
+   "inflacao": false,
+   "data": "2026-11-27",
+   "paises": [
+    "Sérvia"
+   ],
+   "dolar": {}
+  },
+  {
    "moeda": "CHF",
    "nome": "franco suíço",
    "por_100": 14.47,
@@ -157,6 +221,34 @@
    "dolar": {}
   },
   {
+   "moeda": "PEN",
+   "nome": "sol peruano",
+   "por_100": 60.32,
+   "variacao": -7.8,
+   "inflacao": false,
+   "data": "2026-11-27",
+   "paises": [
+    "Peru"
+   ],
+   "dolar": {
+    "Peru": "Dólar aceito em hotéis, passeios e lojas turísticas"
+   }
+  },
+  {
+   "moeda": "PYG",
+   "nome": "guarani",
+   "por_100": 110889.18,
+   "variacao": -7.9,
+   "inflacao": false,
+   "data": "2026-11-27",
+   "paises": [
+    "Paraguai"
+   ],
+   "dolar": {
+    "Paraguai": "Dólar e real aceitos, principalmente na fronteira"
+   }
+  },
+  {
    "moeda": "NOK",
    "nome": "coroa norueguesa",
    "por_100": 169.35,
@@ -167,6 +259,34 @@
     "Noruega"
    ],
    "dolar": {}
+  },
+  {
+   "moeda": "UYU",
+   "nome": "peso uruguaio",
+   "por_100": 700.22,
+   "variacao": -8.2,
+   "inflacao": false,
+   "data": "2026-11-27",
+   "paises": [
+    "Uruguai"
+   ],
+   "dolar": {
+    "Uruguai": "Dólar aceito em hotéis, restaurantes e lojas turísticas"
+   }
+  },
+  {
+   "moeda": "COP",
+   "nome": "peso colombiano",
+   "por_100": 61734.48,
+   "variacao": -8.9,
+   "inflacao": false,
+   "data": "2026-11-27",
+   "paises": [
+    "Colômbia"
+   ],
+   "dolar": {
+    "Colômbia": "Pouco aceito: pague em peso"
+   }
   },
   {
    "moeda": "ISK",
@@ -209,6 +329,72 @@
    }
   },
   {
+   "moeda": "AED",
+   "nome": "dirham",
+   "por_100": 63.69,
+   "variacao": -9.8,
+   "inflacao": false,
+   "data": "2026-11-27",
+   "paises": [
+    "Emirados Árabes Unidos"
+   ],
+   "dolar": {}
+  },
+  {
+   "moeda": "AWG",
+   "nome": "florim arubano",
+   "por_100": 31.04,
+   "variacao": -9.8,
+   "inflacao": false,
+   "data": "2026-11-27",
+   "paises": [
+    "Aruba"
+   ],
+   "dolar": {
+    "Aruba": "Dólar amplamente aceito"
+   }
+  },
+  {
+   "moeda": "ALL",
+   "nome": "lek albanês",
+   "por_100": 1415.98,
+   "variacao": -9.9,
+   "inflacao": false,
+   "data": "2026-11-27",
+   "paises": [
+    "Albânia"
+   ],
+   "dolar": {}
+  },
+  {
+   "moeda": "ANG",
+   "nome": "florim antilhano",
+   "por_100": 31.04,
+   "variacao": -10.2,
+   "inflacao": false,
+   "data": "2026-11-27",
+   "paises": [
+    "Curaçao"
+   ],
+   "dolar": {
+    "Curaçao": "Dólar amplamente aceito"
+   }
+  },
+  {
+   "moeda": "DOP",
+   "nome": "peso dominicano",
+   "por_100": 1037.3,
+   "variacao": -10.4,
+   "inflacao": false,
+   "data": "2026-11-27",
+   "paises": [
+    "República Dominicana"
+   ],
+   "dolar": {
+    "República Dominicana": "Dólar aceito em resorts e passeios"
+   }
+  },
+  {
    "moeda": "CNY",
    "nome": "yuan chinês",
    "por_100": 114.72,
@@ -221,116 +407,10 @@
    "dolar": {}
   },
   {
-   "moeda": "AED",
-   "nome": "dirham",
-   "por_100": 63.69,
-   "variacao": null,
-   "inflacao": false,
-   "data": "2026-11-27",
-   "paises": [
-    "Emirados Árabes Unidos"
-   ],
-   "dolar": {}
-  },
-  {
-   "moeda": "ALL",
-   "nome": "lek albanês",
-   "por_100": 1415.98,
-   "variacao": null,
-   "inflacao": false,
-   "data": "2026-11-27",
-   "paises": [
-    "Albânia"
-   ],
-   "dolar": {}
-  },
-  {
-   "moeda": "ANG",
-   "nome": "florim antilhano",
-   "por_100": 31.04,
-   "variacao": null,
-   "inflacao": false,
-   "data": "2026-11-27",
-   "paises": [
-    "Curaçao"
-   ],
-   "dolar": {
-    "Curaçao": "Dólar amplamente aceito"
-   }
-  },
-  {
-   "moeda": "AWG",
-   "nome": "florim arubano",
-   "por_100": 31.04,
-   "variacao": null,
-   "inflacao": false,
-   "data": "2026-11-27",
-   "paises": [
-    "Aruba"
-   ],
-   "dolar": {
-    "Aruba": "Dólar amplamente aceito"
-   }
-  },
-  {
-   "moeda": "BAM",
-   "nome": "marco conversível",
-   "por_100": 30.95,
-   "variacao": null,
-   "inflacao": false,
-   "data": "2026-11-27",
-   "paises": [
-    "Bósnia e Herzegovina"
-   ],
-   "dolar": {}
-  },
-  {
-   "moeda": "BOB",
-   "nome": "boliviano",
-   "por_100": 204.34,
-   "variacao": null,
-   "inflacao": false,
-   "data": "2026-11-27",
-   "paises": [
-    "Bolívia"
-   ],
-   "dolar": {
-    "Bolívia": "Dólar aceito em turismo; troque o resto em casas de câmbio"
-   }
-  },
-  {
-   "moeda": "CLP",
-   "nome": "peso chileno",
-   "por_100": 17914.46,
-   "variacao": null,
-   "inflacao": false,
-   "data": "2026-11-27",
-   "paises": [
-    "Chile"
-   ],
-   "dolar": {
-    "Chile": "Pouco aceito: pague em peso"
-   }
-  },
-  {
-   "moeda": "COP",
-   "nome": "peso colombiano",
-   "por_100": 61734.48,
-   "variacao": null,
-   "inflacao": false,
-   "data": "2026-11-27",
-   "paises": [
-    "Colômbia"
-   ],
-   "dolar": {
-    "Colômbia": "Pouco aceito: pague em peso"
-   }
-  },
-  {
    "moeda": "CRC",
    "nome": "colón costarriquenho",
    "por_100": 7664.83,
-   "variacao": null,
+   "variacao": -14.6,
    "inflacao": false,
    "data": "2026-11-27",
    "paises": [
@@ -338,6 +418,20 @@
    ],
    "dolar": {
     "Costa Rica": "Dólar amplamente aceito"
+   }
+  },
+  {
+   "moeda": "ARS",
+   "nome": "peso argentino",
+   "por_100": 27757.91,
+   "variacao": null,
+   "inflacao": true,
+   "data": "2026-11-27",
+   "paises": [
+    "Argentina"
+   ],
+   "dolar": {
+    "Argentina": "Dólar em espécie é muito aceito e costuma render mais; cartão brasileiro paga no câmbio MEP"
    }
   },
   {
@@ -355,84 +449,28 @@
    }
   },
   {
-   "moeda": "DOP",
-   "nome": "peso dominicano",
-   "por_100": 1037.3,
+   "moeda": "TRY",
+   "nome": "lira turca",
+   "por_100": 880.01,
    "variacao": null,
-   "inflacao": false,
+   "inflacao": true,
    "data": "2026-11-27",
    "paises": [
-    "República Dominicana"
-   ],
-   "dolar": {
-    "República Dominicana": "Dólar aceito em resorts e passeios"
-   }
-  },
-  {
-   "moeda": "MKD",
-   "nome": "dinar macedônio",
-   "por_100": 971.59,
-   "variacao": null,
-   "inflacao": false,
-   "data": "2026-11-27",
-   "paises": [
-    "Macedônia do Norte"
+    "Turquia"
    ],
    "dolar": {}
   },
   {
-   "moeda": "PEN",
-   "nome": "sol peruano",
-   "por_100": 60.32,
+   "moeda": "VES",
+   "nome": "bolívar",
+   "por_100": 16064.8,
    "variacao": null,
-   "inflacao": false,
+   "inflacao": true,
    "data": "2026-11-27",
    "paises": [
-    "Peru"
-   ],
-   "dolar": {
-    "Peru": "Dólar aceito em hotéis, passeios e lojas turísticas"
-   }
-  },
-  {
-   "moeda": "PYG",
-   "nome": "guarani",
-   "por_100": 110889.18,
-   "variacao": null,
-   "inflacao": false,
-   "data": "2026-11-27",
-   "paises": [
-    "Paraguai"
-   ],
-   "dolar": {
-    "Paraguai": "Dólar e real aceitos, principalmente na fronteira"
-   }
-  },
-  {
-   "moeda": "RSD",
-   "nome": "dinar sérvio",
-   "por_100": 1850.85,
-   "variacao": null,
-   "inflacao": false,
-   "data": "2026-11-27",
-   "paises": [
-    "Sérvia"
+    "Venezuela"
    ],
    "dolar": {}
-  },
-  {
-   "moeda": "UYU",
-   "nome": "peso uruguaio",
-   "por_100": 700.22,
-   "variacao": null,
-   "inflacao": false,
-   "data": "2026-11-27",
-   "paises": [
-    "Uruguai"
-   ],
-   "dolar": {
-    "Uruguai": "Dólar aceito em hotéis, restaurantes e lojas turísticas"
-   }
   }
  ]
 }

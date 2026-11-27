@@ -53,5 +53,15 @@
   "iata": "THE",
   "nome": "Teresina (PI)",
   "desde": "2026-11-27"
+ },
+ {
+  "iata": "LIM",
+  "nome": "Lima",
+  "desde": "2026-11-27"
+ },
+ {
+  "iata": "BUE",
+  "nome": "Buenos Aires",
+  "desde": "2026-11-27"
  }
 ]

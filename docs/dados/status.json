@@ -3,7 +3,46 @@
  "apify_gasto": {
   "2026-11": 0.10052
  },
- "ultima_execucao": "2026-11-27T23:45-03:00",
- "ultimo_voos": "2026-11-27",
- "ultimo_cambio": "2026-11-27"
+ "ultima_execucao": "2026-11-28T08:56-03:00",
+ "ultimo_voos": "2026-11-28",
+ "ultimo_cambio": "2026-11-28",
+ "precos_pendente": {
+  "run": "4cdn2KLQ4WkhLZ9VR",
+  "mapa": {
+   "SLZ": "SLZ",
+   "JJD": "JJD",
+   "NVT": "NVT",
+   "SSA": "SSA",
+   "REC": "REC",
+   "FOR": "FOR",
+   "NAT": "NAT",
+   "JPA": "JPA",
+   "MCZ": "MCZ",
+   "AJU": "AJU",
+   "THE": "THE",
+   "LIM": "LIM",
+   "BUE": "BUE",
+   "EZE": "BUE",
+   "AEP": "BUE",
+   "RIO": "RIO",
+   "GIG": "RIO",
+   "SDU": "RIO",
+   "BVB": "BVB",
+   "BSB": "BSB",
+   "FLN": "FLN",
+   "MDZ": "MDZ",
+   "ASU": "ASU",
+   "VVI": "VVI",
+   "PAR": "PAR",
+   "CDG": "PAR",
+   "ORY": "PAR",
+   "FRA": "FRA",
+   "PRG": "PRG",
+   "MLA": "MLA",
+   "RIX": "RIX",
+   "IST": "IST"
+  },
+  "janela": 30,
+  "desde": "2026-11-28T08:56-03:00"
+ }
 }
